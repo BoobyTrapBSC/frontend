@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  font-family: Euclid Circular A;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+input:focus{
+  outline: none;
+}
+button:focus, button:active{
+  outline: none;
+}
+.btn-outline-dark{
+  background-color: #fff;
+  color: #2e4e85;
+}
+.button-blue{
+  background-color: #355A9B;
+  color: #fff;
+}
+.button-blue:hover{
+  background-color: #2e4e85;
+  color: #fff;
+}
+
+/* DEVICE BREAKPOINTS */
+@media only screen and (max-width: 1200px){
+  #defiloss-cont{
+    width: 90% !important;
+  }
+  .defi-main{
+    width: 80% !important;
+  }
+  #keyfeatures-cont .row{
+    width: 90%;
+  }
+  .hero-search{
+    width: 80% !important;
+  }
+  .hero-text h1{
+    font-size: 6vw !important;
+  }
+  .hero-text p{
+    font-size: 20px !important;
+  }
+  .patternImg{
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .secondary-cont{
+    flex-direction: column;
+  }
+  .secondary-cont .col{
+    width: 100% !important;
+  }
+  .defi-desc{
+    width: 100% !important;
+  }
+  #keyfeatures-cont .row svg{
+    width: 300px;
+    height: 125px;
+  }
+  #hero-container{
+    width: 90% !important;
+  }
+  .hero-text p{
+    font-size: 16px !important;
+  }
+  .hero-search .form-control .button-blue{
+    display: none;
+  }
+  .hero-search input{
+  flex-grow: none;
+  }
+  .hero-search .search{
+    width: 200px !important;
+  }
+  #hero-container{
+    height: 60vh !important;
+  }
+  .footer-main{
+    flex-direction: column;
+    width: 100% !important;
+  }
+  .f-graphic img{
+    padding-top: 25px;
+    width: 100% !important;
+  }
+  /* .roadmap-content h2, .roadmap-content p{
+    width: 90% !important;
+    text-align: start;
+  } */
+  .navbar-toggler{
+    display: none;
+  }
+  .mob-nav{
+  display: block !important;
+  position: absolute;
+  right: 5px;
+  }
+  .copyright{
+    padding-bottom: 60px !important;
+  }
+  .roadmap{
+    display: none;
+  }
+  .mobmap-cont{
+    display: block !important;
+  }
+  .sidebar{
+    display: none;
+  }
+  .safe-collapse{
+    display: block !important;
+    color: #264B8C;
+    right: 0;
+    margin: 5px;
+  }
+  .side-categories,
+  .filter-points {
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 769px){
+  .defi-main{
+    width: 100% !important;
+  }
+  .hero-search{
+    width: 95% !important;
+  }
+  #hero-container{
+    width: 90% !important;
+  }
+  .hero-text h1{
+    font-size: 7vw !important;
+  }
+  .categories-cont{
+    width: 90% !important;
+    height: auto !important; 
+  }
+  .cat-card{
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin: 2px;
+    padding-left: 15px;
+    text-align: left;
+    width: 50% !important;
+  }
+  .patternImg{
+    width: 100% !important;
+  }
+  #safedefi-cont{
+    text-align: start !important;
+  }
+  #safedefi-cont p{
+    width: 100% !important;
+  }
+  .hero-search .search{
+    width: 120px !important;
+  }
+  .rating-slider{
+    width: 100% !important;
+  }
+  .safe-collapse{
+    display: block !important;
+  }
+  .sidebar{
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  .ownerCard img {
+    transform: translate(10px, -20px) !important;
+  }
+  .sort{
+    padding-left: 25px;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 350px){
+  .ownerCard{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .ownerCard img{
+    transform: none !important;
+    width: 250px;
+  }
+}

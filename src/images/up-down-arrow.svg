@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="chevron-circle-left-Light" transform="translate(0 24) rotate(-90)">
+    <rect id="Path" width="24" height="24" fill="rgba(255,255,255,0)"/>
+    <path id="chevron-circle-left-Light_1_" d="M888.354,574.353,885.707,577l2.646,2.646a.5.5,0,0,1-.708.707l-3-3a.5.5,0,0,1,0-.707l3-3a.5.5,0,0,1,.709.707Z" transform="translate(-880 -565)" fill="#767d8a"/>
+    <path id="chevron-circle-left-Light_1_2" data-name="chevron-circle-left-Light_1_" d="M888.354,574.353,885.707,577l2.646,2.646a.5.5,0,0,1-.708.707l-3-3a.5.5,0,0,1,0-.707l3-3a.5.5,0,0,1,.709.707Z" transform="translate(902.998 588.999) rotate(180)" fill="#767d8a"/>
+  </g>
+</svg>
