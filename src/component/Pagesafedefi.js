@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   AiFillLeftCircle,
   AiFillSafetyCertificate,
@@ -12,7 +12,6 @@ import {
   GiTireIronCross,
 } from "react-icons/gi";
 import { Link, Outlet } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 
 export default function Pagesafedefi() {
   const [sidebar, setSidebar] = useState(1);
