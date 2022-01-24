@@ -10,6 +10,7 @@ import Ownercards from './component/Ownercards';
 import Promoters from './component/Promoters';
 import Influencers from './component/Influencers';
 import Devcards from './component/Devcards';
+import Ownerprofile from './component/Ownerprofile';
 
 function App() {
   return (
@@ -20,12 +21,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="faqs" element={<Faqs />} />
-          <Route path="safedefi" element={<Pagesafedefi/>} >
-            <Route path="projectowner" element={<Ownercards/>}/>
-            <Route path="influencers" element={<Influencers/>}/>
-            <Route path="developers" element={<Devcards/>}/>
-            <Route path="promoters" element={<Promoters/>}/>
+          <Route path="safedefi" element={<Pagesafedefi />} >
+            <Route path="projectowner" element={<Ownercards />} />
+            <Route path="influencers" element={<Influencers />} />
+            <Route path="developers" element={<Devcards />} />
+            <Route path="promoters" element={<Promoters />} />
           </Route>
+          <Route path="/safedefi/projectowner/ownerprofile" element={<Ownerprofile />} />
         </Routes>
         <Footer />
       </Router>

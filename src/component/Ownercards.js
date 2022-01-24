@@ -23,7 +23,7 @@ export default function Ownercards() {
                 <div id="dev-name">{ownerInfo.name}</div>
                 <div className="star"><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></div>
                 <div id="social-dev"><Link to="/"><FaTelegramPlane size={25} fill={"#fff"}/></Link> &nbsp;<Link to="/"><FaTwitter size={25} fill={"#fff"}/></Link></div>
-                <button className="btn shadow-sm">Projects</button>
+                <Link className="btn shadow-sm" to="/safedefi/projectowner/ownerprofile">Projects</Link>
             </div>
         )
     }
