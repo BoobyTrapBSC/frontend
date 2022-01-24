@@ -2,7 +2,6 @@ import React from "react";
 import {
   AiFillLeftCircle,
   AiFillSafetyCertificate,
-  AiFillRightCircle,
 } from "react-icons/ai";
 import { FaBusinessTime, FaLaptopCode, FaCode } from "react-icons/fa";
 import {
@@ -11,7 +10,7 @@ import {
   GiHamburgerMenu,
   GiTireIronCross,
 } from "react-icons/gi";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 
 export default function Ownerprofile() {
@@ -19,13 +18,6 @@ export default function Ownerprofile() {
 
   const activeSidebar = (index) => {
     setSidebar(index);
-    console.log(index);
-  };
-
-  const [activeRange, setActiveRange] = useState(1);
-
-  const activePoints = (index) => {
-    setActiveRange(index);
     console.log(index);
   };
 
