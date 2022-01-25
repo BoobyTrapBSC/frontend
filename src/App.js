@@ -27,7 +27,9 @@ function App() {
             <Route path="developers" element={<Devcards />} />
             <Route path="promoters" element={<Promoters />} />
           </Route>
-          <Route path="/safedefi/projectowner/ownerprofile" element={<Ownerprofile />} />
+          <Route path="/safedefi/projectowner/ownerprofile" element={<Ownerprofile />}/>
+            {/* <Route></Route>
+          </Route> */}
         </Routes>
         <Footer />
       </Router>

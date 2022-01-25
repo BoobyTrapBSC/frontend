@@ -131,6 +131,9 @@ button:focus, button:active{
   .filter-points {
     margin: auto;
   }
+  .owner-prof-cont .head-content{
+    flex-direction: column-reverse !important;
+  }
 }
 
 @media only screen and (max-width: 769px){
@@ -179,9 +182,6 @@ button:focus, button:active{
   .sidebar{
     flex-direction: column;
     margin-bottom: 15px;
-  }
-  .ownerCard img {
-    transform: translate(10px, -20px) !important;
   }
   .sort{
     padding-left: 25px;

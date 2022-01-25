@@ -14,7 +14,7 @@ import {
 import { Link, Outlet } from "react-router-dom";
 
 export default function Pagesafedefi() {
-  const [sidebar, setSidebar] = useState(1);
+  const [sidebar, setSidebar] = useState(2);
 
   const activeSidebar = (index) => {
     setSidebar(index);
@@ -65,17 +65,17 @@ export default function Pagesafedefi() {
           >
             Home
           </Link>
-          <h1>SAFE HEAVEN</h1>
+          <h1>SAFE HAVEN</h1>
           <h2>Best Rated in DeFi</h2>
-          <b>(This Platform Preview is still under development)</b>
+          <b>(Platform Preview)</b>
           <p>
-            0 Trap Points means the Safest! Lower Trap Points means safer! Read
+            0 Trap Points means the safest! lower trap points means safer! Read
             more about{" "}
             <Link
               to="/"
               style={{ color: "#fff", fontSize: "16px", fontWeight: "500" }}
             >
-              Trap Points
+              trap points
             </Link>
           </p>
         </div>
