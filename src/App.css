@@ -96,8 +96,26 @@
   max-width: 1440px;
   margin: auto;
 }
+.slick-next:before, .slick-arrow, .slick-next{
+  display: none !important;
+}
 .sc-bwzfXH {
   display: none;
+}
+.f-slider .item{
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+.slick-list {
+  margin: auto -20px;
+}
+.slick-track{
+  width: max-content !important;
+}
+.slick-slide{
+  margin: auto 20px;
+  min-width: 150px;
+  max-width: 250px;
 }
 .rating-slider {
   width: 90%;
@@ -108,6 +126,7 @@
 }
 .rating-slider .card {
   max-width: 300px;
+  margin: auto;
 }
 .rating-slider .card-body {
   font-size: 12px;

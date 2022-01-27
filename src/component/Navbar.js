@@ -18,7 +18,7 @@ export default function Navbar() {
                                 <Link className="nav-link" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                            <Link className="nav-link" to="/safedefi/projectowner">Safe DeFi</Link>
+                            <Link className="nav-link" to="/safedefi/safuprojects">Safe DeFi</Link>
                             </li>
                             <li className="nav-item">
                                 <a href = {trapsheetpdf} target = "_blank" rel="noreferrer" className="nav-link">Trapsheet</a>

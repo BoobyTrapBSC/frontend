@@ -15,7 +15,7 @@ import {
 import { Link, Outlet } from "react-router-dom";
 
 export default function Pagesafedefi() {
-  const [sidebar, setSidebar] = useState(2);
+  const [sidebar, setSidebar] = useState(1);
 
   const activeSidebar = (index) => {
     setSidebar(index);
@@ -91,9 +91,9 @@ export default function Pagesafedefi() {
               <li className="nav-item">
                 <Link
                   //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
-                  className="nav-link disabled"
+                  className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   onClick={() => activeSidebar(1)}
-                  to="/safedefi"
+                  to="/safedefi/safuprojects"
                 >
                   <AiFillSafetyCertificate /> Safu Projects
                 </Link>

@@ -52,6 +52,10 @@ button:focus, button:active{
   .hero-text p{
     font-size: 20px !important;
   }
+  .f-slider{
+    width: 90%;
+    margin: auto;
+  }
   .patternImg{
     width: 90% !important;
   }
@@ -189,6 +193,10 @@ button:focus, button:active{
   .sort{
     padding-left: 25px;
     flex-direction: column;
+  }
+  .safuCards{
+    width: 90%;
+    margin: auto;
   }
 }
 @media only screen and (max-width: 350px){

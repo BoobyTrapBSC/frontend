@@ -15,7 +15,7 @@ export default function Bottomnav() {
             <Link id="mob-link" to="/"><img src={home} alt=""/><br/>Home</Link>
           </button>
           <button className="btn">
-          <Link id="mob-link" to="/safedefi/projectowner"><img src={safedefi} alt=""/><br/>Safe DeFi</Link>
+          <Link id="mob-link" to="/safedefi/safuprojects"><img src={safedefi} alt=""/><br/>Safe DeFi</Link>
           </button>
           <button className="btn">
             <Link to = {trapsheetpdf} id="mob-link" target = "_blank" rel="noreferrer"><img src={trapsheet} alt=""/><br/>Trapsheet</Link>

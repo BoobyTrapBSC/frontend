@@ -21,13 +21,13 @@ export default function Mobmap() {
                     <Carousel.Item>
                         <div className={toggleMap === 2 ? "map-head-2 active" : "map-head-2"} onClick={() => toggleTab(2)} id="nav-bubble">
                             <h4>Phase II</h4>
-                            <p className='text-muted'>Feb 2022</p>
+                            <p className='text-muted'>Feb 2022 - Pending</p>
                         </div>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div className={toggleMap === 3 ? "map-head-3 active" : "map-head-3"} onClick={() => toggleTab(3)} id="nav-bubble">
                             <h4>Phase III</h4>
-                            <p className='text-muted'>Mar 2022</p>
+                            <p className='text-muted'>Mar 2022 - Pending</p>
                         </div>
                     </Carousel.Item>
                     <Carousel.Item>

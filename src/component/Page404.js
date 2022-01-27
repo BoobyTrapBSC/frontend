@@ -15,7 +15,7 @@ export default function Page404() {
         </p>
         <p className="output">
           Please try to <a href="#1">go back</a> or{" "}
-          <a href="#2">return to the homepage</a>.
+          <a href="/">return to the homepage</a>.
         </p>
         <p className="output">Good luck.</p>
       </div>
