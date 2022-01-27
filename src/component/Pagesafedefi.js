@@ -1,4 +1,5 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {
   AiFillLeftCircle,
   AiFillSafetyCertificate,
@@ -28,43 +29,39 @@ export default function Pagesafedefi() {
     console.log(index);
   };
 
-  const [menuCollapse, setMenuCollapse] = useState(true)
+  const [menuCollapse, setMenuCollapse] = useState(true);
   const [hamburgerDisplay, setHamburgerDisplay] = useState("d-block");
   const [crossDisplay, setCrossDisplay] = useState("d-none");
   const [sideDisplay, setSideDisplay] = useState("d-block");
 
   const toggleCollapse = (bool) => {
-      if (menuCollapse === true) {
-          console.log("Open");
-          setMenuCollapse(false)
-          setHamburgerDisplay("d-none")
-          setCrossDisplay("d-block")
-          setSideDisplay("d-block")
-      } else {
-          console.log("Close");
-          setMenuCollapse(true)
-          setHamburgerDisplay("d-block")
-          setCrossDisplay("d-none")
-          setSideDisplay("d-none")
-      }
-  }
+    if (menuCollapse === true) {
+      console.log("Open");
+      setMenuCollapse(false);
+      setHamburgerDisplay("d-none");
+      setCrossDisplay("d-block");
+      setSideDisplay("d-block");
+    } else {
+      console.log("Close");
+      setMenuCollapse(true);
+      setHamburgerDisplay("d-block");
+      setCrossDisplay("d-none");
+      setSideDisplay("d-none");
+    }
+  };
 
   return (
     <div id="pagesafe-cont">
       <div className="safe-head py-3 position-relative container-fluid">
+          <Breadcrumb>
+            <AiFillLeftCircle size={25} />
+            <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
+            {/* <Breadcrumb.Item href="/safedefi/projectowner">
+              Safe DeFi
+            </Breadcrumb.Item> */}
+            <Breadcrumb.Item active>Safe DeFi</Breadcrumb.Item>
+          </Breadcrumb>
         <div className="head-content">
-          <AiFillLeftCircle size={20} />
-          <Link
-            style={{
-              color: "#fff",
-              textDecoration: "none",
-              fontSize: "16px",
-              marginLeft: "5px",
-            }}
-            to="/"
-          >
-            Home
-          </Link>
           <h1>SAFE HAVEN</h1>
           <h2>Best Rated in DeFi</h2>
           <b>(Platform Preview)</b>
@@ -80,8 +77,12 @@ export default function Pagesafedefi() {
           </p>
         </div>
       </div>
-      <div className="safe-collapse" onClick={() => toggleCollapse(menuCollapse === true ? false: true)}>
-        Menu <GiHamburgerMenu id="menu-icon" className={hamburgerDisplay}/><GiTireIronCross id="menu-icon" className={crossDisplay}/>
+      <div
+        className="safe-collapse"
+        onClick={() => toggleCollapse(menuCollapse === true ? false : true)}
+      >
+        Menu <GiHamburgerMenu id="menu-icon" className={hamburgerDisplay} />
+        <GiTireIronCross id="menu-icon" className={crossDisplay} />
       </div>
       <div className="safe-content row mt-3">
         <div className={`sidebar col-lg-2 ${sideDisplay}`}>
@@ -89,7 +90,7 @@ export default function Pagesafedefi() {
             <ul className="nav flex-column">
               <li className="nav-item">
                 <Link
-                //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
+                  //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   className="nav-link disabled"
                   onClick={() => activeSidebar(1)}
                   to="/safedefi"

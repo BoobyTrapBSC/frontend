@@ -367,6 +367,7 @@
 }
 .safe-content {
   margin: auto;
+  max-width: 1440px;
 }
 #menu-icon {
   border: 1px solid rgb(123, 160, 228);
@@ -413,7 +414,8 @@
 .ownerCard {
   padding-left: 15px;
 }
-.ownerCard .star, .review-star {
+.ownerCard .star,
+.review-star {
   color: #ffdd4d;
 }
 .ownerCard img {
@@ -421,7 +423,7 @@
   max-width: 18rem;
   transform: translate(5px, -20px);
 }
-.ownerCard .btn {
+.ownerCard .btn{
   background-color: #fff;
   color: #264b8c;
   border: 1px solid #fff;
@@ -431,10 +433,10 @@
   left: 30%;
   bottom: -7%;
 }
-.owner-prof-cont .head-content{
+.owner-prof-cont .head-content {
   flex-direction: row;
 }
-.ownerCard .btn:hover {
+.ownerCard .btn:hover, .projectCard .btn:hover {
   background-color: #264b8c;
   color: #fff;
 }
@@ -447,7 +449,169 @@
   text-decoration: none;
   color: #fff;
 }
-.profileImg{
+.owner-prof-cont .head-content{
+  max-width: 1440px;
+}
+.owner-prof-cont .head-content .col-lg-2{
+  width: fit-content;
+}
+.owner-prof-cont .safe-content{
+  max-width: 1440px;
+}
+#skills{
+  font-weight: 500;
+  line-height: 30px;
+}
+.profileImg {
   max-height: 175px;
   border-radius: 25px;
+}
+.projectCard{
+  background-color: #EDF0F4;
+  border-radius: 20px;
+  position: relative;
+  min-width: 325px;
+  max-width: 350px;
+}
+.projectCard img{
+  max-height: 100px;
+  border-radius: 50%
+}
+#project-social{
+  font-size: 25px;
+  margin: auto 2px;
+  text-decoration: none;
+  color: #000
+}
+#project-social:hover{
+  color: #264b8c;
+}
+#projectDesc{
+  text-align: justify;
+  max-width: 80%;
+  margin: auto;
+  font-weight: 500;
+}
+.projectCard .btn {
+  background-color: #fff;
+  color: #264b8c;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  padding: 8px 25px;
+  position: absolute;
+  left: 35%;
+  bottom: -7%;
+}
+
+/* 404 */
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
+.pagenotfound-cont{
+    box-sizing: border-box;
+    height: 90vh;
+    position: relative;
+    background-color: #000000;
+    background-image: radial-gradient(#112d58, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Inconsolata', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: rgba(128, 168, 255, 0.8);
+    text-shadow:
+        0 0 1ex rgba(51, 255, 51, 1),
+        0 0 2px rgba(255, 255, 255, 0.8);
+}
+.noise {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.02;
+}
+
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-size: auto 4px;
+  z-index: 1;
+}
+
+.overlay::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    0deg,
+    transparent 0%,
+    rgba(32, 128, 32, 0.2) 2%,
+    rgba(32, 128, 32, 0.8) 3%,
+    rgba(32, 128, 32, 0.2) 3%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  animation: scan 5.5s linear 0s infinite;
+}
+
+@keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  35%,
+  100% {
+    background-position: 0 100vh;
+  }
+}
+
+.terminal {
+  box-sizing: inherit;
+  position: absolute;
+  height: 100%;
+  width: 1000px;
+  max-width: 100%;
+  padding: 4rem;
+  text-transform: uppercase;
+}
+
+.output {
+  color: rgba(128, 168, 255, 0.8);
+  text-shadow: 0 0 1px rgba(128, 168, 255, 0.8), 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.output::before {
+  content: "> ";
+}
+
+.pagenotfound-cont a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.pagenotfound-cont a::before {
+  content: "[";
+}
+
+.pagenotfound-cont a::after {
+  content: "]";
+}
+
+.errorcode {
+  color: white;
 }

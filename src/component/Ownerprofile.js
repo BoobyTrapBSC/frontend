@@ -12,7 +12,7 @@ import {
     GiHamburgerMenu,
     GiTireIronCross,
 } from "react-icons/gi";
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Ownerdetails from "./Ownerdetails";
 
 export default function Ownerprofile() {
@@ -47,8 +47,8 @@ export default function Ownerprofile() {
     return (
         <div id="pagesafe-cont" className="owner-prof-cont">
             <div className="safe-head py-3 position-relative container-fluid">
-                <Breadcrumb><AiFillLeftCircle size={25} />
-                    <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+                <Breadcrumb><AiFillLeftCircle size={25} color="#fff" />
+                    <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
                     <Breadcrumb.Item href="/safedefi/projectowner">
                         Safe DeFi
                     </Breadcrumb.Item>
@@ -139,7 +139,7 @@ export default function Ownerprofile() {
                     </div>
                 </div>
                 <div className="content col">
-                    <div className="sort mb-3 d-flex text-start">
+                    {/* <div className="sort mb-3 d-flex text-start">
                         <p>Sort by:</p>
                         <div className="form-check mx-2 form-switch">
                             <label
@@ -170,7 +170,7 @@ export default function Ownerprofile() {
                                 id="flexSwitchCheckDefault"
                             />
                         </div>
-                    </div>
+                    </div> */}
                     <Ownerdetails/>
                 </div>
             </div>
