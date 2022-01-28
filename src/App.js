@@ -13,6 +13,7 @@ import Devcards from './component/Devcards';
 import Ownerprofile from './component/Ownerprofile';
 import Page404 from './component/Page404';
 import Safecards from './component/Safecards';
+import Projectpage from './component/Projectpage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="safuprojects" element={<Safecards/>}/>
           </Route>
           <Route path="/safedefi/projectowner/ownerprofile" element={<Ownerprofile />}/>
+          <Route path="/safedefi/safuprojects/projectpage" element={<Projectpage/>}/>
           <Route path="*" element={<Page404/>} />
             {/* <Route></Route>
           </Route> */}

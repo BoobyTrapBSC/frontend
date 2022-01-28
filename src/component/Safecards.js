@@ -42,7 +42,7 @@ export default function Safecards() {
               <br />
               <p>{projectArray.desc}</p>
           </div>
-          <Link className="btn shadow-sm" to="/">Details</Link>
+          <Link className="btn shadow-sm" to="/safedefi/safuprojects/projectpage">Details</Link>
         </div>
             // <div className="ownerCard mb-5 col-md-3 shadow" key={index}>
             //     <img src={projectArray.image} alt="" />
