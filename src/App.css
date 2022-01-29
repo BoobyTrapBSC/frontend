@@ -165,6 +165,12 @@
 .defi-desc {
   width: 50%;
 }
+#defiloss-cont .btn{
+  position: absolute;
+  font-weight: 500;
+  right: -55%;
+  top: 25px;
+}
 .defi-desc p:nth-child(1) {
   font-size: 16px;
   font-weight: 600;

@@ -29,6 +29,7 @@ export default function Footer() {
               <FaTwitter size={25} className="text-light mx-3" />
             </a>
           </div>
+            <p className="mt-3 mb-0">Email: <a className="text-decoration-none" style={{color:"#fff", fontWeight:"500"}} href="mailto:info@boobytrap.live">info@boobytrap.live</a></p>
         </div>
         <div className="f-graphic">
           <img src={fGraphic} alt="" />
