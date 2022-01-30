@@ -18,7 +18,8 @@ export default function Ownercards() {
     const renderOwner = (ownerInfo, index) =>{
         return(
             <div className="ownerCard mb-5 col-md-3 shadow" key={index}>
-                <img src={ownerInfo.image} alt="" />
+                <div style={{overflow:"hidden", width:"fit-content", borderRadius:"25px",}}>
+                <img src={ownerInfo.image} alt="" /></div>
                 <div id="trap-points">{ownerInfo.trapPoints} Trap Points</div>
                 <div id="dev-name">{ownerInfo.name}</div>
                 <div className="star"><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></div>

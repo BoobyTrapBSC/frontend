@@ -74,6 +74,9 @@ button:focus, button:active{
   .defi-desc{
     width: 100% !important;
   }
+  #navbar-container .navbar{
+    width: 100% !important;
+  }
   #keyfeatures-cont .row svg{
     width: 300px;
     height: 125px;

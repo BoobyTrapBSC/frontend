@@ -32,11 +32,6 @@ export default function Ownerdetails() {
       <div className="row justify-content-evenly mb-4">
         <div className="projectCard mx-2 my-4 col-md-3 px-3 py-2 shadow">
           <div id="projectHead" className="d-flex">
-            <img
-              className="shadow"
-              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
-              alt=""
-            />
             <div className="m-auto">
               <h3 className="fs-6">
                 Project Name <span>(Tracker)</span>
@@ -47,6 +42,11 @@ export default function Ownerdetails() {
               <Link to="/" id="project-social"><FaDiscord /></Link>
               <Link to="/" id="project-social"><FaInstagram /></Link>
             </div>
+            <img
+              className="shadow bg-light"
+              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
+              alt=""
+            />
           </div>
           <div id="projectDesc">
               <br />
@@ -56,11 +56,6 @@ export default function Ownerdetails() {
         </div>
         <div className="projectCard mx-2 my-4 col-md-3 px-3 py-2 shadow">
           <div id="projectHead" className="d-flex">
-            <img
-              className="shadow"
-              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
-              alt=""
-            />
             <div className="m-auto">
               <h3 className="fs-6">
                 Project Name <span>(Tracker)</span>
@@ -71,6 +66,11 @@ export default function Ownerdetails() {
               <Link to="/" id="project-social"><FaDiscord /></Link>
               <Link to="/" id="project-social"><FaInstagram /></Link>
             </div>
+            <img
+              className="shadow bg-light"
+              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
+              alt=""
+            />
           </div>
           <div id="projectDesc">
               <br />
@@ -80,11 +80,6 @@ export default function Ownerdetails() {
         </div>
         <div className="projectCard mx-2 my-4 col-md-3 px-3 py-2 shadow">
           <div id="projectHead" className="d-flex">
-            <img
-              className="shadow"
-              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
-              alt=""
-            />
             <div className="m-auto">
               <h3 className="fs-6">
                 Project Name <span>(Tracker)</span>
@@ -95,6 +90,11 @@ export default function Ownerdetails() {
               <Link to="/" id="project-social"><FaDiscord /></Link>
               <Link to="/" id="project-social"><FaInstagram /></Link>
             </div>
+            <img
+              className="shadow bg-light"
+              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
+              alt=""
+            />
           </div>
           <div id="projectDesc">
               <br />
@@ -113,11 +113,6 @@ export default function Ownerdetails() {
             <div className="row justify-content-evenly">
         <div className="projectCard mx-2 my-4 col-md-3 px-3 py-2 shadow">
           <div id="projectHead" className="d-flex">
-            <img
-              className="shadow"
-              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
-              alt=""
-            />
             <div className="m-auto">
               <h3 className="fs-6">
                 Project Name <span>(Tracker)</span>
@@ -128,6 +123,11 @@ export default function Ownerdetails() {
               <Link to="/" id="project-social"><FaDiscord /></Link>
               <Link to="/" id="project-social"><FaInstagram /></Link>
             </div>
+            <img
+              className="shadow bg-light"
+              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
+              alt=""
+            />
           </div>
           <div id="projectDesc">
               <br />
@@ -137,11 +137,6 @@ export default function Ownerdetails() {
         </div>
         <div className="projectCard mx-2 my-4 col-md-3 px-3 py-2 shadow">
           <div id="projectHead" className="d-flex">
-            <img
-              className="shadow"
-              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
-              alt=""
-            />
             <div className="m-auto">
               <h3 className="fs-6">
                 Project Name <span>(Tracker)</span>
@@ -152,6 +147,11 @@ export default function Ownerdetails() {
               <Link to="/" id="project-social"><FaDiscord /></Link>
               <Link to="/" id="project-social"><FaInstagram /></Link>
             </div>
+            <img
+              className="shadow bg-light"
+              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
+              alt=""
+            />
           </div>
           <div id="projectDesc">
               <br />
@@ -161,11 +161,6 @@ export default function Ownerdetails() {
         </div>
         <div className="projectCard mx-2 my-4 col-md-3 px-3 py-2 shadow">
           <div id="projectHead" className="d-flex">
-            <img
-              className="shadow"
-              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
-              alt=""
-            />
             <div className="m-auto">
               <h3 className="fs-6">
                 Project Name <span>(Tracker)</span>
@@ -176,6 +171,11 @@ export default function Ownerdetails() {
               <Link to="/" id="project-social"><FaDiscord /></Link>
               <Link to="/" id="project-social"><FaInstagram /></Link>
             </div>
+            <img
+              className="shadow bg-light"
+              src="https://cryptologos.cc/logos/cardano-ada-logo.png"
+              alt=""
+            />
           </div>
           <div id="projectDesc">
               <br />

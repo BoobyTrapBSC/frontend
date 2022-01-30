@@ -100,7 +100,7 @@ export default function Roadmap() {
       </div>
 
       {/* TOKENOMICS */}
-      <div className="tokenomics mx-auto pt-4" style={{ color: "#264B8C", width: "90%" }}>
+      <div className="tokenomics mx-auto pt-4" style={{ color: "#264B8C", width: "90%", maxWidth:"1440px" }}>
         <div className="row row-cols-1 mx-auto row-cols-md-3">
           <div className="col mb-4">
             <div className="card flex-column border-0 p-3" style={{ color: "#264B8C", backgroundColor: "#f9f9f9" }}>

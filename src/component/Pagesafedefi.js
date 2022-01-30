@@ -11,6 +11,8 @@ import {
   GiChessKing,
   GiHamburgerMenu,
   GiTireIronCross,
+  GiSandsOfTime,
+  GiProgression
 } from "react-icons/gi";
 import { Link, Outlet } from "react-router-dom";
 
@@ -53,15 +55,15 @@ export default function Pagesafedefi() {
   return (
     <div id="pagesafe-cont">
       <div className="safe-head py-3 position-relative container-fluid">
+        <div className="head-content">
           <Breadcrumb>
-            <AiFillLeftCircle size={25} />
+            <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
             {/* <Breadcrumb.Item href="/safedefi/projectowner">
               Safe DeFi
             </Breadcrumb.Item> */}
             <Breadcrumb.Item active>Safe DeFi</Breadcrumb.Item>
           </Breadcrumb>
-        <div className="head-content">
           <h1>SAFE HAVEN</h1>
           <h2>Best Rated in DeFi</h2>
           <b>(Platform Preview)</b>
@@ -84,8 +86,8 @@ export default function Pagesafedefi() {
         Menu <GiHamburgerMenu id="menu-icon" className={hamburgerDisplay} />
         <GiTireIronCross id="menu-icon" className={crossDisplay} />
       </div>
-      <div className="safe-content row mt-3">
-        <div className={`sidebar col-lg-2 ${sideDisplay}`}>
+      <div className="safe-content row w-100 mt-3">
+        <div className={`sidebar col-lg-3 ${sideDisplay}`}>
           <div className="side-categories p-3 rounded">
             <ul className="nav flex-column">
               <li className="nav-item">
@@ -96,6 +98,26 @@ export default function Pagesafedefi() {
                   to="/safedefi/safuprojects"
                 >
                   <AiFillSafetyCertificate /> Safu Projects
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
+                  className={sidebar === 8 ? "nav-link active" : "nav-link"}
+                  onClick={() => activeSidebar(8)}
+                  to="/safedefi/safuprojects"
+                >
+                  <GiProgression /> Upcoming Projects
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
+                  className={sidebar === 7 ? "nav-link active" : "nav-link"}
+                  onClick={() => activeSidebar(7)}
+                  to="/safedefi/safuprojects"
+                >
+                  <GiSandsOfTime /> Ongoing Projects
                 </Link>
               </li>
               <li className="nav-item">
@@ -131,12 +153,14 @@ export default function Pagesafedefi() {
                   onClick={() => activeSidebar(5)}
                   to="/safedefi/promoters"
                 >
-                  <GiChart /> Promoters
+                  <GiChart /> AMA/Call Channels
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link disabled" to="/">
-                  <FaCode /> Coming Soon!
+                <Link className={sidebar === 6 ? "nav-link active" : "nav-link"}
+                  onClick={() => activeSidebar(6)}
+                  to="/safedefi/promoters">
+                  <FaCode /> Other Services
                 </Link>
               </li>
             </ul>
@@ -191,7 +215,7 @@ export default function Pagesafedefi() {
             </ul>
           </div>
         </div>
-        <div className="content col">
+        <div className="content col position-relative">
           <div className="sort mb-3 d-flex text-start">
             <p>Sort by:</p>
             <div className="form-check mx-2 form-switch">
@@ -224,6 +248,12 @@ export default function Pagesafedefi() {
               />
             </div>
           </div>
+          <button className="btn button-blue dropdown-toggle safepage-listing" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Request Listing</button>
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a className="dropdown-item" target="_blank" rel="noreferrer" href="https://bit.ly/34hqxDY">Service Providers</a></li>
+            <li><a className="dropdown-item" target="_blank" rel="noreferrer" href="https://bit.ly/3g6UY2b">Upcoming Projects</a></li>
+            <li><a className="dropdown-item" target="_blank" rel="noreferrer" href="https://bit.ly/3HgUhiJ">Ongoing Projects</a></li>
+          </ul>
           {/* <Ownercards /> */}
           {/* <Devcards/> */}
           <Outlet />

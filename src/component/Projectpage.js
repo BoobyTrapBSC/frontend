@@ -5,7 +5,7 @@ import {
     FaGlobe,
     FaDiscord,
     FaInstagram,
-    FaFacebookSquare, 
+    FaFacebookSquare,
 } from "react-icons/fa";
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {
@@ -19,9 +19,11 @@ import {
     GiChessKing,
     GiHamburgerMenu,
     GiTireIronCross,
+    GiSandsOfTime,
+    GiProgression
 } from "react-icons/gi";
 import { Link } from 'react-router-dom'
-import Ownerdetails from "./Ownerdetails";
+import Projectdetails from "./Projectdetails";
 
 export default function Projectpage() {
     const [sidebar, setSidebar] = useState(1);
@@ -55,14 +57,14 @@ export default function Projectpage() {
     return (
         <div id="pagesafe-cont" className="owner-prof-cont projectpage-cont">
             <div className="safe-head py-3 position-relative container-fluid">
-                <Breadcrumb><AiFillLeftCircle size={25} color="#fff" />
-                    <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-                    <Breadcrumb.Item href="/safedefi/safuprojects">
-                        Safe DeFi
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item active>Profile</Breadcrumb.Item>
-                </Breadcrumb>
                 <div className="head-content row">
+                    <Breadcrumb><AiFillLeftCircle size={25} color="#fff" />
+                        <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
+                        <Breadcrumb.Item href="/safedefi/safuprojects">
+                            Safe DeFi
+                        </Breadcrumb.Item>
+                        <Breadcrumb.Item active>Profile</Breadcrumb.Item>
+                    </Breadcrumb>
                     <div className="col-lg-8">
                         <div className="dev-main">
                             <h1>Project Name</h1>
@@ -96,18 +98,38 @@ export default function Projectpage() {
             <div className="safe-collapse" onClick={() => toggleCollapse(menuCollapse === true ? false : true)}>
                 Menu <GiHamburgerMenu id="menu-icon" className={hamburgerDisplay} /><GiTireIronCross id="menu-icon" className={crossDisplay} />
             </div>
-            <div className="safe-content row mt-3">
-                <div className={`sidebar col-lg-2 ${sideDisplay}`}>
+            <div className="safe-content row w-100 mt-3">
+                <div className={`sidebar col-lg-3 ${sideDisplay}`}>
                     <div className="side-categories p-3 rounded">
                         <ul className="nav flex-column">
                             <li className="nav-item">
                                 <Link
                                     //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
-                                    className="nav-link disabled"
+                                    className={sidebar === 1 ? "nav-link active" : "nav-link"}
                                     onClick={() => activeSidebar(1)}
-                                    to="/safedefi"
+                                    to="/safedefi/safuprojects"
                                 >
                                     <AiFillSafetyCertificate /> Safu Projects
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
+                                    className={sidebar === 8 ? "nav-link active" : "nav-link"}
+                                    onClick={() => activeSidebar(8)}
+                                    to="/safedefi/safuprojects"
+                                >
+                                    <GiProgression /> Upcoming Projects
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
+                                    className={sidebar === 7 ? "nav-link active" : "nav-link"}
+                                    onClick={() => activeSidebar(7)}
+                                    to="/safedefi/safuprojects"
+                                >
+                                    <GiSandsOfTime /> Ongoing Projects
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -155,7 +177,7 @@ export default function Projectpage() {
                     </div>
                 </div>
                 <div className="content col">
-                    <Ownerdetails />
+                    <Projectdetails />
                 </div>
             </div>
         </div>
