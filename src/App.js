@@ -31,7 +31,7 @@ function App() {
             <Route path="promoters" element={<Promoters />} />
             <Route path="safuprojects" element={<Safecards/>}/>
           </Route>
-          <Route path="/safedefi/projectowner/ownerprofile" element={<Ownerprofile />}/>
+          <Route path="/safedefi/projectowner/:slug" element={<Ownerprofile />}/>
           <Route path="/safedefi/safuprojects/projectpage" element={<Projectpage/>}/>
           <Route path="*" element={<Page404/>} />
             {/* <Route></Route>

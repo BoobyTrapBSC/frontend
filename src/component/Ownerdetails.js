@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from 'react'
+import client from '../client'
 import {
   FaTelegramPlane,
   FaTwitter,
@@ -6,29 +7,55 @@ import {
   FaDiscord,
   FaInstagram,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Ownerdetails() {
+
+  const [singleOwner, setSingleOwner] = useState([]);
+  const { slug } = useParams()
+
+  useEffect(() => {
+    client.fetch(
+      `*[slug.current == "${slug}"] {
+        name,
+              alias,
+              trappoints,
+              numProjects,
+              experience,
+              slug,
+              avgLife,
+              image{
+                  asset -> {
+                      _id,
+                      url
+                  },
+                  alt
+              }
+      }`
+    ).then((data) => setSingleOwner(data[0]))
+  }, [slug])
+
   return (
     <div className="row justify-content-center">
       <div className="container-fluid text-start fs-6">
         <ul id="skills">
-          <li>Experience in DeFi: 24 Months</li>
+          <li>Experience in DeFi: {singleOwner.experience} Months</li>
           <li>Skills: Project owner and excellent project manager</li>
           <li>Number of Projects till date: 4</li>
           <li>Community Strength: 35k+</li>
           <li>Avg. Life of Projects: 5 Months</li>
         </ul>
       </div>
-      <hr className="mb-5"/>
+      <hr className="mb-5" />
 
-        {/* UPCOMING PROJECTS */}
+      {/* UPCOMING PROJECTS */}
 
-        <h3 style={{
-            backgroundColor: "#EDF0F4",
-            textAlign: "start",
-            paddingTop: "5px",
-            paddingBottom: "5px",}}>Upcoming Projects</h3>
+      <h3 style={{
+        backgroundColor: "#EDF0F4",
+        textAlign: "start",
+        paddingTop: "5px",
+        paddingBottom: "5px",
+      }}>Upcoming Projects</h3>
       <div className="row justify-content-evenly mb-4">
         <div className="projectCard mx-2 my-4 col-md-3 px-3 py-2 shadow">
           <div id="projectHead" className="d-flex">
@@ -49,8 +76,8 @@ export default function Ownerdetails() {
             />
           </div>
           <div id="projectDesc">
-              <br />
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
+            <br />
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
           </div>
           <Link className="btn shadow-sm" to="/">Details</Link>
         </div>
@@ -73,8 +100,8 @@ export default function Ownerdetails() {
             />
           </div>
           <div id="projectDesc">
-              <br />
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
+            <br />
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
           </div>
           <Link className="btn shadow-sm" to="/">Details</Link>
         </div>
@@ -97,20 +124,21 @@ export default function Ownerdetails() {
             />
           </div>
           <div id="projectDesc">
-              <br />
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
+            <br />
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
           </div>
           <Link className="btn shadow-sm" to="/">Details</Link>
         </div>
       </div>
 
       {/* PREVIOUS PROJECTS */}
-        <h3 style={{
-            backgroundColor: "#EDF0F4",
-            textAlign: "start",
-            paddingTop: "5px",
-            paddingBottom: "5px",}}>Previous Projects</h3>
-            <div className="row justify-content-evenly">
+      <h3 style={{
+        backgroundColor: "#EDF0F4",
+        textAlign: "start",
+        paddingTop: "5px",
+        paddingBottom: "5px",
+      }}>Previous Projects</h3>
+      <div className="row justify-content-evenly">
         <div className="projectCard mx-2 my-4 col-md-3 px-3 py-2 shadow">
           <div id="projectHead" className="d-flex">
             <div className="m-auto">
@@ -130,8 +158,8 @@ export default function Ownerdetails() {
             />
           </div>
           <div id="projectDesc">
-              <br />
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
+            <br />
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
           </div>
           <Link className="btn shadow-sm" to="/">Details</Link>
         </div>
@@ -154,8 +182,8 @@ export default function Ownerdetails() {
             />
           </div>
           <div id="projectDesc">
-              <br />
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
+            <br />
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
           </div>
           <Link className="btn shadow-sm" to="/">Details</Link>
         </div>
@@ -178,12 +206,12 @@ export default function Ownerdetails() {
             />
           </div>
           <div id="projectDesc">
-              <br />
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
+            <br />
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti itaque vero tenetur asperiores at assumenda molestias aliquid omnis molestiae quae temporibus nemo!</p>
           </div>
           <Link className="btn shadow-sm" to="/">Details</Link>
         </div>
-        </div>
+      </div>
     </div>
   );
 }

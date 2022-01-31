@@ -454,6 +454,7 @@
 }
 .ownerCard img {
   max-width: 18rem;
+  max-height: 175px;
   border-radius: 25px;
   transition-duration: 0.25s;
   transform: translate(5px, -20px);
