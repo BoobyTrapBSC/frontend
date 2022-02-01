@@ -177,11 +177,11 @@ export default function Ownerprofile(props) {
                             }
                             
                           >
-                            <option>SAFU</option>
-                            <option>Excellent</option>
-                            <option>DYOR</option>
-                            <option>Avoidable</option>
-                            <option>Scammer</option>
+                            <option>SAFU&nbsp;&nbsp;5</option>
+                            <option>Excellent&nbsp;&nbsp;4</option>
+                            <option>DYOR&nbsp;&nbsp;3</option>
+                            <option>Avoidable&nbsp;&nbsp;2</option>
+                            <option>Scammer&nbsp;&nbsp;1</option>
                         </select>
                     <button className="btn btn-outline-dark" onClick={()=> giveRating(rating)}>Submit</button>
                 </div>

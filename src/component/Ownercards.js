@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 export default function Ownercards() {
 
     const [owner, setOwner] = useState([]);
-    const id = [0,1,2,3]
+    const id = [1,0,2]
 
     useEffect(() => {
       client.fetch(
