@@ -41,9 +41,9 @@ export default function Ownerdetails() {
         <ul id="skills">
           <li>Experience in DeFi: {singleOwner.experience} Months</li>
           <li>Skills: Project owner and excellent project manager</li>
-          <li>Number of Projects till date: 4</li>
+          <li>Number of Projects till date: {singleOwner.numProjects}</li>
           <li>Community Strength: 35k+</li>
-          <li>Avg. Life of Projects: 5 Months</li>
+          <li>Avg. Life of Projects: {singleOwner.avgLife} Months</li>
         </ul>
       </div>
       <hr className="mb-5" />

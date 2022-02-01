@@ -20,9 +20,9 @@ export default function Bottomnav() {
           <button className="btn">
             <Link to = {trapsheetpdf} id="mob-link" target = "_blank" rel="noreferrer"><img src={trapsheet} alt=""/><br/>Trapsheet</Link>
           </button>
-          <button className="btn">
+          <a href="#" id="mob-link" target = "_blank" rel="noreferrer"><button className="btn">
             <img src={buybbt} alt=""/><br/>Buy $BBT
-          </button>
+          </button></a>
         </div>
       </nav>
     </div>

@@ -25,7 +25,7 @@ export default function Navbar() {
                             </li>
                         </ul>
                         <a href="https://t.me/boobytrapbsc" className="btn btn-outline-dark m-1">911</a>
-                        <a type="button" href='https://fomobaby.app/launchpad' className="btn btn-outline-dark m-1">Buy Pvt Sale</a>
+                        <a type="button" href='https://privatesale.boobytrap.live/' className="btn btn-outline-dark m-1">Buy Pvt Sale</a>
                         <button type="button" className="btn button-blue m-1">Connect Wallet</button>
                         {/* <form className="d-flex">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />

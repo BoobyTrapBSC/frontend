@@ -485,6 +485,9 @@
   text-decoration: none;
   color: #fff;
 }
+.breadcrumb .active{
+  color: yellow;
+}
 .owner-prof-cont .head-content{
   max-width: 1440px;
 }
@@ -495,7 +498,6 @@
   max-width: 1440px;
 }
 #skills{
-  font-weight: 500;
   line-height: 30px;
 }
 .profileImg {
@@ -511,6 +513,7 @@
 }
 .projectCard img{
   max-height: 75px;
+  max-width: 75px;
   border-radius: 50%;
   margin-top: -25px;
   transform: translateX(-25px);
@@ -701,4 +704,48 @@
 .circle6{
   top: 86%;
   left: 130px;
+}
+.marquee p {
+  position: absolute;
+  width: max-content;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -moz-animation: scroll-left 2s linear infinite;
+  -webkit-animation: scroll-left 2s linear infinite;
+  animation: scroll-left 30s linear infinite;
+}
+
+@-moz-keyframes scroll-left {
+  0% {
+      -moz-transform: translateX(100%);
+  }
+  100% {
+      -moz-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes scroll-left {
+  0% {
+      -webkit-transform: translateX(100%);
+  }
+  100% {
+      -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+  }
+  100% {
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+  }
 }

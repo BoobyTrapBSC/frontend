@@ -35,7 +35,8 @@ export default function Ownercards() {
                 <div style={{overflow:"hidden", width:"fit-content", borderRadius:"25px",}}>
                 <img src={owner.image.asset.url} alt="" /></div>
                 <div id="trap-points">{owner.trappoints} Trap Points</div>
-                <div id="dev-name">{owner.name}</div>
+                <div id="dev-name" className='mb-0 lh-sm'>{owner.name}</div>
+                <div id="alias" className='lh-sm'>{owner.alias}</div>
                 <div className="star"><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></div>
                 <div id="social-dev"><Link to="/"><FaTelegramPlane size={25} fill={"#fff"}/></Link> &nbsp;<Link to="/"><FaTwitter size={25} fill={"#fff"}/></Link></div>
                 <Link className="btn shadow-sm" to={`/safedefi/projectowner/${owner.slug.current}`}>Projects</Link>

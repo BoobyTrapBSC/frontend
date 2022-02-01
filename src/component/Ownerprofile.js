@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react'
+import client from '../client'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {
     AiFillLeftCircle,
@@ -14,10 +15,35 @@ import {
     GiSandsOfTime,
     GiProgression
 } from "react-icons/gi";
-import { Link } from 'react-router-dom'
+import { Link, useParams } from "react-router-dom";
 import Ownerdetails from "./Ownerdetails";
 
 export default function Ownerprofile() {
+
+    const [singleOwner, setSingleOwner] = useState([]);
+    const { slug } = useParams()
+
+    useEffect(() => {
+        client.fetch(
+            `*[slug.current == "${slug}"] {
+        name,
+              alias,
+              trapPoints,
+              numProjects,
+              experience,
+              slug,
+              avgLife,
+              image{
+                  asset -> {
+                      _id,
+                      url
+                  },
+                  alt
+              }
+      }`
+        ).then((data) => setSingleOwner(data[0]))
+    }, [slug])
+
     const [sidebar, setSidebar] = useState(2);
 
     const activeSidebar = (index) => {
@@ -59,9 +85,9 @@ export default function Ownerprofile() {
                     </Breadcrumb>
                     <div className="col-lg-8">
                         <div className="dev-main">
-                            <h1>ABC DEV</h1>
+                            <h1>{singleOwner.name}</h1>
                             <div className="fs-6"><span className="review-star fs-5"><BsStarFill /><BsStarFill /><BsStarFill /><BsStarFill /><BsStarHalf /> </span> (177 Reviews)</div>
-                            <p className="my-1">2 Trap Points</p>
+                            <p className="my-1">{singleOwner.trapPoints} Trap Points</p>
                             <p>
                                 0 Trap Points means the safest! lower trap points means safer! Read
                                 more about{" "}
@@ -72,10 +98,13 @@ export default function Ownerprofile() {
                                     trap points
                                 </Link>
                             </p>
+                            <a href="#" className="btn btn-outline-dark">Give Rating</a>
                         </div>
                     </div>
                     <div className="col-lg-2">
-                        <img className="profileImg" src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+                        {singleOwner.image && singleOwner.image.asset &&(
+                            <img className="profileImg" src={singleOwner.image.asset.url} alt={singleOwner.title} />
+                        )}
                     </div>
                 </div>
             </div>

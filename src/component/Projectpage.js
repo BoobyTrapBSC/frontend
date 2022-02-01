@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react'
+import client from '../client'
+import { Link, useParams } from "react-router-dom";
 import {
     FaTelegramPlane,
     FaTwitter,
@@ -22,10 +24,56 @@ import {
     GiSandsOfTime,
     GiProgression
 } from "react-icons/gi";
-import { Link } from 'react-router-dom'
 import Projectdetails from "./Projectdetails";
 
 export default function Projectpage() {
+
+    const [singleProject, setSingleProject] = useState([]);
+    const { slug } = useParams()
+
+    useEffect(() => {
+        client.fetch(
+            `*[_type=="lprojects"] {
+                name,
+                email,
+                tracker,
+                slug,
+                contract,
+                audit,
+                kyc,
+                marketingWallet,
+                budget,
+                tradingStartDate,
+                initialMC,
+                launchPrice,
+                athMC,
+                owner,
+                marketingStatus,
+                telegram,
+                twitter,
+                website,
+                facebook,
+                discord,
+                instagram,
+                reditt,
+                youtube,
+                other,
+                tgOwner,
+                image{
+                    asset -> {
+                        _id,
+                        url
+                    },
+                    alt
+                },
+                devwallet,
+                devStatus,
+                description,
+            }`
+        ).then((data) => setSingleProject(data[0]))
+    }, [slug])
+
+
     const [sidebar, setSidebar] = useState(1);
 
     const activeSidebar = (index) => {
@@ -63,13 +111,13 @@ export default function Projectpage() {
                         <Breadcrumb.Item href="/safedefi/safuprojects">
                             Safe DeFi
                         </Breadcrumb.Item>
-                        <Breadcrumb.Item active>Profile</Breadcrumb.Item>
+                        <Breadcrumb.Item active>{singleProject.name}</Breadcrumb.Item>
                     </Breadcrumb>
                     <div className="col-lg-8">
                         <div className="dev-main">
-                            <h1>Project Name</h1>
+                            <h1>{singleProject.name}</h1>
                             <div className="fs-6"><span className="review-star fs-5"><BsStarFill /><BsStarFill /><BsStarFill /><BsStarFill /><BsStarHalf /> </span> (177 Reviews)</div>
-                            <p className="my-1">2 Trap Points</p>
+                            <p className="my-1">{singleProject.trapPoints} Trap Points</p>
                             <p>
                                 0 Trap Points means the safest! lower trap points means safer! Read
                                 more about{" "}
@@ -80,6 +128,7 @@ export default function Projectpage() {
                                     trap points
                                 </Link>
                             </p>
+                            <a href="#" className="btn btn-outline-dark">Give Rating</a>
                         </div>
                     </div>
                     <div className="col-lg-2 position-relative">
