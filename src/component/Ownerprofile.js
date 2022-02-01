@@ -93,11 +93,11 @@ export default function Ownerprofile(props) {
             
             if(rate === "SAFU"){
                 console.log(1)
-                await addReview(id,1)
+                await addReview(id,5)
             }
             else if(rate === "Excellent"){
                 console.log(2)
-                await addReview(id,2)
+                await addReview(id,4)
             }
             else if(rate === "DYOR"){
                 console.log(4)
@@ -105,15 +105,15 @@ export default function Ownerprofile(props) {
             }
             else if(rate === "Avoidable"){
                 console.log(5)
-                await addReview(id,4)
+                await addReview(id,2)
             }
             else if(rate === "Scammer"){
                 console.log(6)
-                await addReview(id,5)
+                await addReview(id,1)
             }
         }
         catch(e){
-            
+
         }
         
        
