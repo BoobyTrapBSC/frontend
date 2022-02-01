@@ -17,7 +17,7 @@ export const getTotoalProfile = async() =>{
 export const addReview = async(id, rating)=> {
     const contract = await getRATEContract();
     const data = await contract.methods.addReview(id,rating).send({
-        from: '0x5Cd4B50B02aDDa52A2bBB743b726ef0d91fc7610'
+        from: await getAccount()
     });
     return data;
 }

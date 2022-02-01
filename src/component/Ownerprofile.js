@@ -89,7 +89,8 @@ export default function Ownerprofile(props) {
         document.body.classList.remove('active-modal')
       }
     const giveRating = async(rate)=>{
-        
+        try{
+            
             if(rate === "SAFU"){
                 console.log(1)
                 await addReview(id,1)
@@ -110,6 +111,10 @@ export default function Ownerprofile(props) {
                 console.log(6)
                 await addReview(id,5)
             }
+        }
+        catch(e){
+            
+        }
         
        
     }
