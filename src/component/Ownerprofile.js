@@ -23,7 +23,7 @@ import { initInstance } from './../Web3_connection/web3_methods'
 export default function Ownerprofile(props) {
 
     const [singleOwner, setSingleOwner] = useState([]);
-    const [rating, setRating] = useState('Excellent');
+    const [rating, setRating] = useState('SAFU (5 Start)');
     const { slug, id } = useParams();
     
     
@@ -91,24 +91,22 @@ export default function Ownerprofile(props) {
     const giveRating = async(rate)=>{
         try{
             
-            if(rate === "SAFU"){
-                console.log(1)
+            if(rate === "SAFU (5 Start)"){
                 await addReview(id,5)
             }
-            else if(rate === "Excellent"){
-                console.log(2)
+            else if(rate === "Excellent (4 Start)"){
                 await addReview(id,4)
             }
-            else if(rate === "DYOR"){
-                console.log(4)
+            else if(rate === "DYOR (3 Start)"){
+                
                 await addReview(id,3)
             }
-            else if(rate === "Avoidable"){
-                console.log(5)
+            else if(rate === "Avoidable (2 Start)"){
+                
                 await addReview(id,2)
             }
-            else if(rate === "Scammer"){
-                console.log(6)
+            else if(rate === "Scammer (1 Start)"){
+                
                 await addReview(id,1)
             }
         }
@@ -177,11 +175,11 @@ export default function Ownerprofile(props) {
                             }
                             
                           >
-                            <option>SAFU&nbsp;&nbsp;5</option>
-                            <option>Excellent&nbsp;&nbsp;4</option>
-                            <option>DYOR&nbsp;&nbsp;3</option>
-                            <option>Avoidable&nbsp;&nbsp;2</option>
-                            <option>Scammer&nbsp;&nbsp;1</option>
+                            <option>SAFU (5 Start)</option>
+                            <option>Excellent (4 Start)</option>
+                            <option>DYOR (3 Start)</option>
+                            <option>Avoidable (2 Start)</option>
+                            <option>Scammer (1 Start)</option>
                         </select>
                     <button className="btn btn-outline-dark" onClick={()=> giveRating(rating)}>Submit</button>
                 </div>

@@ -15,6 +15,7 @@ export const getTotoalProfile = async() =>{
 }
 
 export const addReview = async(id, rating)=> {
+    console.log("Rating got", id , rating)
     const contract = await getRATEContract();
     const data = await contract.methods.addReview(id,rating).send({
         from: await getAccount()
