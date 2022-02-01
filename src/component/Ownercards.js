@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 export default function Ownercards() {
 
     const [owner, setOwner] = useState([]);
+    const id = [0,1,2,3]
 
     useEffect(() => {
       client.fetch(
@@ -39,7 +40,8 @@ export default function Ownercards() {
                 <div id="alias" className='lh-sm'>{owner.alias}</div>
                 <div className="star"><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></div>
                 <div id="social-dev"><Link to="/"><FaTelegramPlane size={25} fill={"#fff"}/></Link> &nbsp;<Link to="/"><FaTwitter size={25} fill={"#fff"}/></Link></div>
-                <Link className="btn shadow-sm" to={`/safedefi/projectowner/${owner.slug.current}`}>Projects</Link>
+                <Link className="btn shadow-sm" to={{pathname:`/safedefi/projectowner/${owner.slug.current}/${id[index]}`, state:{id:id[index]}}}>Projects</Link>
+                {/* <Link className="btn shadow-sm" to={`/safedefi/projectowner/${owner.slug.current}`} >Projects</Link> */}
             </div>
         )
     }

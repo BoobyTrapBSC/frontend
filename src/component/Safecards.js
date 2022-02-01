@@ -9,11 +9,14 @@ import {
     FaInstagram,
   } from "react-icons/fa";
   import {BsStarFill, BsStarHalf} from 'react-icons/bs'
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { getTotoalProfile } from "./../Web3_connection/ContractMethods"
+import { initInstance } from './../Web3_connection/web3_methods'
 
 export default function Safecards() {
 
   const [project, setProject] = useState([]);
+  const [CountProfile, setProfileCount] = useState();
 
     useEffect(() => {
       client.fetch(
@@ -55,8 +58,15 @@ export default function Safecards() {
               description,
           }`
       ).then((data) => setProject(data)).catch(console.error)
+      const getData = async()=>{
+        await initInstance();
+        const data = await getTotoalProfile();
+        setProfileCount(data)
+        
+      }
+      getData();
     }, []);
-
+    console.log("Total profile",CountProfile)
     const renderProjects = (project, index) =>{
         return(
             <div className="projectCard mx-2 my-4 col-md-3 px-1 py-2 shadow" key={index}>

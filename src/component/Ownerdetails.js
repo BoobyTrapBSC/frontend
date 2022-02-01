@@ -7,12 +7,14 @@ import {
   FaDiscord,
   FaInstagram,
 } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useLocation } from "react-router-dom";
 
-export default function Ownerdetails() {
+export default function Ownerdetails(props) {
 
   const [singleOwner, setSingleOwner] = useState([]);
   const { slug } = useParams()
+  const location = useLocation();
+  // console.log("id", location.state.id)
 
   useEffect(() => {
     client.fetch(
@@ -34,7 +36,7 @@ export default function Ownerdetails() {
       }`
     ).then((data) => setSingleOwner(data[0]))
   }, [slug])
-
+  
   return (
     <div className="row justify-content-center">
       <div className="container-fluid text-start fs-6">

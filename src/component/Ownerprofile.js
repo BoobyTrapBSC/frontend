@@ -15,14 +15,18 @@ import {
     GiSandsOfTime,
     GiProgression
 } from "react-icons/gi";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import Ownerdetails from "./Ownerdetails";
+import {addReview} from "./../Web3_connection/ContractMethods"
+import { initInstance } from './../Web3_connection/web3_methods'
 
-export default function Ownerprofile() {
+export default function Ownerprofile(props) {
 
     const [singleOwner, setSingleOwner] = useState([]);
-    const { slug } = useParams()
-
+    const [rating, setRating] = useState('Excellent');
+    const { slug, id } = useParams();
+    
+    
     useEffect(() => {
         client.fetch(
             `*[slug.current == "${slug}"] {
@@ -42,6 +46,10 @@ export default function Ownerprofile() {
               }
       }`
         ).then((data) => setSingleOwner(data[0]))
+        const init = async() =>{
+           await initInstance();
+        }
+        init();
     }, [slug])
 
     const [sidebar, setSidebar] = useState(2);
@@ -55,6 +63,7 @@ export default function Ownerprofile() {
     const [hamburgerDisplay, setHamburgerDisplay] = useState("d-block");
     const [crossDisplay, setCrossDisplay] = useState("d-none");
     const [sideDisplay, setSideDisplay] = useState("d-block");
+    const [modal, setModal] = useState(false);
 
     const toggleCollapse = (bool) => {
         if (menuCollapse === true) {
@@ -71,6 +80,39 @@ export default function Ownerprofile() {
             setSideDisplay("d-none")
         }
     }
+    const toggleModal = () => {
+        setModal(!modal);
+      };
+      if(modal) {
+        document.body.classList.add('active-modal')
+      } else {
+        document.body.classList.remove('active-modal')
+      }
+    const giveRating = async(rate)=>{
+        
+            if(rate === "SAFU"){
+                console.log(1)
+                await addReview(id,1)
+            }
+            else if(rate === "Excellent"){
+                console.log(2)
+                await addReview(id,2)
+            }
+            else if(rate === "DYOR"){
+                console.log(4)
+                await addReview(id,3)
+            }
+            else if(rate === "Avoidable"){
+                console.log(5)
+                await addReview(id,4)
+            }
+            else if(rate === "Scammer"){
+                console.log(6)
+                await addReview(id,5)
+            }
+        
+       
+    }
 
     return (
         <div id="pagesafe-cont" className="owner-prof-cont">
@@ -86,7 +128,7 @@ export default function Ownerprofile() {
                     <div className="col-lg-8">
                         <div className="dev-main">
                             <h1>{singleOwner.name}</h1>
-                            <div className="fs-6"><span className="review-star fs-5"><BsStarFill /><BsStarFill /><BsStarFill /><BsStarFill /><BsStarHalf /> </span> (177 Reviews)</div>
+                            <div className="fs-6"><span className="review-star fs-5"><BsStarFill /><BsStarFill /><BsStarFill /><BsStarFill /><BsStarHalf /> </span> (0 Reviews)</div>
                             <p className="my-1">{singleOwner.trapPoints} Trap Points</p>
                             <p>
                                 0 Trap Points means the safest! lower trap points means safer! Read
@@ -98,9 +140,10 @@ export default function Ownerprofile() {
                                     trap points
                                 </Link>
                             </p>
-                            <a href="#" className="btn btn-outline-dark">Give Rating</a>
+                            <button className="btn btn-outline-dark" onClick={() => toggleModal()}>Give Rating</button>
                         </div>
                     </div>
+                    
                     <div className="col-lg-2">
                         {singleOwner.image && singleOwner.image.asset &&(
                             <img className="profileImg" src={singleOwner.image.asset.url} alt={singleOwner.title} />
@@ -108,9 +151,37 @@ export default function Ownerprofile() {
                     </div>
                 </div>
             </div>
+            
             <div className="safe-collapse" onClick={() => toggleCollapse(menuCollapse === true ? false : true)}>
                 Menu <GiHamburgerMenu id="menu-icon" className={hamburgerDisplay} /><GiTireIronCross id="menu-icon" className={crossDisplay} />
             </div>
+            {modal && (
+                <div className="">
+                <div onClick={() => toggleModal()} className="overlay-popup"></div>
+                <div className="modal-content">
+                    
+                    <label for="category" className="form-label">
+                            Give Rating
+                          </label>
+                          <select
+                            class="form-control"
+                            id="sel1"
+                            value={rating}
+                            onChange={(e) =>
+                                setRating(e.target.value)
+                            }
+                            
+                          >
+                            <option>SAFU</option>
+                            <option>Excellent</option>
+                            <option>DYOR</option>
+                            <option>Avoidable</option>
+                            <option>Scammer</option>
+                        </select>
+                    <button className="btn btn-outline-dark" onClick={()=> giveRating(rating)}>Submit</button>
+                </div>
+                </div>
+                )}
             <div className="safe-content row mt-3">
                 <div className={`sidebar col-lg-3 ${sideDisplay}`}>
                     <div className="side-categories p-3 rounded">
