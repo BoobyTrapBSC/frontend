@@ -1,6 +1,6 @@
 import Web3 from 'web3';
 import { ConnectorID, CONNECTOR_ID } from './Constants';
-import { envdev, envprod } from './Envrionments';
+import {envprod} from './Envrionments';
 
 export let web3Instance = null;
 export let web3Modal = null;
@@ -18,13 +18,16 @@ export const initInstance = async () => {
 export const loginProcess = async () => {
     await window.ethereum.enable();
     try {
-        await checkChain();
+        const chainId = await web3Instance.eth.getChainId();
+        if(chainId != envprod.React_App_chain_Id){
+            alert("Please Switch to BSC Testnet")
+        }
     }
     catch (err) {
         console.log('check chain error:', err);
         window.location.replace('/')
     }
-    await login();
+    // await login();
 }
 
 export const getValidProvider = async () => {
