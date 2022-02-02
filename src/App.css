@@ -754,6 +754,8 @@ body.active-modal {
   }
 }
 
+/* Overlay Popup for Rating */
+
 .overlay-popup{
   background: rgba(49,49,49,0.8);
 }
@@ -761,14 +763,9 @@ body.active-modal {
   position: absolute;
   top: 40%;
   left: 50%;
-  width: 21%;
+  width: fit-content;
   transform: translate(-50%, -50%);
-  line-height: 1.4;
   background: #f5f0f0;
-  padding: 0;
-  color: #000;
-  border-radius: 10px;
-  max-width: 600px;
   min-width: 300px;
 }
 

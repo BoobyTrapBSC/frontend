@@ -17,16 +17,16 @@ import {
 } from "react-icons/gi";
 import { Link, useParams, useLocation } from "react-router-dom";
 import Ownerdetails from "./Ownerdetails";
-import {addReview} from "./../Web3_connection/ContractMethods"
+import { addReview } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
 
-export default function Ownerprofile(props) {
+export default function Ownerprofile() {
 
     const [singleOwner, setSingleOwner] = useState([]);
     const [rating, setRating] = useState('SAFU (5 Start)');
     const { slug, id } = useParams();
-    
-    
+
+
     useEffect(() => {
         client.fetch(
             `*[slug.current == "${slug}"] {
@@ -46,8 +46,8 @@ export default function Ownerprofile(props) {
               }
       }`
         ).then((data) => setSingleOwner(data[0]))
-        const init = async() =>{
-           await initInstance();
+        const init = async () => {
+            await initInstance();
         }
         init();
     }, [slug])
@@ -82,39 +82,39 @@ export default function Ownerprofile(props) {
     }
     const toggleModal = () => {
         setModal(!modal);
-      };
-      if(modal) {
+    };
+    if (modal) {
         document.body.classList.add('active-modal')
-      } else {
+    } else {
         document.body.classList.remove('active-modal')
-      }
-    const giveRating = async(rate)=>{
-        try{
-            
-            if(rate === "SAFU (5 Start)"){
-                await addReview(id,5)
+    }
+    const giveRating = async (rate) => {
+        try {
+
+            if (rate === "SAFU (5 Start)") {
+                await addReview(id, 5)
             }
-            else if(rate === "Excellent (4 Start)"){
-                await addReview(id,4)
+            else if (rate === "Excellent (4 Start)") {
+                await addReview(id, 4)
             }
-            else if(rate === "DYOR (3 Start)"){
-                
-                await addReview(id,3)
+            else if (rate === "DYOR (3 Start)") {
+
+                await addReview(id, 3)
             }
-            else if(rate === "Avoidable (2 Start)"){
-                
-                await addReview(id,2)
+            else if (rate === "Avoidable (2 Start)") {
+
+                await addReview(id, 2)
             }
-            else if(rate === "Scammer (1 Start)"){
-                
-                await addReview(id,1)
+            else if (rate === "Scammer (1 Start)") {
+
+                await addReview(id, 1)
             }
         }
-        catch(e){
+        catch (e) {
 
         }
-        
-       
+
+
     }
 
     return (
@@ -146,45 +146,39 @@ export default function Ownerprofile(props) {
                             <button className="btn btn-outline-dark" onClick={() => toggleModal()}>Give Rating</button>
                         </div>
                     </div>
-                    
+
                     <div className="col-lg-2">
-                        {singleOwner.image && singleOwner.image.asset &&(
+                        {singleOwner.image && singleOwner.image.asset && (
                             <img className="profileImg" src={singleOwner.image.asset.url} alt={singleOwner.title} />
                         )}
                     </div>
                 </div>
             </div>
-            
+
             <div className="safe-collapse" onClick={() => toggleCollapse(menuCollapse === true ? false : true)}>
                 Menu <GiHamburgerMenu id="menu-icon" className={hamburgerDisplay} /><GiTireIronCross id="menu-icon" className={crossDisplay} />
             </div>
             {modal && (
-                <div className="">
-                <div onClick={() => toggleModal()} className="overlay-popup"></div>
-                <div className="modal-content">
-                    
-                    <label for="category" className="form-label">
+                <div style={{zIndex:"5"}}>
+                    <div onClick={() => toggleModal()} className="overlay-popup"></div>
+                    <div className="modal-content py-3">
+
+                        <label for="category" className="form-label fw-bold mb-3">
                             Give Rating
-                          </label>
-                          <select
-                            class="form-control"
-                            id="sel1"
-                            value={rating}
-                            onChange={(e) =>
-                                setRating(e.target.value)
-                            }
-                            
-                          >
-                            <option>SAFU (5 Start)</option>
-                            <option>Excellent (4 Start)</option>
-                            <option>DYOR (3 Start)</option>
-                            <option>Avoidable (2 Start)</option>
-                            <option>Scammer (1 Start)</option>
-                        </select>
-                    <button className="btn btn-outline-dark" onClick={()=> giveRating(rating)}>Submit</button>
+                        </label>
+                        <div className='px-4 mb-2'>
+                            <select className="form-select text-center" id="sel1" value={rating} onChange={(e) => setRating(e.target.value)} aria-label="Default select example">
+                                <option selected>Select Star Rating</option>
+                                <option>Safu &nbsp; &#9733; &#9733; &#9733; &#9733; &#9733;</option>
+                                <option>Excellent &nbsp; &#9733; &#9733; &#9733; &#9733;</option>
+                                <option>DYOR &nbsp; &#9733; &#9733; &#9733;</option>
+                                <option>Avoidable &nbsp; &#9733; &#9733;</option>
+                                <option>Scammer &nbsp; &#9733;</option>
+                            </select></div>
+                        <button className="btn w-50 mx-auto fw-bold my-2 btn-outline-dark" onClick={() => giveRating(rating)}>Submit</button>
+                    </div>
                 </div>
-                </div>
-                )}
+            )}
             <div className="safe-content row mt-3">
                 <div className={`sidebar col-lg-3 ${sideDisplay}`}>
                     <div className="side-categories p-3 rounded">
