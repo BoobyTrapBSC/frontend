@@ -1,9 +1,22 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import logo from "../images/logo.png"
 import trapsheetpdf from '../whitepaper/trapSheet-v2.pdf'
 import {Link} from 'react-router-dom'
+import { loginProcess, initInstance, getAccount } from "./../Web3_connection/web3_methods"
 
 export default function Navbar() {
+    useEffect(()=>{
+        login();
+    })
+    const [userAddress, setUserAddress] = useState();
+    const login = async()=>{
+        await initInstance();
+        await loginProcess();
+        const user = await getAccount();
+        if(user){
+            setUserAddress(user)
+        }
+    }
     return (
         <div id='navbar-container'>
             <nav className="navbar mx-auto navbar-expand-lg navbar-light">
@@ -26,7 +39,7 @@ export default function Navbar() {
                         </ul>
                         <a href="https://t.me/boobytrapbsc" className="btn btn-outline-dark m-1">911</a>
                         <a type="button" href='https://privatesale.boobytrap.live/' className="btn btn-outline-dark m-1">Buy Pvt Sale</a>
-                        <button type="button" className="btn button-blue m-1">Connect Wallet</button>
+                        <button type="button" className="btn button-blue m-1" onClick={()=> login()}>{userAddress ? `${userAddress.slice(0,5)}...${userAddress.slice(38)}` : `Connect Wallet`}</button>
                         {/* <form className="d-flex">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success" type="submit">Search</button>
@@ -34,7 +47,7 @@ export default function Navbar() {
                     </div>
                     <div className="mob-nav">
                         <a href="https://t.me/boobytrapbsc" className="btn btn-sm btn-outline-dark m-1">911</a>
-                        <button type="button" className="btn btn-sm button-blue m-1">Connect Wallet</button>
+                        <button type="button" className="btn btn-sm button-blue m-1" >Connect Wallet</button>
                     </div>
                 </div>
             </nav>
