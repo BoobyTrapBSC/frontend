@@ -15,6 +15,7 @@ import Ownerprofile from './component/Ownerprofile';
 import Page404 from './component/Page404';
 import Safecards from './component/Safecards';
 import Projectpage from './component/Projectpage';
+import UpcomingCards from './component/upcomingCards';
 
 
 function App() {
@@ -33,9 +34,10 @@ function App() {
             <Route path="developers" element={<Devcards />} />
             <Route path="promoters" element={<Promoters />} />
             <Route path="safuprojects" element={<Safecards/>}/>
+            <Route path="upcomingprojects" element={<UpcomingCards/>}/>
           </Route>
           <Route path="/safedefi/projectowner/:slug/:id/" element={<Ownerprofile />}/>
-          <Route path="/safedefi/safuprojects/projectpage" element={<Projectpage/>}/>
+          <Route path="/safedefi/safuprojects/:slug/" element={<Projectpage/>}/>
           <Route path="*" element={<Page404/>} />
             {/* <Route></Route>
           </Route> */}

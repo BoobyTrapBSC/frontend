@@ -25,6 +25,7 @@ import {
     GiProgression
 } from "react-icons/gi";
 import Projectdetails from "./Projectdetails";
+import { initInstance } from './../Web3_connection/web3_methods'
 
 export default function Projectpage() {
 
@@ -33,7 +34,7 @@ export default function Projectpage() {
 
     useEffect(() => {
         client.fetch(
-            `*[_type=="lprojects"] {
+            `*[slug.current == "${slug}"] {
                 name,
                 email,
                 tracker,
@@ -71,6 +72,10 @@ export default function Projectpage() {
                 description,
             }`
         ).then((data) => setSingleProject(data[0]))
+        const init = async () => {
+            await initInstance();
+        }
+        init();
     }, [slug])
 
 
@@ -132,14 +137,17 @@ export default function Projectpage() {
                         </div>
                     </div>
                     <div className="col-lg-2 position-relative">
-                        <img className="projectImg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="" />
+                        {singleProject.image && singleProject.image.asset && (
+                            <img className="projectImg" src={singleProject.image.asset.url} alt={singleProject.name} />
+                        )}
                         <div className="circleSocial">
-                            <Link to="/" id="circleIco" className="circle1"><FaTelegramPlane /></Link>
-                            <Link to="/" id="circleIco" className="circle2"><FaTwitter /></Link>
-                            <Link to="/" id="circleIco" className="circle3"><FaGlobe /></Link>
-                            <Link to="/" id="circleIco" className="circle4"><FaDiscord /></Link>
-                            <Link to="/" id="circleIco" className="circle5"><FaInstagram /></Link>
-                            <Link to="/" id="circleIco" className="circle6"><FaFacebookSquare /></Link>
+                            {console.log(singleProject.owner)}
+                            <a href={singleProject.telegram} id="circleIco" className="circle1"><FaTelegramPlane /></a>
+                            <a href={singleProject.twitter} id="circleIco" className="circle2"><FaTwitter /></a>
+                            <a href={singleProject.website} id="circleIco" className="circle3"><FaGlobe /></a>
+                            <a href={singleProject.discord} id="circleIco" className="circle4"><FaDiscord /></a>
+                            <a href={singleProject.instagram} id="circleIco" className="circle5"><FaInstagram /></a>
+                            <a href={singleProject.facebook} id="circleIco" className="circle6"><FaFacebookSquare /></a>
                         </div>
                     </div>
                 </div>
