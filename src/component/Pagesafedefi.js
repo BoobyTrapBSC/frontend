@@ -105,7 +105,7 @@ export default function Pagesafedefi() {
                   //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   className={sidebar === 8 ? "nav-link active" : "nav-link"}
                   onClick={() => activeSidebar(8)}
-                  to="/safedefi/safuprojects"
+                  to="/safedefi/upcomingprojects"
                 >
                   <GiProgression /> Upcoming Projects
                 </Link>

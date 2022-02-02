@@ -13,29 +13,22 @@ import {Link} from 'react-router-dom';
 import { getTotoalProfile } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
 
-export default function Safecards() {
+export default function UpcomingCards() {
 
   const [project, setProject] = useState([]);
   const [CountProfile, setProfileCount] = useState();
 
     useEffect(() => {
       client.fetch(
-          `*[_type=="lprojects"] {
+          `*[_type=="uprojects"] {
               name,
               email,
               tracker,
               slug,
-              contract,
               audit,
               kyc,
               marketingWallet,
-              budget,
-              tradingStartDate,
-              initialMC,
-              launchPrice,
-              athMC,
               owner,
-              marketingStatus,
               telegram,
               twitter,
               website,
@@ -54,7 +47,6 @@ export default function Safecards() {
                   alt
               },
               devwallet,
-              comStrength,
               devStatus,
               description,
           }`
@@ -92,12 +84,12 @@ export default function Safecards() {
             <br />
             {/* <ul className='my-0' style={{listStyle:"none", listStylePosition:"outside"}}> */}
               <p className='mb-0' >Trap Points</p>
-              <p className='mb-0' >{project.comStrength}k+ Community Strength</p>
+              <p className='mb-0' >k+ Community Strength</p>
               <p className='mb-0' style={{color:"#FCB040", fontSize:"18px",}}><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></p>
             {/* </ul> */}
               <BlockContent blocks={project.description} projectId="lfyw4jna" dataset='production'/>
           </div>
-          <Link className="btn shadow-sm" to={{pathname:`/safedefi/safuprojects/${project.slug.current}`}}>Details</Link>
+          <Link className="btn shadow-sm" to="/safedefi/safuprojects/projectpage">Details</Link>
         </div>
         )
     }

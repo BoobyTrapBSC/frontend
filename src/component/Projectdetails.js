@@ -57,7 +57,7 @@ export default function Projectdetails() {
             <div className="container-fluid text-start fs-6">
                 <ul id="skills">
                     <li><b>Trap Points:</b> {singleProject.trappoints}</li>
-                    <li><b>Project Status:</b> {singleProject.newlyLaunched == true? "Recently Launched": singleProject.devStatus}</li>
+                    <li><b>Project Status:</b> {singleProject.newlyLaunched === true? "Recently Launched": singleProject.devStatus}</li>
                     <li><b>Community Ratings:</b>  </li>
                     <li><b>Community Strength:</b> {singleProject.comStrength}k+</li>
                     <li><b>Marketing Budget:</b> ${singleProject.budget}</li>
