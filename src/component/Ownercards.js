@@ -4,6 +4,7 @@ import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
 import {BsStarFill, BsStarHalf} from 'react-icons/bs'
 import {Link} from 'react-router-dom'
 
+
 export default function Ownercards() {
 
     const [owner, setOwner] = useState([]);
@@ -29,6 +30,25 @@ export default function Ownercards() {
           }`
       ).then((data) => setOwner(data)).catch(console.error)
     }, []);
+
+    const start =()=> {
+       if(Number(avgRating).toFixed(0) == 5){
+            return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />]
+       }
+       else if(Number(avgRating).toFixed(0) == 4){
+        return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />] 
+       }
+       else if(Number(avgRating).toFixed(0) == 3){
+        return [<BsStarFill />,<BsStarFill />,<BsStarFill />] 
+       }
+       else if(Number(avgRating).toFixed(0) == 2){
+        return [<BsStarFill />,<BsStarFill />] 
+       }
+       else if(Number(avgRating).toFixed(0) == 1){
+        return [<BsStarFill />] 
+       }
+      
+    }
 
     const renderOwner = (owner, index) =>{
         return(

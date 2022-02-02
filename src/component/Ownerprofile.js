@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import client from '../client'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import ReactStars from "react-rating-stars-component";
 import {
     AiFillLeftCircle,
     AiFillSafetyCertificate,
 } from "react-icons/ai";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { FaBusinessTime, FaLaptopCode, FaCode } from "react-icons/fa";
 import { BsStarFill, BsStarHalf } from 'react-icons/bs'
 import {
@@ -15,9 +18,9 @@ import {
     GiSandsOfTime,
     GiProgression
 } from "react-icons/gi";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Ownerdetails from "./Ownerdetails";
-import { addReview } from "./../Web3_connection/ContractMethods"
+import { addReview, getProfile } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
 
 export default function Ownerprofile() {
@@ -25,6 +28,10 @@ export default function Ownerprofile() {
     const [singleOwner, setSingleOwner] = useState([]);
     const [rating, setRating] = useState('SAFU (5 Start)');
     const { slug, id } = useParams();
+    const notify = () => toast("Transaction Successful",{
+        position: "top-right",
+        pauseOnHover: false,
+      });
 
 
     useEffect(() => {
@@ -48,8 +55,10 @@ export default function Ownerprofile() {
         ).then((data) => setSingleOwner(data[0]))
         const init = async () => {
             await initInstance();
+            await getprofile(id);
         }
         init();
+        
     }, [slug])
 
     const [sidebar, setSidebar] = useState(2);
@@ -63,7 +72,9 @@ export default function Ownerprofile() {
     const [hamburgerDisplay, setHamburgerDisplay] = useState("d-block");
     const [crossDisplay, setCrossDisplay] = useState("d-none");
     const [sideDisplay, setSideDisplay] = useState("d-block");
+    const [avgRating, setavgRating] = useState();
     const [modal, setModal] = useState(false);
+    const [countreview, setCountReview] = useState(0)
 
     const toggleCollapse = (bool) => {
         if (menuCollapse === true) {
@@ -88,37 +99,81 @@ export default function Ownerprofile() {
     } else {
         document.body.classList.remove('active-modal')
     }
+
     const giveRating = async (rate) => {
+        toggleModal();
         try {
-
-            if (rate === "SAFU (5 Start)") {
-                await addReview(id, 5)
+            if (rate.includes("Safu")) {
+                const got = await addReview(id, 5);
+                if(got.status == true){
+                    console.log("Done")
+                    notify();
+                    await getprofile();
+                }
             }
-            else if (rate === "Excellent (4 Start)") {
-                await addReview(id, 4)
+            else if (rate.includes("Excellent")) {
+               const got = await addReview(id, 4)
+               if(got.status == true){
+                notify();
+                await getprofile();
             }
-            else if (rate === "DYOR (3 Start)") {
-
-                await addReview(id, 3)
             }
-            else if (rate === "Avoidable (2 Start)") {
-
-                await addReview(id, 2)
+            else if (rate.includes("DYOR")) {
+               const got = await addReview(id, 3)
+               if(got.status == true){
+                notify();
+                await getprofile();
             }
-            else if (rate === "Scammer (1 Start)") {
-
-                await addReview(id, 1)
+            }
+            else if (rate.includes("Avoidable")) {
+                const got = await addReview(id, 2)
+                if(got.status == true){
+                    notify();
+                    await getprofile();
+                }
+            }
+            else if (rate.includes("Scammer")) {
+               const got = await addReview(id, 1)
+               if(got.status == true){
+                notify();
+                await getprofile();
+            }
             }
         }
         catch (e) {
-
+            
         }
-
-
     }
 
+    const getprofile = async(id) =>{
+        const data = await getProfile(id)
+        setCountReview(data.reviewsCount)
+        setavgRating(data.avgRating/10) 
+    }
+    console.log("Data",countreview,avgRating,id)
+    const start =()=> {
+        console.log("review", Number(avgRating).toFixed(0))
+       if(Number(avgRating).toFixed(0) == 5){
+            return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />]
+       }
+       else if(Number(avgRating).toFixed(0) == 4){
+        return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />] 
+       }
+       else if(Number(avgRating).toFixed(0) == 3){
+        return [<BsStarFill />,<BsStarFill />,<BsStarFill />] 
+       }
+       else if(Number(avgRating).toFixed(0) == 2){
+        return [<BsStarFill />,<BsStarFill />] 
+       }
+       else if(Number(avgRating).toFixed(0) == 1){
+        return [<BsStarFill />] 
+       }
+      
+    }
+    
     return (
         <div id="pagesafe-cont" className="owner-prof-cont">
+            <ToastContainer />
             <div className="safe-head py-3 position-relative container-fluid">
                 <div className="head-content row">
                     <Breadcrumb><AiFillLeftCircle size={25} color="#fff" />
@@ -131,7 +186,7 @@ export default function Ownerprofile() {
                     <div className="col-lg-8">
                         <div className="dev-main">
                             <h1>{singleOwner.name}</h1>
-                            <div className="fs-6"><span className="review-star fs-5"><BsStarFill /><BsStarFill /><BsStarFill /><BsStarFill /><BsStarHalf /> </span> (0 Reviews)</div>
+                            <div className="fs-6"><span className="review-star fs-5"> {start()} </span> ({countreview} Reviews)</div>
                             <p className="my-1">{singleOwner.trapPoints} Trap Points</p>
                             <p>
                                 0 Trap Points means the safest! lower trap points means safer! Read

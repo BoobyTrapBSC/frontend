@@ -65,7 +65,7 @@ export const ABI = [
       { internalType: "uint256", name: "id", type: "uint256" },
       { internalType: "string", name: "name", type: "string" },
       { internalType: "uint256", name: "avgRating", type: "uint256" },
-      { internalType: "bool", name: "hasReviewed", type: "bool" },
+      { internalType: "uint256", name: "reviewsCount", type: "uint256" },
     ],
     stateMutability: "view",
     type: "function",
