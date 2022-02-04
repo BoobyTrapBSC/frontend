@@ -3,7 +3,7 @@ import Bottomnav from './component/Bottomnav';
 import Faqs from './component/Faqs';
 import Footer from './component/Footer';
 import Navbar from './component/Navbar';
-import React,{useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './component/Home';
 import Pagesafedefi from './component/Pagesafedefi';
@@ -16,6 +16,7 @@ import Page404 from './component/Page404';
 import Safecards from './component/Safecards';
 import Projectpage from './component/Projectpage';
 import UpcomingCards from './component/upcomingCards';
+import Devprofile from './component/Devprofile';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="upcomingprojects" element={<UpcomingCards/>}/>
           </Route>
           <Route path="/safedefi/projectowner/:slug/:id/" element={<Ownerprofile />}/>
+          <Route path="/safedefi/developers/:slug/:id/" element={<Devprofile />}/>
           <Route path="/safedefi/safuprojects/:slug/" element={<Projectpage/>}/>
           <Route path="*" element={<Page404/>} />
             {/* <Route></Route>

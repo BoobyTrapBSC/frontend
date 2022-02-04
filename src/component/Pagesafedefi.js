@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 import {
   AiFillLeftCircle,
   AiFillSafetyCertificate,
@@ -12,7 +12,7 @@ import {
   GiHamburgerMenu,
   GiTireIronCross,
   GiSandsOfTime,
-  GiProgression
+  GiProgression,
 } from "react-icons/gi";
 import { Link, Outlet } from "react-router-dom";
 
@@ -157,9 +157,11 @@ export default function Pagesafedefi() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className={sidebar === 6 ? "nav-link active" : "nav-link"}
+                <Link
+                  className={sidebar === 6 ? "nav-link active" : "nav-link"}
                   onClick={() => activeSidebar(6)}
-                  to="/safedefi/promoters">
+                  to="/safedefi/promoters"
+                >
                   <FaCode /> Other Services
                 </Link>
               </li>
@@ -248,14 +250,47 @@ export default function Pagesafedefi() {
               />
             </div>
           </div>
-          <button className="btn button-blue dropdown-toggle safepage-listing" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Request Listing</button>
+          <button
+            className="btn button-blue dropdown-toggle safepage-listing"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Request Listing
+          </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a className="dropdown-item" target="_blank" rel="noreferrer" href="https://bit.ly/34hqxDY">Service Providers</a></li>
-            <li><a className="dropdown-item" target="_blank" rel="noreferrer" href="https://bit.ly/3g6UY2b">Upcoming Projects</a></li>
-            <li><a className="dropdown-item" target="_blank" rel="noreferrer" href="https://bit.ly/3HgUhiJ">Ongoing Projects</a></li>
+            <li>
+              <a
+                className="dropdown-item"
+                target="_blank"
+                rel="noreferrer"
+                href="https://bit.ly/34hqxDY"
+              >
+                Service Providers
+              </a>
+            </li>
+            <li>
+              <a
+                className="dropdown-item"
+                target="_blank"
+                rel="noreferrer"
+                href="https://bit.ly/3g6UY2b"
+              >
+                Upcoming Projects
+              </a>
+            </li>
+            <li>
+              <a
+                className="dropdown-item"
+                target="_blank"
+                rel="noreferrer"
+                href="https://bit.ly/3HgUhiJ"
+              >
+                Ongoing Projects
+              </a>
+            </li>
           </ul>
-          {/* <Ownercards /> */}
-          {/* <Devcards/> */}
           <Outlet />
         </div>
       </div>

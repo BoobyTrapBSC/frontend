@@ -147,6 +147,9 @@ button:focus, button:active{
   .filter-points {
     margin: auto;
   }
+  #owner-card-cont{
+    justify-content: center !important;
+  }
   .owner-prof-cont .head-content{
     flex-direction: column-reverse !important;
   }

@@ -53,8 +53,8 @@ export default function Ownercards() {
     const renderOwner = (owner, index) =>{
         return(
             <div className="ownerCard mb-5 col-md-3 shadow" key={index}>
-                <div style={{overflow:"hidden", width:"fit-content", borderRadius:"25px",}}>
-                <img src={owner.image.asset.url} alt="" /></div>
+                {/* <div style={{overflow:"hidden", width:"fit-content", borderRadius:"25px",}}></div> */}
+                <img src={owner.image.asset.url} alt="" />
                 <div id="trap-points">{owner.trappoints} Trap Points</div>
                 <div id="dev-name" className='mb-0 lh-sm'>{owner.name}</div>
                 <div id="alias" className='lh-sm'>{owner.alias}</div>
@@ -66,8 +66,8 @@ export default function Ownercards() {
         )
     }
     return (
-        <div className='row justify-content-center'>
-            {owner.map(renderOwner)};
+        <div className='row' id='owner-card-cont'>
+            {owner.map(renderOwner)}
             {console.log(owner)}
         </div>
     )

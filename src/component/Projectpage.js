@@ -133,7 +133,7 @@ export default function Projectpage() {
                                     trap points
                                 </Link>
                             </p>
-                            <a href="#" className="btn btn-outline-dark">Give Rating</a>
+                            <a href="/" className="btn btn-outline-dark">Give Rating</a>
                         </div>
                     </div>
                     <div className="col-lg-2 position-relative">

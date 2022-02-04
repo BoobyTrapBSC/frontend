@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import client from '../client'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import ReactStars from "react-rating-stars-component";
 import {
     AiFillLeftCircle,
     AiFillSafetyCertificate,
@@ -9,7 +8,7 @@ import {
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaBusinessTime, FaLaptopCode, FaCode } from "react-icons/fa";
-import { BsStarFill, BsStarHalf } from 'react-icons/bs'
+import { BsStarFill} from 'react-icons/bs'
 import {
     GiChart,
     GiChessKing,
@@ -105,7 +104,7 @@ export default function Ownerprofile() {
         try {
             if (rate.includes("Safu")) {
                 const got = await addReview(id, 5);
-                if(got.status == true){
+                if(got.status === true){
                     console.log("Done")
                     notify();
                     await getprofile();
@@ -113,28 +112,28 @@ export default function Ownerprofile() {
             }
             else if (rate.includes("Excellent")) {
                const got = await addReview(id, 4)
-               if(got.status == true){
+               if(got.status === true){
                 notify();
                 await getprofile();
             }
             }
             else if (rate.includes("DYOR")) {
                const got = await addReview(id, 3)
-               if(got.status == true){
+               if(got.status === true){
                 notify();
                 await getprofile();
             }
             }
             else if (rate.includes("Avoidable")) {
                 const got = await addReview(id, 2)
-                if(got.status == true){
+                if(got.status === true){
                     notify();
                     await getprofile();
                 }
             }
             else if (rate.includes("Scammer")) {
                const got = await addReview(id, 1)
-               if(got.status == true){
+               if(got.status === true){
                 notify();
                 await getprofile();
             }
@@ -153,19 +152,19 @@ export default function Ownerprofile() {
     console.log("Data",countreview,avgRating,id)
     const start =()=> {
         console.log("review", Number(avgRating).toFixed(0))
-       if(Number(avgRating).toFixed(0) == 5){
+       if(Number(avgRating).toFixed(0) === 5){
             return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />]
        }
-       else if(Number(avgRating).toFixed(0) == 4){
+       else if(Number(avgRating).toFixed(0) === 4){
         return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />] 
        }
-       else if(Number(avgRating).toFixed(0) == 3){
+       else if(Number(avgRating).toFixed(0) === 3){
         return [<BsStarFill />,<BsStarFill />,<BsStarFill />] 
        }
-       else if(Number(avgRating).toFixed(0) == 2){
+       else if(Number(avgRating).toFixed(0) === 2){
         return [<BsStarFill />,<BsStarFill />] 
        }
-       else if(Number(avgRating).toFixed(0) == 1){
+       else if(Number(avgRating).toFixed(0) === 1){
         return [<BsStarFill />] 
        }
       

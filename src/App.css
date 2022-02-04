@@ -433,6 +433,9 @@ body.active-modal {
 }
 
 /*Owner Cards*/
+#owner-card-cont{
+  justify-content: start;
+}
 .ownerCard {
   background-color: #264b8c;
   width: fit-content;
@@ -515,6 +518,54 @@ body.active-modal {
   min-width: 325px;
   max-width: 350px;
 }
+#ribbon-container {
+  position: absolute;
+  top: 25%;
+  right: 0px;
+  overflow: visible;
+  /* so we can see the pseudo-elements we're going to add to the anchor */
+  font-size: 12px;
+  line-height: 0px;
+  font-weight: 500;
+}
+
+#ribbon-container:before {
+  content: "";
+  height: 0;
+  width: 0;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  border-top: 15px solid rgba(0, 0, 0, .3);
+}
+#ribbon-container span {
+  display: block;
+  padding: 15px;
+  position: relative;
+  /* allows us to position our pseudo-elements properly */
+  background: #0089d0;
+  height: 15px;
+  margin-left: 29px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* this creates the "forked" part of our ribbon */  
+#ribbon-container span:before {
+  content: "";
+  height: 0;
+  width: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  border-top: 15px solid #0089d0;
+  border-bottom: 15px solid #0089d0;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
 .projectCard img{
   max-height: 75px;
   max-width: 75px;
@@ -780,4 +831,15 @@ body.active-modal {
   right: 0;
   bottom: 0;
   position: fixed;
+}
+
+/* DEV DETAILS PAGE*/
+#dev-social{
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  margin: auto 5px;
+}
+#dev-social:hover{
+  color: #000;
 }
