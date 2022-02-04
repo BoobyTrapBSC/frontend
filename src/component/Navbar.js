@@ -3,10 +3,18 @@ import logo from "../images/logo.png"
 import trapsheetpdf from '../whitepaper/trapSheet-v2.pdf'
 import {Link} from 'react-router-dom'
 import { loginProcess, initInstance, getAccount } from "./../Web3_connection/web3_methods"
+import {getTokenBalance} from './../Web3_connection/ContractMethods'
 
 export default function Navbar() {
+    const [tokenBal, setTokenBal] = useState(0)
     useEffect(()=>{
         login();
+
+        const init = async()=>{
+            const bal = await getTokenBalance();
+            setTokenBal(bal)
+        }
+    init();
     })
     const [userAddress, setUserAddress] = useState();
     const login = async()=>{
@@ -39,7 +47,9 @@ export default function Navbar() {
                         </ul>
                         <a href="https://t.me/boobytrapbsc" className="btn btn-outline-dark m-1">911</a>
                         <a type="button" href='https://privatesale.boobytrap.live/' className="btn btn-outline-dark m-1">Buy Pvt Sale</a>
+                        <p className='btn btn-outline-dark m-1'>Reward Balance: {tokenBal} WhistleBlower</p>
                         <button type="button" className="btn button-blue m-1" onClick={()=> login()}>{userAddress ? `${userAddress.slice(0,5)}...${userAddress.slice(38)}` : `Connect Wallet`}</button>
+                        
                         {/* <form className="d-flex">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success" type="submit">Search</button>

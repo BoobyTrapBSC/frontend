@@ -1,6 +1,8 @@
 import { getAccount, getContract } from "./web3_methods";
 import { ABI } from './../ABI/Rating';
+import { TokenABI } from "../ABI/TokenABI";
 import { envprod } from "./Envrionments";
+import { getWeb3 } from "./web3";
 
 
 export const getRATEContract = async() => {
@@ -18,7 +20,8 @@ export const addReview = async(id, rating)=> {
     console.log("Rating got", id , rating)
     const contract = await getRATEContract();
     const data = await contract.methods.addReview(id,rating).send({
-        from: await getAccount()
+        from: await getAccount(),
+        value: envprod.React_App_Rating_Fee
     });
     return data;
 }
@@ -27,4 +30,21 @@ export const getProfile = async(id) => {
     const contract = await getRATEContract();
     const data = await contract.methods.getProfile(id).call();
     return data;
+}
+
+export const TokenContract = async()=>{
+    const contract = getContract(TokenABI,envprod.React_App_Token)
+    return contract
+}
+
+export const getTokenBalance = async()=> {
+    const contract = await TokenContract();
+    const balance = await contract.methods.balanceOf(await getAccount()).call();
+    return balance
+}
+
+export const BNBBalance = async()=>{
+    const web3 = getWeb3();
+    const bal = await web3.eth.getBalance(await getAccount());
+    return bal;
 }

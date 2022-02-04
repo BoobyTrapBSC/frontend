@@ -19,13 +19,16 @@ import {
 } from "react-icons/gi";
 import { Link, useParams } from "react-router-dom";
 import Ownerdetails from "./Ownerdetails";
-import { addReview, getProfile } from "./../Web3_connection/ContractMethods"
+import { addReview, getProfile, getTokenBalance, BNBBalance } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
+import { TokenABI } from '../ABI/TokenABI';
 
 export default function Ownerprofile() {
 
     const [singleOwner, setSingleOwner] = useState([]);
     const [rating, setRating] = useState('SAFU (5 Start)');
+    const [bnbBal,setBNBBal] = useState(0)
+    const [tokenBal, setTokenBal] = useState(0)
     const { slug, id } = useParams();
     const notify = () => toast("Transaction Successful",{
         position: "top-right",
@@ -55,11 +58,14 @@ export default function Ownerprofile() {
         const init = async () => {
             await initInstance();
             await getprofile(id);
+            const bnbbal = await BNBBalance();
+          
+            setBNBBal(bnbbal/10**18)
         }
         init();
         
     }, [slug])
-
+   
     const [sidebar, setSidebar] = useState(2);
 
     const activeSidebar = (index) => {
@@ -140,7 +146,7 @@ export default function Ownerprofile() {
             }
         }
         catch (e) {
-            
+            console.log(e)
         }
     }
 
@@ -197,7 +203,8 @@ export default function Ownerprofile() {
                                     trap points
                                 </Link>
                             </p>
-                            <button className="btn btn-outline-dark" onClick={() => toggleModal()}>Give Rating</button>
+                            <button className={`btn btn-outline-dark ${bnbBal < 0.005 ? "disabled" : ""} `} onClick={() => toggleModal()}>{bnbBal < 0.005 ? "Insufficient BNB Balance" : "Give Rating"}</button>
+                            
                         </div>
                     </div>
 

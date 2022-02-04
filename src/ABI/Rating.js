@@ -1,5 +1,18 @@
 export const ABI = [
   {
+    inputs: [
+      { internalType: "address", name: "_operator", type: "address" },
+      {
+        internalType: "address payable",
+        name: "_feeCollector",
+        type: "address",
+      },
+      { internalType: "address", name: "_token", type: "address" },
+    ],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
     anonymous: false,
     inputs: [
       {
@@ -23,6 +36,25 @@ export const ABI = [
     inputs: [
       { indexed: false, internalType: "uint256", name: "id", type: "uint256" },
       { indexed: false, internalType: "string", name: "name", type: "string" },
+      {
+        indexed: false,
+        internalType: "string",
+        name: "username",
+        type: "string",
+      },
+      {
+        indexed: false,
+        internalType: "uint8",
+        name: "trapPoints",
+        type: "uint8",
+      },
+      {
+        indexed: false,
+        internalType: "bool",
+        name: "auditStatus",
+        type: "bool",
+      },
+      { indexed: false, internalType: "bool", name: "KYCStatus", type: "bool" },
     ],
     name: "ProfileAdded",
     type: "event",
@@ -37,12 +69,26 @@ export const ABI = [
         name: "avgRating",
         type: "uint256",
       },
+      {
+        indexed: false,
+        internalType: "address",
+        name: "reviewer",
+        type: "address",
+      },
     ],
     name: "ProfileReviewed",
     type: "event",
   },
   {
-    inputs: [{ internalType: "string", name: "_name", type: "string" }],
+    inputs: [
+      { internalType: "string", name: "_name", type: "string" },
+      { internalType: "string", name: "_username", type: "string" },
+      { internalType: "uint8", name: "_trapPoints", type: "uint8" },
+      { internalType: "string", name: "_telegram", type: "string" },
+      { internalType: "string", name: "_website", type: "string" },
+      { internalType: "string", name: "_twitter", type: "string" },
+      { internalType: "string", name: "_instagram", type: "string" },
+    ],
     name: "addProfile",
     outputs: [],
     stateMutability: "nonpayable",
@@ -55,6 +101,27 @@ export const ABI = [
     ],
     name: "addReview",
     outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "_profileId", type: "uint256" },
+      { internalType: "string", name: "_name", type: "string" },
+      { internalType: "string", name: "_username", type: "string" },
+    ],
+    name: "editProfile",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "_profileId", type: "uint256" },
+      { internalType: "uint8", name: "_updatedTrapPoints", type: "uint8" },
+    ],
+    name: "editTrapPoints",
+    outputs: [],
     stateMutability: "nonpayable",
     type: "function",
   },
@@ -64,9 +131,31 @@ export const ABI = [
     outputs: [
       { internalType: "uint256", name: "id", type: "uint256" },
       { internalType: "string", name: "name", type: "string" },
+      { internalType: "string", name: "username", type: "string" },
+      { internalType: "uint256", name: "trapPoints", type: "uint256" },
+      { internalType: "string", name: "telegram", type: "string" },
+      { internalType: "string", name: "website", type: "string" },
+      { internalType: "string", name: "twitter", type: "string" },
+      { internalType: "string", name: "instagram", type: "string" },
+      { internalType: "bool", name: "auditStatus", type: "bool" },
+      { internalType: "bool", name: "KYCStatus", type: "bool" },
       { internalType: "uint256", name: "avgRating", type: "uint256" },
       { internalType: "uint256", name: "reviewsCount", type: "uint256" },
     ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "_operator", type: "address" }],
+    name: "newOperator",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "operator",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
@@ -92,8 +181,95 @@ export const ABI = [
     type: "function",
   },
   {
+    inputs: [],
+    name: "token",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [{ internalType: "address", name: "newOwner", type: "address" }],
     name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "_profileId", type: "uint256" },
+      { internalType: "bool", name: "_auditStatus", type: "bool" },
+    ],
+    name: "updateAuditStatus",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address payable",
+        name: "_feeCollector",
+        type: "address",
+      },
+    ],
+    name: "updateFeeCollector",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "_profileId", type: "uint256" },
+      { internalType: "string", name: "_instagram", type: "string" },
+    ],
+    name: "updateInstagram",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "_profileId", type: "uint256" },
+      { internalType: "bool", name: "_KYCStatus", type: "bool" },
+    ],
+    name: "updateKYCStatus",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "_profileId", type: "uint256" },
+      { internalType: "string", name: "_telegram", type: "string" },
+    ],
+    name: "updateTelegram",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "_token", type: "address" }],
+    name: "updateToken",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "_profileId", type: "uint256" },
+      { internalType: "string", name: "_twitter", type: "string" },
+    ],
+    name: "updateTwitter",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "_profileId", type: "uint256" },
+      { internalType: "string", name: "_website", type: "string" },
+    ],
+    name: "updateWebsite",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
