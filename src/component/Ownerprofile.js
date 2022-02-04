@@ -62,7 +62,11 @@ export default function Ownerprofile() {
           
             setBNBBal(bnbbal/10**18)
         }
-        init();
+        setInterval(()=>{
+            init();
+            console.log("tun")
+        },4000)
+        
         
     }, [slug])
    
@@ -80,6 +84,8 @@ export default function Ownerprofile() {
     const [avgRating, setavgRating] = useState();
     const [modal, setModal] = useState(false);
     const [countreview, setCountReview] = useState(0)
+    const [trappoint, setTrapPoint] = useState(0)
+    const [name,setName] = useState("")
 
     const toggleCollapse = (bool) => {
         if (menuCollapse === true) {
@@ -111,7 +117,7 @@ export default function Ownerprofile() {
             if (rate.includes("Safu")) {
                 const got = await addReview(id, 5);
                 if(got.status === true){
-                    console.log("Done")
+                    
                     notify();
                     await getprofile();
                 }
@@ -152,26 +158,31 @@ export default function Ownerprofile() {
 
     const getprofile = async(id) =>{
         const data = await getProfile(id)
+        setName(data.name)
+        setTrapPoint(data.trapPoints)
         setCountReview(data.reviewsCount)
         setavgRating(data.avgRating/10) 
     }
-    console.log("Data",countreview,avgRating,id)
-    const start =()=> {
-        console.log("review", Number(avgRating).toFixed(0))
-       if(Number(avgRating).toFixed(0) === 5){
+  
+    const start =(avgRating)=> {
+        console.log("Rating",Number(avgRating).toFixed(0))
+       if(Number(avgRating).toFixed(0) == 5){
             return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />]
        }
-       else if(Number(avgRating).toFixed(0) === 4){
+       else if(Number(avgRating).toFixed(0) == 4){
         return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />] 
        }
-       else if(Number(avgRating).toFixed(0) === 3){
+       else if(Number(avgRating).toFixed(0) == 3){
         return [<BsStarFill />,<BsStarFill />,<BsStarFill />] 
        }
-       else if(Number(avgRating).toFixed(0) === 2){
+       else if(Number(avgRating).toFixed(0) == 2){
         return [<BsStarFill />,<BsStarFill />] 
        }
-       else if(Number(avgRating).toFixed(0) === 1){
+       else if(Number(avgRating).toFixed(0) == 1){
         return [<BsStarFill />] 
+       }
+       else{
+        return [<BsStarFill />,<BsStarFill />,<BsStarFill />] 
        }
       
     }
@@ -190,9 +201,9 @@ export default function Ownerprofile() {
                     </Breadcrumb>
                     <div className="col-lg-8">
                         <div className="dev-main">
-                            <h1>{singleOwner.name}</h1>
-                            <div className="fs-6"><span className="review-star fs-5"> {start()} </span> ({countreview} Reviews)</div>
-                            <p className="my-1">{singleOwner.trapPoints} Trap Points</p>
+                            <h1>{name}</h1>
+                            <div className="fs-6"><span className="review-star fs-5"> {start(avgRating)} </span> ({countreview} Reviews)</div>
+                            <p className="my-1">{trappoint} Trap Points</p>
                             <p>
                                 0 Trap Points means the safest! lower trap points means safer! Read
                                 more about{" "}

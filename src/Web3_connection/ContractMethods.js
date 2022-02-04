@@ -49,8 +49,10 @@ export const BNBBalance = async()=>{
     const bal = await web3.eth.getBalance(await getAccount());
     return bal;
 }
+
 export const symbol = async()=>{
     const contract = await TokenContract();
     const sym = await contract.methods.symbol().call();
     return sym;
 }
+
