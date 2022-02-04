@@ -47,7 +47,7 @@ export default function Navbar() {
                         </ul>
                         <a href="https://t.me/boobytrapbsc" className="btn btn-outline-dark m-1">911</a>
                         <a type="button" href='https://privatesale.boobytrap.live/' className="btn btn-outline-dark m-1">Buy Pvt Sale</a>
-                        <p className='btn btn-outline-dark m-1'>Reward Balance: {tokenBal} WhistleBlower</p>
+                        <p className='btn btn-outline-dark m-1'>Reward Balance: {tokenBal} $BBTians</p>
                         <button type="button" className="btn button-blue m-1" onClick={()=> login()}>{userAddress ? `${userAddress.slice(0,5)}...${userAddress.slice(38)}` : `Connect Wallet`}</button>
                         
                         {/* <form className="d-flex">
