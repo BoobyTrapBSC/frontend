@@ -3,16 +3,19 @@ import logo from "../images/logo.png"
 import trapsheetpdf from '../whitepaper/trapSheet-v2.pdf'
 import {Link} from 'react-router-dom'
 import { loginProcess, initInstance, getAccount } from "./../Web3_connection/web3_methods"
-import {getTokenBalance} from './../Web3_connection/ContractMethods'
+import {getTokenBalance,symbol} from './../Web3_connection/ContractMethods'
 
 export default function Navbar() {
     const [tokenBal, setTokenBal] = useState(0)
+    const [tokensymbol, setSymbol] = useState("") 
     useEffect(()=>{
         login();
 
         const init = async()=>{
             const bal = await getTokenBalance();
+            const sym = await symbol();
             setTokenBal(bal)
+            setSymbol(sym)
         }
     init();
     })
