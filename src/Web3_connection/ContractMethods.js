@@ -1,4 +1,4 @@
-import { getAccount, getContract } from "./web3_methods";
+import { getAccount, getContract,initInstance } from "./web3_methods";
 import { ABI } from './../ABI/Rating';
 import { TokenABI } from "../ABI/TokenABI";
 import { envprod } from "./Envrionments";
@@ -33,6 +33,7 @@ export const getProfile = async(id) => {
 }
 
 export const TokenContract = async()=>{
+    await initInstance();
     const contract = getContract(TokenABI,envprod.React_App_Token)
     return contract
 }
