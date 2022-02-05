@@ -58,18 +58,18 @@ export default function Ownerprofile() {
         const init = async () => {
             await initInstance();
             await getprofile(id);
-            const bnbbal = await BNBBalance();
-          
-            setBNBBal(bnbbal/10**18)
         }
         setInterval(()=>{
             init();
-            console.log("tun")
         },4000)
-        
-        
+
+        const getBNB = async()=> {
+            const bnbbal = await BNBBalance();
+            setBNBBal(bnbbal)
+        } 
+        getBNB();
     }, [slug])
-   
+   console.log("BNB Balance ", bnbBal)
     const [sidebar, setSidebar] = useState(2);
 
     const activeSidebar = (index) => {
@@ -182,7 +182,7 @@ export default function Ownerprofile() {
         return [<BsStarFill />] 
        }
        else{
-        return [<BsStarFill />,<BsStarFill />,<BsStarFill />] 
+       
        }
       
     }
@@ -214,7 +214,7 @@ export default function Ownerprofile() {
                                     trap points
                                 </Link>
                             </p>
-                            <button className={`btn btn-outline-dark ${bnbBal < 0.005 ? "disabled" : ""} `} onClick={() => toggleModal()}>{bnbBal < 0.005 ? "Insufficient BNB Balance" : "Give Rating"}</button>
+                            <button className={`btn btn-outline-dark ${bnbBal ? "disabled" : ""} `} onClick={() => toggleModal()}>{bnbBal ? "Insufficient BNB Balance" : "Give Rating"}</button>
                             
                         </div>
                     </div>

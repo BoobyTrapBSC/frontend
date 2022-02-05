@@ -47,7 +47,13 @@ export const getTokenBalance = async()=> {
 export const BNBBalance = async()=>{
     const web3 = getWeb3();
     const bal = await web3.eth.getBalance(await getAccount());
-    return bal;
+    const convertBal = bal/10**18
+    if(convertBal > 0.005){
+        return false;
+    }
+    else{
+        return true
+    }
 }
 
 export const symbol = async()=>{
