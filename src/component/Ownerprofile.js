@@ -238,6 +238,7 @@ export default function Ownerprofile() {
                         <label for="category" className="form-label fw-bold mb-3">
                             Give Rating
                         </label>
+                        <span style={{fontSize:"10px",marginTop:"-20px",marginBottom:"10px"}}>(A fee of 0.005 BNBs is applicable to keep this utility spam free!)</span>
                         <div className='px-4 mb-2'>
                             <select className="form-select text-center" id="sel1" value={rating} onChange={(e) => setRating(e.target.value)} aria-label="Default select example">
                                 <option selected>Select Star Rating</option>
