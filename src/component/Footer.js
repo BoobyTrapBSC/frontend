@@ -8,12 +8,10 @@ export default function Footer() {
       <div className="d-flex footer-main mx-auto position-relative">
         <div className="f-content container pt-5">
           <h2>
-            Let's make DeFi a<br />
-            safer place together.
+            Let's make DeFi a safer place together.
           </h2>
-          <p className="text-muted w-50">
-            Our Safe Heavens and Booby Trap dashboards help you make smart
-            choices and achieve your dream of financial freedom.
+          <p className="text-muted">
+            Our Safe Heavens and Booby Trap dashboards help you make smart choices and achieve your dream of financial freedom.
           </p>
           <div className="social">
             <a href="https://t.me/boobytrapbsc">

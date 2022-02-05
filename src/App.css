@@ -146,6 +146,9 @@ body.active-modal {
 #keyfeatures-cont .card {
   background-color: #f9f9f9;
 }
+#keyfeature-align{
+  margin: auto;
+}
 #keyfeatures-cont .row {
   width: 80%;
   max-width: 1440px;
@@ -312,6 +315,9 @@ body.active-modal {
 .map-nav p {
   line-height: 3px;
 }
+.map-nav p{
+  font-size: 10px !important;
+}
 .map-nav .active {
   border: 1px solid #c0c0c0;
 }
@@ -324,7 +330,7 @@ body.active-modal {
 .map-content {
   padding: 25px 15px;
   background-color: #f9f9f9;
-  text-align: justify;
+  text-align: left !important;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -349,14 +355,15 @@ body.active-modal {
   margin-top: 25px;
 }
 .footer-main {
-  width: 80%;
+  width: 100%;
   max-width: 1440px;
 }
 .f-graphic img {
   width: 500px;
 }
 .copyright {
-  width: 80%;
+  max-width: 1440px;
+  width: 100%;
   margin: auto;
 }
 
@@ -433,7 +440,7 @@ body.active-modal {
 }
 
 /*Owner Cards*/
-#owner-card-cont{
+#owner-card-cont, .safuCards{
   justify-content: start;
 }
 .ownerCard {

@@ -94,7 +94,7 @@ export default function UpcomingCards() {
         )
     }
 
-    return <div className='row justify-content-center safuCards'>
+    return <div className='row safuCards'>
         {project.map(renderProjects)}
     </div>;
 }

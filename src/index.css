@@ -147,7 +147,7 @@ button:focus, button:active{
   .filter-points {
     margin: auto;
   }
-  #owner-card-cont{
+  #owner-card-cont, .safuCards{
     justify-content: center !important;
   }
   .owner-prof-cont .head-content{
@@ -186,9 +186,15 @@ button:focus, button:active{
     text-align: left;
     width: 50% !important;
   }
+  #keyfeature-align{
+    margin:0 !important;
+  }
   .patternImg{
     width: 100% !important;
   }
+.roadmap-content h2 {
+  width: 90% !important;
+}
   #safedefi-cont{
     text-align: start !important;
   }

@@ -46,7 +46,7 @@ export default function Devcards() {
         )
     }
     return (
-        <div className='row justify-content-center'>
+        <div className='row' id='owner-card-cont'>
             {dev.map(renderDev)}
         </div>
     )

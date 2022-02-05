@@ -25,9 +25,9 @@ export default function Roadmap() {
 
   return (
     <div id='roadmap-cont'>
-      <div className="safe-defi roadmap-content container pt-5">
+      <div className="safe-defi roadmap-content container mb-5 pt-5">
         <h2>Here's how we plan to take our project to a success - the roadmap.</h2>
-        <p className='text-muted w-75 mt-3 mx-auto'>We don't plan to wait for business to come to us; instead, we will bring our services to the DeFi. We aim to deliver a quality service, and this is how we do it.</p>
+        <p className='text-muted mt-3 mx-auto'>We don't plan to wait for business to come to us; instead, we will bring our services to the DeFi. We aim to deliver a quality service, and this is how we do it.</p>
       </div>
       <Mobmap/>
       <div className="roadmap">
@@ -54,9 +54,9 @@ export default function Roadmap() {
              <>
              {/* <FaCode className='fa'/> */}
              {/* <h2>This is Roadmap 1</h2> */}
-                <h3 className='ongoing'>Pre-Launch (Dec 2021 - Jan 2022)</h3>
+                <h3 className='ongoing'>Pre-Launch (Dec 2021 - Feb 2022)</h3>
               <p>
-                <span className='ongoing'>• Private Sale to collect funds for development of platform & presale marketing<br/></span>• Beta Version of $BBT platform with "Safe Haven" <br />• Presale Marketing and promotions <br />• Listing of 100+ Project Owners, Developers, Influencers/Promoters</p>
+                <span className='ongoing'>• Private Sale to collect funds for development of platform & presale marketing<br/>• Beta Version of $BBT platform with "Safe Haven"</span> <br />• Presale Marketing and promotions <br />• Listing of 100+ Project Owners, Developers, Influencers/Promoters</p>
               </>
             :""}
             </div>
@@ -66,7 +66,7 @@ export default function Roadmap() {
              <>
              {/* <FaPencilAlt className='fa'/> */}
               {/* <h2>This is Roadmap 2</h2> */}
-              <h3>Post-Launch (Feb 2022)</h3>
+              <h3>Post-Launch (Mar 2022)</h3>
               <p>
               • V1 of $BBT platform launch <br />• Listing of more Project Owners, Developers, Influencers/Promoters <br />• Post launch marketing campaign <br />• Major Listings & Tendings</p>
               </>
@@ -78,7 +78,7 @@ export default function Roadmap() {
              <>
               {/* <FaChartLine className='fa'/> */}
               {/* <h2>This is Roadmap 3</h2> */}
-              <h3>Insuring DEFI (Mar 2022)</h3>
+              <h3>Insuring DEFI (Apr 2022)</h3>
               <p>
               • Launch of Insurance on blockchain for $BBT holders <br />• Marketing campaign for Insurance platform <br />• Partnerships with major Insurance players</p>
               </>
@@ -89,7 +89,7 @@ export default function Roadmap() {
             {show === 4 ?
              <>
               {/* <FaEnvelope className='fa'/> */}
-              <h3>(Apr - June 2022)</h3>
+              <h3>(Jun - Jul 2022)</h3>
               <p>• Launchpad for projects willing to list on $BBT platform<br/>• VC Funding and Presale platforms<br/>• NFT Marketplace to be launched in Metaverse<br/>• First Insurance provider in Metaverse</p>
               </>
               :""}

@@ -58,6 +58,8 @@ export default function Safecards() {
     getData();
   }, []);
   console.log("Total profile", CountProfile);
+
+  // RENDER PROJECTS
   const renderProjects = (project, index) => {
     return (
       <div
@@ -165,7 +167,7 @@ export default function Safecards() {
   };
 
   return (
-    <div className="row justify-content-center safuCards">
+    <div className="row safuCards">
       {project.map(renderProjects)}
     </div>
   );

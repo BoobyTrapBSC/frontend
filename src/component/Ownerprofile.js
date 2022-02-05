@@ -166,19 +166,19 @@ export default function Ownerprofile() {
   
     const start =(avgRating)=> {
         console.log("Rating",Number(avgRating).toFixed(0))
-       if(Number(avgRating).toFixed(0) == 5){
+       if(Number(avgRating).toFixed(0) === 5){
             return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />]
        }
-       else if(Number(avgRating).toFixed(0) == 4){
+       else if(Number(avgRating).toFixed(0) === 4){
         return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />] 
        }
-       else if(Number(avgRating).toFixed(0) == 3){
+       else if(Number(avgRating).toFixed(0) === 3){
         return [<BsStarFill />,<BsStarFill />,<BsStarFill />] 
        }
-       else if(Number(avgRating).toFixed(0) == 2){
+       else if(Number(avgRating).toFixed(0) === 2){
         return [<BsStarFill />,<BsStarFill />] 
        }
-       else if(Number(avgRating).toFixed(0) == 1){
+       else if(Number(avgRating).toFixed(0) === 1){
         return [<BsStarFill />] 
        }
        else{

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 export default function Keyfeatures() {
     return (
         <div id='keyfeatures-cont' className='py-5 overflow-hidden'>
-            <div className="row row-cols-1 mx-auto container row-cols-md-3">
+            <div className="row row-cols-1 container row-cols-md-3" id='keyfeature-align'>
                 <div className="col mb-4">
                     <div className="card flex-column border-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="300" height="125" viewBox="0 0 346.063 164">

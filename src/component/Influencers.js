@@ -27,7 +27,7 @@ export default function Influencers() {
         )
     }
     return (
-        <div className='row justify-content-center'>
+        <div className='row' id='owner-card-cont'>
             {ownerInfo.map(renderOwner)}
         </div>
     )
