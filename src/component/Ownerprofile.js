@@ -69,7 +69,7 @@ export default function Ownerprofile() {
         } 
         getBNB();
     }, [slug])
-   console.log("BNB Balance ", bnbBal)
+//    console.log("BNB Balance ", bnbBal)
     const [sidebar, setSidebar] = useState(2);
 
     const activeSidebar = (index) => {
@@ -165,7 +165,7 @@ export default function Ownerprofile() {
     }
   
     const start =(avgRating)=> {
-        console.log("Rating",Number(avgRating).toFixed(0))
+        // console.log("Rating",Number(avgRating).toFixed(0))
        if(Number(avgRating).toFixed(0) === 5){
             return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />]
        }
