@@ -19,8 +19,8 @@ export default function Home() {
             <Keyfeatures />
             <Defiloss />
             <Safedefi />
-            <Roadmap />
             <Team/>
+            <Roadmap />
             {/* <Mobmap/> */}
             {/* <News/> */}
         </div>

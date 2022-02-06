@@ -351,7 +351,7 @@ body.active-modal {
 #team-cont .row{
   width: 80%;
   max-width: 1440px;
-  margin: auto;
+  margin: 100px auto 75px auto;
 }
 #team-cont .row .card{
   background-color: #264B8C;

@@ -3,7 +3,7 @@ import React from "react";
 export default function Team() {
   return (
     <div id="team-cont" className="w-100">
-      <div className="row justify-content-between mt-5">
+      <div className="row justify-content-between">
           <h2>TEAM</h2>
         <div className="col-lg-3 my-2">
           <div className="card rounded border-0">
