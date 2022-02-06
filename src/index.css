@@ -105,6 +105,9 @@ button:focus, button:active{
     right: 0 !important;
     margin-bottom: 15px;
   }
+  #team-cont .row{
+    width: 90% !important;
+  }
   .footer-main{
     flex-direction: column;
     width: 100% !important;

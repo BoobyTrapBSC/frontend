@@ -347,6 +347,18 @@ body.active-modal {
   margin: auto;
 }
 
+/* TEAM */
+#team-cont .row{
+  width: 80%;
+  max-width: 1440px;
+  margin: auto;
+}
+#team-cont .row .card{
+  background-color: #264B8C;
+  width: 18rem;
+  color: #fff;
+}
+
 /* FOOTER */
 #footer-container {
   background-color: #0a1c1c;

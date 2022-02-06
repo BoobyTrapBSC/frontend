@@ -7,6 +7,7 @@ import Keyfeatures from '../component/Keyfeatures';
 import CarouselHome from '../component/CarouselHome';
 import Categories from '../component/Categories';
 import Defiloss from '../component/Defiloss';
+import Team from './Team';
 // import Mobmap from '../component/Mobmap';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
             <Defiloss />
             <Safedefi />
             <Roadmap />
+            <Team/>
             {/* <Mobmap/> */}
             {/* <News/> */}
         </div>
