@@ -185,11 +185,11 @@ export default function Ownerdetails(props) {
                 </div>
                 <div id="projectDesc">
                   <br />
-                  <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Deleniti itaque vero tenetur asperiores at assumenda
-                    molestias aliquid omnis molestiae quae temporibus nemo!
-                  </p>
+          <BlockContent
+            blocks={upcoming.description}
+            projectId="lfyw4jna"
+            dataset="production"
+          />
                 </div>
                 <Link className="btn shadow-sm" to="/">
                   Details
@@ -295,11 +295,11 @@ export default function Ownerdetails(props) {
                 </div>
                 <div id="projectDesc">
                   <br />
-                  <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Deleniti itaque vero tenetur asperiores at assumenda
-                    molestias aliquid omnis molestiae quae temporibus nemo!
-                  </p>
+          <BlockContent
+            blocks={launched.description}
+            projectId="lfyw4jna"
+            dataset="production"
+          />
                 </div>
                 <Link className="btn shadow-sm" to={{ pathname: `/safedefi/safuprojects/${launched.slug.current}`}}>
                   Details
