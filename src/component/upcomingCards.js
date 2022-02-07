@@ -85,7 +85,7 @@ export default function UpcomingCards() {
             {/* <ul className='my-0' style={{listStyle:"none", listStylePosition:"outside"}}> */}
               <p className='mb-0' >Trap Points</p>
               <p className='mb-0' >k+ Community Strength</p>
-              <p className='mb-0' style={{color:"#FCB040", fontSize:"18px",}}><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></p>
+              {/* <p className='mb-0' style={{color:"#FCB040", fontSize:"18px",}}><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></p> */}
             {/* </ul> */}
               <BlockContent blocks={project.description} projectId="lfyw4jna" dataset='production'/>
           </div>

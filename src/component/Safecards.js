@@ -143,13 +143,13 @@ export default function Safecards() {
           <br />
           <p className="mb-0">Trap Points</p>
           <p className="mb-0">{project.comStrength}k+ Community Strength</p>
-          <p className="mb-0" style={{ color: "#FCB040", fontSize: "18px" }}>
+          {/* <p className="mb-0" style={{ color: "#FCB040", fontSize: "18px" }}>
             <BsStarFill />
             <BsStarFill />
             <BsStarFill />
             <BsStarFill />
             <BsStarHalf />
-          </p>
+          </p> */}
           <BlockContent
             blocks={project.description}
             projectId="lfyw4jna"
