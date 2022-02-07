@@ -67,7 +67,7 @@ export default function Safecards() {
         key={index}
       >
         <div id="projectHead" className="d-flex justify-content-between">
-          <div className="w-100" style={{ paddingLeft: "30px" }}>
+          <div className="w-100 text-start" style={{ paddingLeft: "30px" }}>
             <h3 className="fs-6 mt-2 text-start">
               {project.name} <span>({project.tracker})</span>
             </h3>

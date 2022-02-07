@@ -210,6 +210,7 @@ export default function Ownerdetails(props) {
       >
         Previous Projects
       </h3>
+              {/* <h2 style={singleOwner.lprojects.length > 0 ? { display: "block" } : { display: "none" }}>No Data Available</h2> */}
       <div className="row justify-content-evenly">
         {singleOwner.lprojects &&
           singleOwner.lprojects.map((launched, index) => {

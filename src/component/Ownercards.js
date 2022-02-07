@@ -15,7 +15,7 @@ export default function Ownercards() {
           `*[_type=="owners"] {
               name,
               alias,
-              trappoints,
+              trapPoints,
               numProjects,
               experience,
               slug,
@@ -54,12 +54,11 @@ export default function Ownercards() {
     const renderOwner = (owner, index) =>{
         return(
             <div className="ownerCard mb-5 col-md-3 shadow" key={index}>
-                {/* <div style={{overflow:"hidden", width:"fit-content", borderRadius:"25px",}}></div> */}
                 <img src={owner.image.asset.url} alt="" />
-                <div id="trap-points">{owner.trappoints} Trap Points</div>
+                <div id="trap-points" className='mt-1'>{owner.trapPoints} Trap Points</div>
                 <div id="dev-name" className='mb-0 lh-sm'>{owner.name}</div>
                 <div id="alias" className='lh-sm'>{owner.alias}</div>
-                <div className="star"><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></div>
+                {/* <div className="star"><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></div> */}
                 <div id="social-dev"><Link to="/"><FaTelegramPlane size={25} fill={"#fff"}/></Link> &nbsp;<Link to="/"><FaTwitter size={25} fill={"#fff"}/></Link></div>
                 <Link className="btn shadow-sm" to={{pathname:`/safedefi/projectowner/${owner.slug.current}/${owner.id}`, state:{id:id[index]}}}>Projects</Link>
                 {/* <Link className="btn shadow-sm" to={`/safedefi/projectowner/${owner.slug.current}`} >Projects</Link> */}
