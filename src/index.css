@@ -77,6 +77,9 @@ button:focus, button:active{
   #navbar-container .navbar{
     width: 100% !important;
   }
+  .mob-nav {
+    margin-right: 40px !important;
+  }
   #keyfeatures-cont .row svg{
     width: 300px;
     height: 125px;
@@ -108,6 +111,9 @@ button:focus, button:active{
   #team-cont .row{
     width: 90% !important;
   }
+  #team-cont .row .card{
+    margin: auto;
+  }
   .footer-main{
     flex-direction: column;
     width: 100% !important;
@@ -138,7 +144,7 @@ button:focus, button:active{
     display: block !important;
   }
   .sidebar{
-    display: none;
+    display: none !important;
   }
   .safe-collapse{
     display: block !important;
@@ -149,6 +155,9 @@ button:focus, button:active{
   .side-categories,
   .filter-points {
     margin: auto;
+  }
+  .breadcrumb{
+    margin-top: 15px !important;
   }
   #owner-card-cont, .safuCards{
     justify-content: center !important;

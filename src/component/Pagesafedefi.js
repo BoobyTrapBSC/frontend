@@ -9,8 +9,6 @@ import { FaBusinessTime, FaLaptopCode, FaCode } from "react-icons/fa";
 import {
   GiChart,
   GiChessKing,
-  GiHamburgerMenu,
-  GiTireIronCross,
   GiSandsOfTime,
   GiProgression,
 } from "react-icons/gi";
@@ -31,27 +29,6 @@ export default function Pagesafedefi() {
     console.log(index);
   };
 
-  const [menuCollapse, setMenuCollapse] = useState(true);
-  const [hamburgerDisplay, setHamburgerDisplay] = useState("d-block");
-  const [crossDisplay, setCrossDisplay] = useState("d-none");
-  const [sideDisplay, setSideDisplay] = useState("d-block");
-
-  const toggleCollapse = (bool) => {
-    if (menuCollapse === true) {
-      console.log("Open");
-      setMenuCollapse(false);
-      setHamburgerDisplay("d-none");
-      setCrossDisplay("d-block");
-      setSideDisplay("d-block");
-    } else {
-      console.log("Close");
-      setMenuCollapse(true);
-      setHamburgerDisplay("d-block");
-      setCrossDisplay("d-none");
-      setSideDisplay("d-none");
-    }
-  };
-
   return (
     <div id="pagesafe-cont">
       <div className="safe-head py-3 position-relative container-fluid">
@@ -59,9 +36,6 @@ export default function Pagesafedefi() {
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-            {/* <Breadcrumb.Item href="/safedefi/projectowner">
-              Safe DeFi
-            </Breadcrumb.Item> */}
             <Breadcrumb.Item active>Safe DeFi</Breadcrumb.Item>
           </Breadcrumb>
           <h1>SAFE HAVEN</h1>
@@ -79,20 +53,12 @@ export default function Pagesafedefi() {
           </p>
         </div>
       </div>
-      <div
-        className="safe-collapse"
-        onClick={() => toggleCollapse(menuCollapse === true ? false : true)}
-      >
-        Menu <GiHamburgerMenu id="menu-icon" className={hamburgerDisplay} />
-        <GiTireIronCross id="menu-icon" className={crossDisplay} />
-      </div>
       <div className="safe-content row w-100 mt-3">
-        <div className={`sidebar col-lg-3 ${sideDisplay}`}>
+        <div className={`sidebar col-lg-3`}>
           <div className="side-categories p-3 rounded">
             <ul className="nav flex-column">
               <li className="nav-item">
                 <Link
-                  //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   onClick={() => activeSidebar(1)}
                   to="/safedefi/safuprojects"
@@ -102,7 +68,6 @@ export default function Pagesafedefi() {
               </li>
               <li className="nav-item">
                 <Link
-                  //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   className={sidebar === 8 ? "nav-link active" : "nav-link"}
                   onClick={() => activeSidebar(8)}
                   to="/safedefi/upcomingprojects"
@@ -112,7 +77,6 @@ export default function Pagesafedefi() {
               </li>
               <li className="nav-item">
                 <Link
-                  //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   className={sidebar === 7 ? "nav-link active" : "nav-link"}
                   onClick={() => activeSidebar(7)}
                   to="/safedefi/safuprojects"

@@ -12,8 +12,6 @@ import { BsStarFill} from 'react-icons/bs'
 import {
     GiChart,
     GiChessKing,
-    GiHamburgerMenu,
-    GiTireIronCross,
     GiSandsOfTime,
     GiProgression
 } from "react-icons/gi";
@@ -77,31 +75,12 @@ export default function Ownerprofile() {
         console.log(index);
     };
 
-    const [menuCollapse, setMenuCollapse] = useState(true)
-    const [hamburgerDisplay, setHamburgerDisplay] = useState("d-block");
-    const [crossDisplay, setCrossDisplay] = useState("d-none");
-    const [sideDisplay, setSideDisplay] = useState("d-block");
     const [avgRating, setavgRating] = useState();
     const [modal, setModal] = useState(false);
     const [countreview, setCountReview] = useState(0)
     const [trappoint, setTrapPoint] = useState(0)
     const [name,setName] = useState("")
 
-    const toggleCollapse = (bool) => {
-        if (menuCollapse === true) {
-            console.log("Open");
-            setMenuCollapse(false)
-            setHamburgerDisplay("d-none")
-            setCrossDisplay("d-block")
-            setSideDisplay("d-block")
-        } else {
-            console.log("Close");
-            setMenuCollapse(true)
-            setHamburgerDisplay("d-block")
-            setCrossDisplay("d-none")
-            setSideDisplay("d-none")
-        }
-    }
     const toggleModal = () => {
         setModal(!modal);
     };
@@ -227,9 +206,6 @@ export default function Ownerprofile() {
                 </div>
             </div>
 
-            <div className="safe-collapse" onClick={() => toggleCollapse(menuCollapse === true ? false : true)}>
-                Menu <GiHamburgerMenu id="menu-icon" className={hamburgerDisplay} /><GiTireIronCross id="menu-icon" className={crossDisplay} />
-            </div>
             {modal && (
                 <div style={{zIndex:"5"}}>
                     <div onClick={() => toggleModal()} className="overlay-popup"></div>
@@ -253,7 +229,7 @@ export default function Ownerprofile() {
                 </div>
             )}
             <div className="safe-content row mt-3">
-                <div className={`sidebar col-lg-3 ${sideDisplay}`}>
+                <div className={`sidebar col-lg-3`}>
                     <div className="side-categories p-3 rounded">
                         <ul className="nav flex-column">
                             <li className="nav-item">

@@ -14,8 +14,6 @@ import { BsStarFill } from "react-icons/bs";
 import {
   GiChart,
   GiChessKing,
-  GiHamburgerMenu,
-  GiTireIronCross,
   GiSandsOfTime,
   GiProgression,
 } from "react-icons/gi";
@@ -66,36 +64,16 @@ export default function Devprofile() {
     init();
   }, [slug]);
 
-  const [sidebar, setSidebar] = useState(2);
-
   const activeSidebar = (index) => {
     setSidebar(index);
     console.log(index);
   };
 
-  const [menuCollapse, setMenuCollapse] = useState(true);
-  const [hamburgerDisplay, setHamburgerDisplay] = useState("d-block");
-  const [crossDisplay, setCrossDisplay] = useState("d-none");
-  const [sideDisplay, setSideDisplay] = useState("d-block");
+  const [sidebar, setSidebar] = useState(2);
   const [avgRating, setavgRating] = useState();
   const [modal, setModal] = useState(false);
   const [countreview, setCountReview] = useState(0);
 
-  const toggleCollapse = (bool) => {
-    if (menuCollapse === true) {
-      console.log("Open");
-      setMenuCollapse(false);
-      setHamburgerDisplay("d-none");
-      setCrossDisplay("d-block");
-      setSideDisplay("d-block");
-    } else {
-      console.log("Close");
-      setMenuCollapse(true);
-      setHamburgerDisplay("d-block");
-      setCrossDisplay("d-none");
-      setSideDisplay("d-none");
-    }
-  };
   const toggleModal = () => {
     setModal(!modal);
   };
@@ -222,13 +200,6 @@ export default function Devprofile() {
         </div>
       </div>
 
-      <div
-        className="safe-collapse"
-        onClick={() => toggleCollapse(menuCollapse === true ? false : true)}
-      >
-        Menu <GiHamburgerMenu id="menu-icon" className={hamburgerDisplay} />
-        <GiTireIronCross id="menu-icon" className={crossDisplay} />
-      </div>
       {modal && (
         <div style={{ zIndex: "5" }}>
           <div onClick={() => toggleModal()} className="overlay-popup"></div>
@@ -266,12 +237,11 @@ export default function Devprofile() {
         </div>
       )}
       <div className="safe-content row mt-3 w-100">
-        <div className={`sidebar col-lg-3 ${sideDisplay}`}>
+        <div className={`sidebar col-lg-3`}>
           <div className="side-categories p-3 rounded">
             <ul className="nav flex-column">
               <li className="nav-item">
                 <Link
-                  //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   onClick={() => activeSidebar(1)}
                   to="/safedefi/safuprojects"
@@ -281,7 +251,6 @@ export default function Devprofile() {
               </li>
               <li className="nav-item">
                 <Link
-                  //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   className={sidebar === 8 ? "nav-link active" : "nav-link"}
                   onClick={() => activeSidebar(8)}
                   to="/safedefi/safuprojects"
@@ -291,7 +260,6 @@ export default function Devprofile() {
               </li>
               <li className="nav-item">
                 <Link
-                  //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
                   className={sidebar === 7 ? "nav-link active" : "nav-link"}
                   onClick={() => activeSidebar(7)}
                   to="/safedefi/safuprojects"

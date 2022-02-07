@@ -19,7 +19,7 @@ export const loginProcess = async () => {
     await window.ethereum.enable();
     try {
         const chainId = await web3Instance.eth.getChainId();
-        if(chainId != envprod.React_App_chain_Id){
+        if(chainId !== envprod.React_App_chain_Id){
             alert("Please Switch to BSC Testnet")
         }
     }

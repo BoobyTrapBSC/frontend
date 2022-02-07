@@ -41,7 +41,7 @@ export default function Devcards() {
                 <div id="dev-name">{dev.name}</div>
                 <div className="star"><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></div>
                 <div id="social-dev"><Link to="/"><FaTelegramPlane size={25} fill={"#fff"}/></Link> &nbsp;<Link to="/"><FaTwitter size={25} fill={"#fff"}/></Link></div>
-                <Link className="btn shadow-sm" to={{pathname:`/safedefi/developers/${dev.slug.current}/${id[index]}`, state:{id:id[index]}}}>Details</Link>
+                <Link className="btn shadow-sm" to={{pathname:`/safedefi/developers/${dev.slug.current}/${dev.id}`, state:{id:dev.id}}}>Details</Link>
             </div>
         )
     }

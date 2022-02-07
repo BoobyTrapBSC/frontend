@@ -17,12 +17,13 @@ import Safecards from './component/Safecards';
 import Projectpage from './component/Projectpage';
 import UpcomingCards from './component/upcomingCards';
 import Devprofile from './component/Devprofile';
+import SidebarSlide from './component/SidebarSlide';
 
 
 function App() {
- 
+
   return (
-    <div className="App">
+    <div className="App" id='App'>
       <Router>
         <Navbar />
         <Bottomnav />
