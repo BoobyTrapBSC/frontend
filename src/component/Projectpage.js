@@ -11,19 +11,12 @@ import {
 } from "react-icons/fa";
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {
-    AiFillLeftCircle,
-    AiFillSafetyCertificate,
+    AiFillLeftCircle
 } from "react-icons/ai";
-import { FaBusinessTime, FaLaptopCode, FaCode } from "react-icons/fa";
 import { BsStarFill, BsStarHalf } from 'react-icons/bs'
-import {
-    GiChart,
-    GiChessKing,
-    GiSandsOfTime,
-    GiProgression
-} from "react-icons/gi";
 import Projectdetails from "./Projectdetails";
 import { initInstance } from './../Web3_connection/web3_methods'
+import Sidebar from './Sidebar';
 
 export default function Projectpage() {
 
@@ -76,14 +69,6 @@ export default function Projectpage() {
         init();
     }, [slug])
 
-
-    const [sidebar, setSidebar] = useState(1);
-
-    const activeSidebar = (index) => {
-        setSidebar(index);
-        console.log(index);
-    };
-
     return (
         <div id="pagesafe-cont" className="owner-prof-cont projectpage-cont">
             <div className="safe-head py-3 position-relative container-fluid">
@@ -132,81 +117,7 @@ export default function Projectpage() {
             
             <div className="safe-content row w-100 mt-3">
                 <div className={`sidebar col-lg-3`}>
-                    <div className="side-categories p-3 rounded">
-                        <ul className="nav flex-column">
-                            <li className="nav-item">
-                                <Link
-                                    //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
-                                    className={sidebar === 1 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(1)}
-                                    to="/safedefi/safuprojects"
-                                >
-                                    <AiFillSafetyCertificate /> Safu Projects
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
-                                    className={sidebar === 8 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(8)}
-                                    to="/safedefi/safuprojects"
-                                >
-                                    <GiProgression /> Upcoming Projects
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
-                                    className={sidebar === 7 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(7)}
-                                    to="/safedefi/safuprojects"
-                                >
-                                    <GiSandsOfTime /> Ongoing Projects
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={sidebar === 2 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(2)}
-                                    to="/safedefi/projectowner"
-                                >
-                                    <FaBusinessTime /> Project Owners
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={sidebar === 3 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(3)}
-                                    to="/safedefi/developers"
-                                >
-                                    <FaLaptopCode /> Developers
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={sidebar === 4 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(4)}
-                                    to="/safedefi/influencers"
-                                >
-                                    <GiChessKing /> Influencers
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={sidebar === 5 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(5)}
-                                    to="/safedefi/promoters"
-                                >
-                                    <GiChart /> Promoters
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link disabled" to="/">
-                                    <FaCode /> Coming Soon!
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
+                    <Sidebar/>
                 </div>
                 <div className="content col">
                     <Projectdetails />

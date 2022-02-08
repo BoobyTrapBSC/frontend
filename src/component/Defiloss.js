@@ -14,7 +14,7 @@ export default function Defiloss() {
                     <li><a className="dropdown-item" target="_blank" rel="noreferrer" href="https://bit.ly/3HgUhiJ">Ongoing Projects</a></li>
                 </ul>
             </div>
-            <div className="container secondary-cont px-0 pt-0" style={{ display: "flex", }}>
+            <div className="container-fluid secondary-cont px-0 pt-0" style={{ display: "flex", }}>
                 <div className="col">
                     <div className="defi-desc">
                         <p>Safe Heaven</p>

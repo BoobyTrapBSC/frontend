@@ -18,6 +18,7 @@ import Projectpage from './component/Projectpage';
 import UpcomingCards from './component/upcomingCards';
 import Devprofile from './component/Devprofile';
 import SidebarSlide from './component/SidebarSlide';
+import InfluencerProfile from './component/InfluencerProfile';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           </Route>
           <Route path="/safedefi/projectowner/:slug/:id/" element={<Ownerprofile />}/>
           <Route path="/safedefi/developers/:slug/:id/" element={<Devprofile />}/>
+          <Route path="/safedefi/influencers/:slug/:id/" element={<InfluencerProfile/>}/>
           <Route path="/safedefi/safuprojects/:slug/" element={<Projectpage/>}/>
           <Route path="*" element={<Page404/>} />
             {/* <Route></Route>

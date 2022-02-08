@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import {
     FaTelegramPlane,
     FaTwitter,
-    FaGithub
+    FaInstagram
   } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 import { BsStarFill } from "react-icons/bs";
@@ -15,9 +15,10 @@ import { addReview, getProfile } from "./../Web3_connection/ContractMethods";
 import { initInstance } from "./../Web3_connection/web3_methods";
 import Devdetails from "./Devdetails";
 import Sidebar from "./Sidebar";
+import InfluencerDetails from "./InfluencerDetails";
 
-export default function Devprofile() {
-  const [singleDev, setSingleDev] = useState([]);
+export default function InfluencerProfile() {
+  const [singleInfluencer, setSingleInfluencer] = useState([]);
   const [rating, setRating] = useState("SAFU (5 Start)");
   const { slug, id } = useParams();
   const notify = () =>
@@ -30,27 +31,26 @@ export default function Devprofile() {
     client
       .fetch(
         `*[slug.current == "${slug}"] {
-                name,
-                alias,
-                id,
-                slug,
-                telegram,
-                twitter,
-                github,
-                numProjects,
-                skills,
-                otherSkills,
-                experience,
-                image{
-                    asset -> {
-                        _id,
-                        url
-                    },
-                    alt
-                }
+            name,
+            alias,
+            id,
+            slug,
+            telegram,
+            instagram,
+            twitter,
+            engagementRating,
+            roi,
+            numProjects,
+            image{
+                asset -> {
+                    _id,
+                    url
+                },
+                alt
+            }
       }`
       )
-      .then((data) => setSingleDev(data[0]));
+      .then((data) => setSingleInfluencer(data[0]));
     const init = async () => {
       await initInstance();
       await getprofile(id);
@@ -144,27 +144,27 @@ export default function Devprofile() {
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="/safedefi/projectowner">
+            <Breadcrumb.Item href="/safedefi/influencers">
               Safe DeFi
             </Breadcrumb.Item>
-            <Breadcrumb.Item active>{singleDev.name}</Breadcrumb.Item>
+            <Breadcrumb.Item active>{singleInfluencer.name}</Breadcrumb.Item>
           </Breadcrumb>
           <div className="col-lg-8">
             <div className="dev-main">
-              <h1>{singleDev.name}</h1>
+              <h1>{singleInfluencer.name}</h1>
               <div className="fs-6">
                 <span className="review-star fs-5"> {start()} </span> (
                 {countreview} Reviews)
               </div>
               <div>
-                <a href={singleDev.telegram} target="_blank" rel="noreferrer" id="dev-social">
+                <a href={singleInfluencer.telegram} target="_blank" rel="noreferrer" id="dev-social">
                   <FaTelegramPlane /> 
                 </a>
-                <a href={singleDev.twitter} target="_blank" rel="noreferrer" id="dev-social">
+                <a href={singleInfluencer.twitter} target="_blank" rel="noreferrer" id="dev-social">
                    <FaTwitter /> 
                 </a>
-                <a href={singleDev.github} target="_blank" rel="noreferrer" id="dev-social">
-                  <FaGithub />
+                <a href={singleInfluencer.instagram} target="_blank" rel="noreferrer" id="dev-social">
+                  <FaInstagram />
                 </a>
               </div>
               <button
@@ -177,11 +177,11 @@ export default function Devprofile() {
           </div>
 
           <div className="col-lg-2">
-            {singleDev.image && singleDev.image.asset && (
+            {singleInfluencer.image && singleInfluencer.image.asset && (
               <img
                 className="profileImg"
-                src={singleDev.image.asset.url}
-                alt={singleDev.name}
+                src={singleInfluencer.image.asset.url}
+                alt={singleInfluencer.name}
               />
             )}
           </div>
@@ -229,7 +229,7 @@ export default function Devprofile() {
           <Sidebar/>
         </div>
         <div className="content col">
-          <Devdetails />
+          <InfluencerDetails />
         </div>
       </div>
     </div>

@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import client from '../client'
 import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
-import {BsStarFill, BsStarHalf} from 'react-icons/bs'
 import {Link} from 'react-router-dom'
 
 export default function Devcards() {
 
     const [dev, setDev] = useState([]);
-    const id = [1,0,2]
 
     useEffect(() => {
       client.fetch(
@@ -21,6 +19,7 @@ export default function Devcards() {
               github,
               numProjects,
               skills,
+              avgPrice,
               otherSkills,
               experience,
               image{
@@ -39,7 +38,8 @@ export default function Devcards() {
             <div className="ownerCard mb-5 col-md-3 shadow" key={index}>
                 <img src={dev.image.asset.url} alt="" />
                 <div id="dev-name">{dev.name}</div>
-                <div className="star"><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></div>
+                <div className="skills">Skills: {dev.skills}</div>
+                <div className="rate">Avg Cost: ${dev.avgPrice}</div>
                 <div id="social-dev"><Link to="/"><FaTelegramPlane size={25} fill={"#fff"}/></Link> &nbsp;<Link to="/"><FaTwitter size={25} fill={"#fff"}/></Link></div>
                 <Link className="btn shadow-sm" to={{pathname:`/safedefi/developers/${dev.slug.current}/${dev.id}`, state:{id:dev.id}}}>Details</Link>
             </div>

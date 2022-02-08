@@ -1,7 +1,5 @@
 import React from 'react'
-import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
-import {BsStarFill, BsStarHalf} from 'react-icons/bs'
-import {Link} from 'react-router-dom'
+import { FaTelegramPlane, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export default function Promoters() {
     const ownerInfo = [
@@ -20,8 +18,10 @@ export default function Promoters() {
             <div className="ownerCard mb-5 col-md-3 shadow" key={index}>
                 <img src={ownerInfo.image} alt="" />
                 <div id="dev-name">{ownerInfo.name}</div>
-                <div className="star"><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></div>
-                <div id="social-dev"><Link to="/"><FaTelegramPlane size={25} fill={"#fff"}/></Link> &nbsp;<Link to="/"><FaTwitter size={25} fill={"#fff"}/></Link></div>
+                {/* <div className="star"><BsStarFill/><BsStarFill/><BsStarFill/><BsStarFill/><BsStarHalf/></div> */}
+                <div className="rate">Avg Price: ${ownerInfo.avgPrice}</div>
+                <div id="social-dev"><a href={ownerInfo.telegram}><FaTelegramPlane size={25} fill={"#fff"}/></a> &nbsp;<a href={ownerInfo.twitter}><FaTwitter size={25} fill={"#fff"}/></a>&nbsp;<a href={ownerInfo.instagram}><FaInstagram size={25} fill={"#fff"}/></a></div>
+                <br />
                 <button className="btn shadow-sm">Details</button>
             </div>
         )

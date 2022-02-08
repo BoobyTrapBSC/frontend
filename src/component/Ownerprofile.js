@@ -2,24 +2,17 @@ import React, { useState, useEffect } from 'react'
 import client from '../client'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {
-    AiFillLeftCircle,
-    AiFillSafetyCertificate,
+    AiFillLeftCircle
 } from "react-icons/ai";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaBusinessTime, FaLaptopCode, FaCode } from "react-icons/fa";
 import { BsStarFill} from 'react-icons/bs'
-import {
-    GiChart,
-    GiChessKing,
-    GiSandsOfTime,
-    GiProgression
-} from "react-icons/gi";
 import { Link, useParams } from "react-router-dom";
 import Ownerdetails from "./Ownerdetails";
-import { addReview, getProfile, getTokenBalance, BNBBalance } from "./../Web3_connection/ContractMethods"
+import { addReview, getProfile, BNBBalance } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
 import { TokenABI } from '../ABI/TokenABI';
+import Sidebar from './Sidebar';
 
 export default function Ownerprofile() {
 
@@ -68,13 +61,7 @@ export default function Ownerprofile() {
         getBNB();
     }, [slug])
 //    console.log("BNB Balance ", bnbBal)
-    const [sidebar, setSidebar] = useState(2);
-
-    const activeSidebar = (index) => {
-        setSidebar(index);
-        console.log(index);
-    };
-
+    
     const [avgRating, setavgRating] = useState();
     const [modal, setModal] = useState(false);
     const [countreview, setCountReview] = useState(0)
@@ -230,81 +217,7 @@ export default function Ownerprofile() {
             )}
             <div className="safe-content row mt-3">
                 <div className={`sidebar col-lg-3`}>
-                    <div className="side-categories p-3 rounded">
-                        <ul className="nav flex-column">
-                            <li className="nav-item">
-                                <Link
-                                    //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
-                                    className={sidebar === 1 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(1)}
-                                    to="/safedefi/safuprojects"
-                                >
-                                    <AiFillSafetyCertificate /> Safu Projects
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
-                                    className={sidebar === 8 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(8)}
-                                    to="/safedefi/safuprojects"
-                                >
-                                    <GiProgression /> Upcoming Projects
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    //   className={sidebar === 1 ? "nav-link active" : "nav-link"}
-                                    className={sidebar === 7 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(7)}
-                                    to="/safedefi/safuprojects"
-                                >
-                                    <GiSandsOfTime /> Ongoing Projects
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={sidebar === 2 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(2)}
-                                    to="/safedefi/projectowner"
-                                >
-                                    <FaBusinessTime /> Project Owners
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={sidebar === 3 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(3)}
-                                    to="/safedefi/developers"
-                                >
-                                    <FaLaptopCode /> Developers
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={sidebar === 4 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(4)}
-                                    to="/safedefi/influencers"
-                                >
-                                    <GiChessKing /> Influencers
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={sidebar === 5 ? "nav-link active" : "nav-link"}
-                                    onClick={() => activeSidebar(5)}
-                                    to="/safedefi/promoters"
-                                >
-                                    <GiChart /> AMA/Call Channels
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link disabled" to="/">
-                                    <FaCode /> Coming Soon!
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
+                    <Sidebar/>
                 </div>
                 <div className="content col">
                     <Ownerdetails />

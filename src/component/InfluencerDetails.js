@@ -3,12 +3,19 @@ import { ToastContainer, toast } from 'react-toastify';
 import client from "../client";
 import { initInstance } from './../Web3_connection/web3_methods'
 import { addReview, getProfile } from "./../Web3_connection/ContractMethods"
+import {
+  FaTelegramPlane,
+  FaTwitter,
+  FaGlobe,
+  FaDiscord,
+  FaInstagram,
+} from "react-icons/fa";
 import { Link, useParams, useLocation } from "react-router-dom";
 
-export default function Devdetails(props) {
+export default function InfluencerDetails() {
   // console.log("id", location.state.id)
 
-  const [singleDev, setSingleDev] = useState([]);
+  const [singleInfluencer, setSingleInfluencer] = useState([]);
   const { slug, id } = useParams();
   const location = useLocation();
   // console.log("id", location.state.id)
@@ -22,27 +29,28 @@ export default function Devdetails(props) {
     client
       .fetch(
         `*[slug.current == "${slug}"] {
-                name,
-                alias,
-                id,
-                slug,
-                telegram,
-                twitter,
-                github,
-                numProjects,
-                skills,
-                otherSkills,
-                experience,
-                image{
-                    asset -> {
-                        _id,
-                        url
-                    },
-                    alt
-                }
+            name,
+            alias,
+            id,
+            slug,
+            telegram,
+            instagram,
+            twitter,
+            avgPrice,
+            experience,
+            engagementRating,
+            roi,
+            numProjects,
+            image{
+                asset -> {
+                    _id,
+                    url
+                },
+                alt
+            }
       }`
       )
-      .then((data) => setSingleDev(data[0]));
+      .then((data) => setSingleInfluencer(data[0]));
     const init = async () => {
       await initInstance();
       await getProfile(id);
@@ -54,10 +62,10 @@ export default function Devdetails(props) {
     <div className="row justify-content-center">
       <div className="container-fluid text-start fs-6">
         <ul id="skills">
-          <li><b>Experience in DeFi:</b> {singleDev.experience}+ Months</li>
-          <li><b>Skills:</b> {singleDev.skills}</li>
-          <li><b>Other Skills:</b> {singleDev.otherSkills}</li>
-          <li><b>Number of Projects till date:</b> {singleDev.numProjects}</li>
+          <li><b>Return on Investment:</b> {singleInfluencer.roi}</li>
+          <li><b>Engagement Rating:</b> {singleInfluencer.engagementRating}</li>
+          <li><b>Experience:</b> {singleInfluencer.experience}+ Months</li>
+          <li><b>Average Cost:</b> ${singleInfluencer.avgPrice}</li>
         </ul>
       </div>
       

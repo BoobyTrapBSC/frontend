@@ -8,7 +8,6 @@ import {
   FaDiscord,
   FaInstagram,
 } from "react-icons/fa";
-import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { getTotoalProfile } from "./../Web3_connection/ContractMethods";
 import { initInstance } from "./../Web3_connection/web3_methods";

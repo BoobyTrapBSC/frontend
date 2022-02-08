@@ -1,20 +1,7 @@
 import React from 'react'
 import pattern from '../images/pattern_graphic.png'
 import trapsheet from '../whitepaper/trapSheet-v2.pdf'
-// const axios = require('axios');
-// const url = ''
 export default function Safedefi() {
-
-    // const APIfetch = () => {
-    //     axios.get(url)
-    //     .then(function (response) {
-    //         console.log(response);
-    //     })
-    //     .catch(function (error) {
-    //         // handle error
-    //         console.log(error);
-    //     })
-    // }
 
     return (
         <div id='safedefi-cont'>
