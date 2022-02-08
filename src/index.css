@@ -201,6 +201,10 @@ button:focus, button:active{
   #keyfeature-align{
     margin:0 !important;
   }
+  #keyfeatures-cont .row {
+    width: 90% !important;
+    margin: auto !important;
+  }
   .patternImg{
     width: 100% !important;
   }

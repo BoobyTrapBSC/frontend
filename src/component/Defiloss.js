@@ -1,5 +1,5 @@
 import React from 'react'
-import defibg from '../images/graphic_dashboard.png'
+import defibg from '../images/BoobyTrap Preview.png'
 
 export default function Defiloss() {
     return (

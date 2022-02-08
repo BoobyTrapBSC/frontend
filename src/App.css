@@ -156,6 +156,12 @@ body.active-modal {
   height: 165px;
   width: 330px;
 }
+#keyfeatures-cont .card img{
+  height: 140px;
+  margin-top: -15px;
+  max-width: 280px;
+  margin-left: 15px;
+}
 #keyfeatures-cont .card-title {
   font-size: 28px;
   text-align: left;
@@ -352,11 +358,6 @@ body.active-modal {
   max-width: 1440px;
   justify-content: space-between;
   margin: 100px auto 75px auto;
-}
-#team-cont .row .card{
-  background-color: #264B8C;
-  width: 18rem;
-  color: #fff;
 }
 
 /* FOOTER */

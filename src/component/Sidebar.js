@@ -14,7 +14,7 @@ export default function Sidebar() {
 
   const activeSidebar = (index) => {
     setSidebar(index);
-    console.log(index);
+    // console.log(index);
   };
   
   const [activeRange, setActiveRange] = useState(1);
