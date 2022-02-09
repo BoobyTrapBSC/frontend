@@ -1,13 +1,19 @@
-import { React, useState } from 'react'
+import { React, useState} from 'react'
 import Carousel from 'react-grid-carousel'
 
 export default function Mobmap() {
-
-        const [toggleMap, setToggleMap] = useState(1);
-        const toggleTab = (index) => {
-            setToggleMap(index)
-        }
-
+    
+    const [toggleMap, setToggleMap] = useState(1);
+    const toggleTab = (index) => {
+        setToggleMap(index)
+    }
+    
+    // useEffect(() => {
+    // const interval = setInterval(() => {
+    //     toggleTab((index) => index + 1);
+    // }, 5000);
+    //         return () => clearInterval(interval);
+    //     }, []);
     return (
         <div className='container-fluid mobmap-cont'>
             <div className="map-nav container mt-3 mb-2">

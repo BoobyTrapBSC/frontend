@@ -13,7 +13,7 @@ export default function Keyfeatures() {
 
                         <div className="card-body">
                             <p className="card-title">Vetted Projects</p>
-                            <p className="card-text">$BBT team of experienced DEVS will apply their expertise and post legit projects on our “Safe Heavens” Dashboard where investors can invest without having to worry about Rugpulls and Honeypots.</p>
+                            <p className="card-text">$BBT team of experienced DEVS will apply their expertise and post legit projects on our “Safe Haven” Dashboard where investors can invest without having to worry about Rugpulls and Honeypots.</p>
                         </div>
                     </div>
                 </div>

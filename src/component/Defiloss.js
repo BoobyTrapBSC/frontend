@@ -17,8 +17,8 @@ export default function Defiloss() {
             <div className="container-fluid secondary-cont px-0 pt-0" style={{ display: "flex", }}>
                 <div className="col">
                     <div className="defi-desc">
-                        <p>Safe Heaven</p>
-                        <p>Fear of fraud leads to most investors missing out on legit projects and thus unfulfilled dream of financial freedom. $BBT will bring legit projects on its “Safe Heavens” Dashboard and let investors benefit by investing in SAFU projects.</p>
+                        <p>Safe Haven</p>
+                        <p>Fear of fraud leads to most investors missing out on legit projects and thus unfulfilled dream of financial freedom. $BBT will bring legit projects on its “Safe Havens” Dashboard and let investors benefit by investing in SAFU projects.</p>
                     </div>
                     <div className="defi-desc">
                         <p>Booby Trap</p>

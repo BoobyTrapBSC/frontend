@@ -7,7 +7,10 @@ export default function Team() {
   return (
     <div id="team-cont" className="w-100">
       <div className="row">
-          <h2>TEAM</h2>
+        <div className="container mb-4">
+          <h2>Fully Doxxed &amp; KYC'ed team</h2>
+          <p>$BBT believes in keeping DeFi transparent, hence our team members have been KYC'ed with Dessert Finance</p>
+          <a href="#" className="btn button-blue" style={{maxWidth:"300px"}}>KYC Info</a></div>
         <div className="col-lg-3 my-2">
             <img src={gaurav} className="card-img-top" alt="Gaurav Monga, CEO" />
         </div>

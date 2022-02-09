@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import Mobmap from '../component/Mobmap';
 import trapsheet from '../whitepaper/trapSheet-v2.pdf'
 // import { FaCode, FaPencilAlt, FaEnvelope, FaChartLine } from "react-icons/fa";
@@ -9,7 +9,7 @@ export default function Roadmap() {
     return document.getElementsByClassName(name);
   }
   let tabPanes = document.getElementsByClassName("tab-head");
-
+  
   for(let i=0;i<tabPanes.length;i++){
     tabPanes[i].addEventListener("click",function(){
       _class("tab-header")[0].getElementsByClassName("active")[0].classList.remove("active");
@@ -18,7 +18,7 @@ export default function Roadmap() {
       _class("tab-content")[0].getElementsByTagName("div")[i].classList.add("active");
     });
   }
-
+  
   const handletab = (tab) => {
     setShow(tab);
   }
@@ -34,16 +34,16 @@ export default function Roadmap() {
         <div className="tabs">
           <div className="tab-header">
             <div className="tab-head active" onClick={() => handletab(1)}>
-              {/* <FaCode className='fa'/> */} Phase I
+              Phase I
             </div>
             <div className='tab-head' onClick={() => handletab(2)}>
-              {/* <FaPencilAlt className='fa'/> */} Phase II
+              Phase II
             </div>
             <div className='tab-head' onClick={() => handletab(3)}>
-              {/* <FaChartLine className='fa'/> */} Phase III
+              Phase III
             </div>
             <div className='tab-head' onClick={() => handletab(4)}>
-              {/* <FaEnvelope className='fa'/>*/} Phase IV 
+              Phase IV 
             </div>
           </div>
           <div className="tab-indicator"></div>
@@ -52,8 +52,6 @@ export default function Roadmap() {
             <div className="active">
              {show === 1 ?
              <>
-             {/* <FaCode className='fa'/> */}
-             {/* <h2>This is Roadmap 1</h2> */}
                 <h3 className='ongoing'>Pre-Launch (Dec 2021 - Feb 2022)</h3>
               <p>
                 <span className='ongoing'>• Private Sale to collect funds for development of platform & presale marketing<br/>• Beta Version of $BBT platform with "Safe Haven"</span> <br />• Presale Marketing and promotions <br />• Listing of 100+ Project Owners, Developers, Influencers/Promoters</p>
@@ -64,8 +62,6 @@ export default function Roadmap() {
             <div>
               {show === 2 ?
              <>
-             {/* <FaPencilAlt className='fa'/> */}
-              {/* <h2>This is Roadmap 2</h2> */}
               <h3>Post-Launch (Mar 2022)</h3>
               <p>
               • V1 of $BBT platform launch <br />• Listing of more Project Owners, Developers, Influencers/Promoters <br />• Post launch marketing campaign <br />• Major Listings & Tendings</p>
@@ -76,8 +72,6 @@ export default function Roadmap() {
             <div>
             {show === 3 ?
              <>
-              {/* <FaChartLine className='fa'/> */}
-              {/* <h2>This is Roadmap 3</h2> */}
               <h3>Insuring DEFI (Apr 2022)</h3>
               <p>
               • Launch of Insurance on blockchain for $BBT holders <br />• Marketing campaign for Insurance platform <br />• Partnerships with major Insurance players</p>
@@ -88,7 +82,6 @@ export default function Roadmap() {
             <div>
             {show === 4 ?
              <>
-              {/* <FaEnvelope className='fa'/> */}
               <h3>(Jun - Jul 2022)</h3>
               <p>• Launchpad for projects willing to list on $BBT platform<br/>• VC Funding and Presale platforms<br/>• NFT Marketplace to be launched in Metaverse<br/>• First Insurance provider in Metaverse</p>
               </>
