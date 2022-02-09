@@ -14,10 +14,10 @@ import { useParams } from "react-router-dom";
 import { addReview, getProfile } from "./../Web3_connection/ContractMethods";
 import { initInstance } from "./../Web3_connection/web3_methods";
 import Sidebar from "./Sidebar";
-import InfluencerDetails from "./InfluencerDetails";
+import PromoterDetails from "./PromoterDetails";
 
-export default function InfluencerProfile() {
-  const [singleInfluencer, setSingleInfluencer] = useState([]);
+export default function PromoterProfile() {
+  const [singlePromoter, setSinglePromoter] = useState([]);
   const [rating, setRating] = useState("SAFU (5 Start)");
   const { slug, id } = useParams();
   const notify = () =>
@@ -49,7 +49,7 @@ export default function InfluencerProfile() {
             }
       }`
       )
-      .then((data) => setSingleInfluencer(data[0]));
+      .then((data) => setSinglePromoter(data[0]));
     const init = async () => {
       await initInstance();
       await getprofile(id);
@@ -143,26 +143,26 @@ export default function InfluencerProfile() {
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="/safedefi/influencers">
+            <Breadcrumb.Item href="/safedefi/promoters">
               Safe DeFi
             </Breadcrumb.Item>
-            <Breadcrumb.Item active>{singleInfluencer.name}</Breadcrumb.Item>
+            <Breadcrumb.Item active>{singlePromoter.name}</Breadcrumb.Item>
           </Breadcrumb>
           <div className="col-lg-8">
             <div className="dev-main">
-              <h1>{singleInfluencer.name}</h1>
+              <h1>{singlePromoter.name}</h1>
               <div className="fs-6">
                 <span className="review-star fs-5"> {start()} </span> (
                 {countreview} Reviews)
               </div>
               <div>
-                <a href={singleInfluencer.telegram} target="_blank" rel="noreferrer" id="dev-social">
+                <a href={singlePromoter.telegram} target="_blank" rel="noreferrer" id="dev-social">
                   <FaTelegramPlane /> 
                 </a>
-                <a href={singleInfluencer.twitter} target="_blank" rel="noreferrer" id="dev-social">
+                <a href={singlePromoter.twitter} target="_blank" rel="noreferrer" id="dev-social">
                    <FaTwitter /> 
                 </a>
-                <a href={singleInfluencer.instagram} target="_blank" rel="noreferrer" id="dev-social">
+                <a href={singlePromoter.instagram} target="_blank" rel="noreferrer" id="dev-social">
                   <FaInstagram />
                 </a>
               </div>
@@ -176,11 +176,11 @@ export default function InfluencerProfile() {
           </div>
 
           <div className="col-lg-2">
-            {singleInfluencer.image && singleInfluencer.image.asset && (
+            {singlePromoter.image && singlePromoter.image.asset && (
               <img
                 className="profileImg"
-                src={singleInfluencer.image.asset.url}
-                alt={singleInfluencer.name}
+                src={singlePromoter.image.asset.url}
+                alt={singlePromoter.name}
               />
             )}
           </div>
@@ -228,7 +228,7 @@ export default function InfluencerProfile() {
           <Sidebar/>
         </div>
         <div className="content col">
-          <InfluencerDetails />
+          <PromoterDetails />
         </div>
       </div>
     </div>

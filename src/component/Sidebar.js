@@ -43,7 +43,7 @@ export default function Sidebar() {
               </li>
               <li className="nav-item">
                 <Link
-                  className={window.location.pathname.includes("safuprojects") === true || sidebar === 0 ? "nav-link active" : "nav-link"} to="/safedefi/safuprojects" onClick={() => activeSidebar(0)}
+                  className={window.location.pathname.includes("ongoingprojects") === true || sidebar === 2 ? "nav-link active" : "nav-link"} to="/safedefi/ongoingprojects" onClick={() => activeSidebar(2)}
                 >
                   <GiSandsOfTime /> Ongoing Projects
                 </Link>
@@ -103,7 +103,7 @@ export default function Sidebar() {
                   onClick={() => activePoints(2)}
                   to="/safedefi"
                 >
-                  <AiFillRightCircle /> 0-2 Trap Points
+                  <AiFillRightCircle /> 1-2 Trap Points
                 </Link>
               </li>
               <li className="nav-item">

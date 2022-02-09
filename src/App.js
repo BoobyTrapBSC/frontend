@@ -17,8 +17,10 @@ import Safecards from './component/Safecards';
 import Projectpage from './component/Projectpage';
 import UpcomingCards from './component/upcomingCards';
 import Devprofile from './component/Devprofile';
-import SidebarSlide from './component/SidebarSlide';
 import InfluencerProfile from './component/InfluencerProfile';
+import PromoterProfile from './component/PromoterProfile';
+import Ongoingcards from './component/Ongoingcards';
+import Ongoingpage from './component/Ongoingpage';
 
 
 function App() {
@@ -38,11 +40,14 @@ function App() {
             <Route path="promoters" element={<Promoters />} />
             <Route path="safuprojects" element={<Safecards/>}/>
             <Route path="upcomingprojects" element={<UpcomingCards/>}/>
+            <Route path="ongoingprojects" element={<Ongoingcards/>}/>
           </Route>
           <Route path="/safedefi/projectowner/:slug/:id/" element={<Ownerprofile />}/>
           <Route path="/safedefi/developers/:slug/:id/" element={<Devprofile />}/>
           <Route path="/safedefi/influencers/:slug/:id/" element={<InfluencerProfile/>}/>
+          <Route path="/safedefi/promoters/:slug/:id/" element={<PromoterProfile/>}/>
           <Route path="/safedefi/safuprojects/:slug/" element={<Projectpage/>}/>
+          <Route path="/safedefi/ongoingprojects/:slug/:id" element={<Ongoingpage/>}/>
           <Route path="*" element={<Page404/>} />
             {/* <Route></Route>
           </Route> */}
