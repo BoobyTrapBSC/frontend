@@ -19,12 +19,13 @@ export default function Ongoingcards() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type=="lprojects"] {
+        `*[_type=="lprojects"] | order(trappoints asc) {
               name,
               id,
               tracker,
               slug,
               contract,
+              trappoints,
               owner,
               marketingStatus,
               telegram,
@@ -57,6 +58,7 @@ export default function Ongoingcards() {
     };
     getData();
   }, []);
+  console.log(project)
   console.log("Total profile", CountProfile);
 
   // RENDER PROJECTS
@@ -127,6 +129,7 @@ export default function Ongoingcards() {
               <FaInstagram />
             </a>
           </div>
+          
           {/* RIBBON CONTAINER FOR NEWLY LAUNCHED PROJECTS */}
           <div id="ribbon-container" style={project.newlyLaunched === true ? { display: "block" } : { display: "none" }}>
             <span id="ribbon">
@@ -141,15 +144,8 @@ export default function Ongoingcards() {
         </div>
         <div id="projectDesc">
           <br />
-          <p className="mb-0">Trap Points</p>
+          <p className="mb-0">{project.trappoints}Trap Points</p>
           <p className="mb-0">{project.comStrength}k+ Community Strength</p>
-          {/* <p className="mb-0" style={{ color: "#FCB040", fontSize: "18px" }}>
-            <BsStarFill />
-            <BsStarFill />
-            <BsStarFill />
-            <BsStarFill />
-            <BsStarHalf />
-          </p> */}
           <BlockContent
             blocks={project.description}
             projectId="lfyw4jna"

@@ -13,7 +13,7 @@ export default function Keyfeatures() {
 
                         <div className="card-body">
                             <p className="card-title">Vetted Projects</p>
-                            <p className="card-text">$BBT team of experienced DEVS will apply their expertise and post legit projects on our “Safe Haven” Dashboard where investors can invest without having to worry about Rugpulls and Honeypots.</p>
+                            <p className="card-text text-start">$BBT team of experienced DEVS will apply their expertise and post legit projects on our “Safe Haven” Dashboard where investors can invest without having to worry about Rugpulls and Honeypots.</p>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ export default function Keyfeatures() {
 
                         <div className="card-body">
                             <p className="card-title">Diamond Hodlers</p>
-                            <p className="card-text">The $BBT Hodlers will benefit the most as community. They would be the first to know about upcoming PROMISING and SAFU projects on BSC.</p>
+                            <p className="card-text text-start">The $BBT Hodlers will benefit the most as community. They would be the first to know about upcoming PROMISING and SAFU projects on BSC.</p>
                         </div>
                     </div>
                 </div>
@@ -95,9 +95,9 @@ export default function Keyfeatures() {
                     <div className="card flex-column border-0">
                         <img src={scam} alt='' style={{marginTop:"0"}}/>
 
-                        <div className="card-body">
+                        <div className="card-body" style={{marginTop:"-15px"}}>
                             <p className="card-title">Scammers Booby-Trapped</p>
-                            <p className="card-text">Our “BOOBY-TRAP” Dashboard will list all potential scams (Rugpulls & Honeypots) to help our community stay away from Frauds on DEFI.</p>
+                            <p className="card-text text-start">Our “BOOBY-TRAP” Dashboard will list all potential scams (Rugpulls & Honeypots) to help our community stay away from Frauds on DEFI.</p>
                         </div>
                     </div>
                 </div>

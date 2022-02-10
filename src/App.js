@@ -22,7 +22,6 @@ import PromoterProfile from './component/PromoterProfile';
 import Ongoingcards from './component/Ongoingcards';
 import Ongoingpage from './component/Ongoingpage';
 
-
 function App() {
 
   return (

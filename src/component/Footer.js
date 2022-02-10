@@ -11,7 +11,7 @@ export default function Footer() {
             Let's make DeFi a safer place together.
           </h2>
           <p className="text-muted">
-            Our Safe Heavens and Booby Trap dashboards help you make smart choices and achieve your dream of financial freedom.
+            Our Safe Haven and Booby Trap dashboards help you make smart choices and achieve your dream of financial freedom.
           </p>
           <div className="social">
             <a href="https://t.me/boobytrapbsc">

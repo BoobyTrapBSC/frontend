@@ -217,6 +217,10 @@ button:focus, button:active{
   #safedefi-cont p{
     width: 100% !important;
   }
+  .safepage-listing{
+    padding-left: 25px !important;
+    justify-content: start !important;
+  }
   .hero-search .search{
     width: 120px !important;
   }

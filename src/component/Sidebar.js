@@ -10,6 +10,8 @@ import {
 import {Link} from 'react-router-dom'
 
 export default function Sidebar() {
+
+  /*Set Active Sidebar*/
     const [sidebar, setSidebar] = useState(1);
 
   const activeSidebar = (index) => {
@@ -19,9 +21,11 @@ export default function Sidebar() {
   
   const [activeRange, setActiveRange] = useState(1);
 
+  
+  /* Filter Trap Points */
+  const arr = [1,2,3,4,5,6,7,8,9,10]
   const activePoints = (index) => {
-    setActiveRange(index);
-    console.log(index);
+    return setActiveRange(index)
   };
 
   return <div>
@@ -92,7 +96,7 @@ export default function Sidebar() {
                 <Link
                   className={activeRange === 1 ? "nav-link active" : "nav-link"}
                   onClick={() => activePoints(1)}
-                  to="/safedefi"
+                  to={`/${window.location.pathname}`}
                 >
                   <AiFillRightCircle /> 0 Trap Points
                 </Link>
@@ -101,7 +105,7 @@ export default function Sidebar() {
                 <Link
                   className={activeRange === 2 ? "nav-link active" : "nav-link"}
                   onClick={() => activePoints(2)}
-                  to="/safedefi"
+                  to={`/${window.location.pathname}`}
                 >
                   <AiFillRightCircle /> 1-2 Trap Points
                 </Link>
@@ -110,7 +114,7 @@ export default function Sidebar() {
                 <Link
                   className={activeRange === 3 ? "nav-link active" : "nav-link"}
                   onClick={() => activePoints(3)}
-                  to="/safedefi"
+                  to={`/${window.location.pathname}`}
                 >
                   <AiFillRightCircle /> 3-5 Trap Points
                 </Link>
@@ -119,7 +123,7 @@ export default function Sidebar() {
                 <Link
                   className={activeRange === 4 ? "nav-link active" : "nav-link"}
                   onClick={() => activePoints(4)}
-                  to="/safedefi"
+                  to={`/${window.location.pathname}`}
                 >
                   <AiFillRightCircle /> 6-8 Trap Points
                 </Link>
@@ -128,7 +132,7 @@ export default function Sidebar() {
                 <Link
                   className={activeRange === 5 ? "nav-link active" : "nav-link"}
                   onClick={() => activePoints(5)}
-                  to="/safedefi"
+                  to={`/${window.location.pathname}`}
                 >
                   <AiFillRightCircle /> 10 Trap Points
                 </Link>

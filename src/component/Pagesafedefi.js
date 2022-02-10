@@ -8,6 +8,17 @@ import Sidebar from "./Sidebar";
 
 export default function Pagesafedefi() {
 
+  const toggleSort = (e) => {
+    const checked = e.target.checked;
+    if (checked) {
+    //  checked
+    console.log("Checked")
+    } else {
+    console.log("unhecked")
+    //  unchecked
+    }
+  };
+
   return (
     <div id="pagesafe-cont">
       <div className="safe-head py-3 position-relative container-fluid">
@@ -35,58 +46,9 @@ export default function Pagesafedefi() {
       <div className="safe-content row w-100 mt-3">
         <div className={`sidebar col-lg-3`}>
           <Sidebar/>
-          {/* <div className="filter-points p-3 mt-4 rounded">
-            <ul className="nav flex-column">
-              <li className="nav-item">
-                <Link
-                  className={activeRange === 1 ? "nav-link active" : "nav-link"}
-                  onClick={() => activePoints(1)}
-                  to="/safedefi"
-                >
-                  <AiFillRightCircle /> 0 Trap Points
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={activeRange === 2 ? "nav-link active" : "nav-link"}
-                  onClick={() => activePoints(2)}
-                  to="/safedefi"
-                >
-                  <AiFillRightCircle /> 0-2 Trap Points
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={activeRange === 3 ? "nav-link active" : "nav-link"}
-                  onClick={() => activePoints(3)}
-                  to="/safedefi"
-                >
-                  <AiFillRightCircle /> 3-5 Trap Points
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={activeRange === 4 ? "nav-link active" : "nav-link"}
-                  onClick={() => activePoints(4)}
-                  to="/safedefi"
-                >
-                  <AiFillRightCircle /> 6-8 Trap Points
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={activeRange === 5 ? "nav-link active" : "nav-link"}
-                  onClick={() => activePoints(5)}
-                  to="/safedefi"
-                >
-                  <AiFillRightCircle /> 10 Trap Points
-                </Link>
-              </li>
-            </ul>
-          </div> */}
         </div>
         <div className="content col position-relative">
-          <div className="sort mb-3 d-flex text-start">
+          {/* <div className="sort mb-3 d-flex text-start">
             <p>Sort by:</p>
             <div className="form-check mx-2 form-switch">
               <label
@@ -99,7 +61,7 @@ export default function Pagesafedefi() {
                 className="form-check-input"
                 type="checkbox"
                 role="switch"
-                id="flexSwitchCheckDefault"
+                id="flexSwitchCheckDefault" onClick={(e)=>{toggleSort(e)}}
               />{" "}
               |
             </div>
@@ -117,9 +79,10 @@ export default function Pagesafedefi() {
                 id="flexSwitchCheckDefault"
               />
             </div>
-          </div>
+          </div> */}
+          <div className="d-flex justify-content-end px-5 safepage-listing">
           <button
-            className="btn button-blue dropdown-toggle safepage-listing"
+            className="btn button-blue dropdown-toggle"
             type="button"
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
@@ -159,6 +122,7 @@ export default function Pagesafedefi() {
               </a>
             </li>
           </ul>
+          </div>
           <Outlet />
         </div>
       </div>

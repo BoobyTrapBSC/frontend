@@ -446,11 +446,6 @@ body.active-modal {
 .filter-points .active {
   color: #264b8c;
 }
-.safepage-listing{
-  position: absolute;
-  top: 0;
-  right: 3%;
-}
 
 /* SIDEBAR SLIDER */
 .bm-item {
