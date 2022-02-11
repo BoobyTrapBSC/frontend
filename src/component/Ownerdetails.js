@@ -111,7 +111,7 @@ export default function Ownerdetails(props) {
       >
         Upcoming Projects
       </h3>
-              {/* <h2 style={singleOwner.uprojects.length == undefined ? { display: "block" } : { display: "none" }}>No Data Available</h2> */}
+      <h2 style={Array.isArray(singleOwner.uprojects) && singleOwner.uprojects.length === 0? {display:"block"} : {display:"none"}}>No Data Available</h2>
       <div className="row justify-content-evenly mb-4">
         {singleOwner.uprojects &&
           singleOwner.uprojects.map((upcoming, index) => {
@@ -211,7 +211,8 @@ export default function Ownerdetails(props) {
       >
         Previous Projects
       </h3>
-              {/* <h2 style={singleOwner.lprojects.length == 0 ? console.log() : console.log("1 or more")}>No Data Available</h2> */}
+      <h2 style={Array.isArray(singleOwner.lprojects) && singleOwner.lprojects.length === 0? {display:"block"} : {display:"none"}}>No Data Available</h2>
+
       <div className="row justify-content-evenly">
         {singleOwner.lprojects &&
           singleOwner.lprojects.map((launched, index) => {
