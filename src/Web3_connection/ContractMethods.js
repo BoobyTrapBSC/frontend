@@ -6,7 +6,7 @@ import { getWeb3 } from "./web3";
 
 
 export const getRATEContract = async() => {
-    const betContract = getContract(ABI, envprod.React_App_Testnet);
+    const betContract = getContract(ABI, envprod.React_App_MAINNET);
     return betContract;
 }
 
