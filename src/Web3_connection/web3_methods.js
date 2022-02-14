@@ -20,7 +20,7 @@ export const loginProcess = async () => {
     try {
         const chainId = await web3Instance.eth.getChainId();
         if(chainId !== envprod.React_App_chain_Id){
-            alert("Please Switch to BSC Testnet")
+            alert("Please Switch to BSC Mainnet")
         }
     }
     catch (err) {
