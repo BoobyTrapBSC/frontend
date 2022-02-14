@@ -19,7 +19,7 @@ export default function Safecards() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type=="lprojects"] {
+        `*[_type=="lprojects" && trappoints == 0] {
               name,
               tracker,
               slug,
@@ -31,6 +31,7 @@ export default function Safecards() {
               website,
               facebook,
               discord,
+              trappoints,
               instagram,
               other,
               tgOwner,
