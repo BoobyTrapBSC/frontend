@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Carousel from 'react-grid-carousel'
 import cake from '../images/cake.svg'
 import { BiUserCircle } from 'react-icons/bi'
 import Slider from "react-slick";
+import client from '../client';
 
 export default function CarouselHome() {
+
+    // const [safuOwner, setSafuOwner] = useState([])
+
+    // useEffect(()=>{
+    //     client.fetch(
+    //         `*[_type == "owners"] {
+    //             name,
+    //             alias,
+    //             trapPoints,
+    //             image{
+    //                 asset -> {
+    //                     _id,
+    //                     url
+    //                 }
+    //             }
+    //         }`
+    //     ).then((data) => setSafuOwner(data)).catch(console.error)
+    //     console.log(safuOwner)
+    // }, []);
 
     return (
         <div id="carousel-container">
