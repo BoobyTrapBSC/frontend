@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import client from "../client";
 import { initInstance } from './../Web3_connection/web3_methods'
-import { addReview, getProfile } from "./../Web3_connection/ContractMethods"
-import { Link, useParams, useLocation } from "react-router-dom";
+import {getProfile } from "./../Web3_connection/ContractMethods"
+import {useParams, useLocation } from "react-router-dom";
 
 export default function PromoterDetails() {
   // console.log("id", location.state.id)

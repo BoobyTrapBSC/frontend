@@ -304,7 +304,7 @@ export default function Ownerdetails(props) {
             dataset="production"
           />
                 </div>
-                <Link className="btn shadow-sm" to={{ pathname: `/safedefi/safuprojects/${launched.slug.current}`}}>
+                <Link className="btn shadow-sm" to={{ pathname: `/safehaven/safuprojects/${launched.slug.current}`}}>
                   Details
                 </Link>
               </div>

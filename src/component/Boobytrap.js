@@ -10,21 +10,21 @@ import {
 import { Link } from "react-router-dom";
 import { getTotoalProfile } from "./../Web3_connection/ContractMethods";
 import { initInstance } from "./../Web3_connection/web3_methods";
+import probably from '../images/probably.png'
+import scam from '../images/scam.png'
 
-export default function Ongoingcards() {
+export default function Boobytrap() {
   const [project, setProject] = useState([]);
   const [CountProfile, setProfileCount] = useState();
 
   useEffect(() => {
     client
       .fetch(
-        `*[_type=="lprojects"] | order(trappoints asc) {
+        `*[_type=="lprojects" && trappoints > 5] {
               name,
-              id,
               tracker,
               slug,
               contract,
-              trappoints,
               owner,
               marketingStatus,
               telegram,
@@ -32,6 +32,7 @@ export default function Ongoingcards() {
               website,
               facebook,
               discord,
+              trappoints,
               instagram,
               other,
               tgOwner,
@@ -57,14 +58,13 @@ export default function Ongoingcards() {
     };
     getData();
   }, []);
-  console.log(project)
-  console.log("Total profile", CountProfile);
+  console.log(project);
 
   // RENDER PROJECTS
   const renderProjects = (project, index) => {
     return (
       <div
-        className="projectCard mx-2 my-4 col-md-3 px-1 py-2 shadow"
+        className="projectCard mx-2 my-4 col-md-3 px-1 py-2 pb-3 shadow"
         key={index}
       >
         <div id="projectHead" className="d-flex justify-content-between">
@@ -128,12 +128,12 @@ export default function Ongoingcards() {
               <FaInstagram />
             </a>
           </div>
-          
           {/* RIBBON CONTAINER FOR NEWLY LAUNCHED PROJECTS */}
-          <div id="ribbon-container" style={project.newlyLaunched === true ? { display: "block" } : { display: "none" }}>
-            <span id="ribbon">
-              New
-            </span>
+          <div id="bbt-ribbon-container" style={project.trappoints < 9 ? { display: "block" } : { display: "none" }}>
+            <img src={probably} alt="" />
+          </div>
+          <div id="bbt-ribbon-container" style={project.trappoints >= 9 ? { display: "block" } : { display: "none" }}>
+            <img src={scam} alt="" />
           </div>
           <img
             className="shadow bg-light"
@@ -149,7 +149,7 @@ export default function Ongoingcards() {
         </div>
         <Link
           className="btn shadow-sm"
-          to={{ pathname: `/safehaven/ongoingprojects/${project.slug.current}/${project.id}`, state:{id:project.id} }}
+          to={{ pathname: `/safehaven/boobytrap/${project.slug.current}/${project.id}`, state:{id:project.id}}}
         >
           Details
         </Link>

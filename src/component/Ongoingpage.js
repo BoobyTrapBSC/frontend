@@ -75,7 +75,7 @@ export default function Ongoingpage() {
                 <div className="head-content row">
                     <Breadcrumb><AiFillLeftCircle size={25} color="#fff" />
                         <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-                        <Breadcrumb.Item href="/safedefi/safuprojects">
+                        <Breadcrumb.Item href="/safehaven/safuprojects">
                             Safe DeFi
                         </Breadcrumb.Item>
                         <Breadcrumb.Item active>{singleProject.name}</Breadcrumb.Item>

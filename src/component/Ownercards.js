@@ -38,8 +38,8 @@ export default function Ownercards() {
                 <div id="dev-name" className='mb-0 lh-sm'>{owner.name}</div>
                 <div id="alias" className='lh-sm'>{owner.alias}</div>
                 <div id="social-dev"><Link to="/"><FaTelegramPlane size={25} fill={"#fff"}/></Link> &nbsp;<Link to="/"><FaTwitter size={25} fill={"#fff"}/></Link></div>
-                <Link className="btn shadow-sm" to={{pathname:`/safedefi/projectowner/${owner.slug.current}/${owner.id}`, state:{id:owner.id[index]}}}>Projects</Link>
-                {/* <Link className="btn shadow-sm" to={`/safedefi/projectowner/${owner.slug.current}`} >Projects</Link> */}
+                <Link className="btn shadow-sm" to={{pathname:`/safehaven/projectowner/${owner.slug.current}/${owner.id}`, state:{id:owner.id[index]}}}>Projects</Link>
+                {/* <Link className="btn shadow-sm" to={`/safehaven/projectowner/${owner.slug.current}`} >Projects</Link> */}
             </div>
         )
     }

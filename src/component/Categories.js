@@ -11,7 +11,7 @@ export default function Categories() {
         <div className="col-md-6 mt-3 d-flex justify-content-around">
           <div className="cat-card">
             <Link
-              to="/safedefi/projectowner"
+              to="/safehaven/projectowner"
               style={{
                 fontSize: "16px",
                 fontWeight: "500",
@@ -24,7 +24,7 @@ export default function Categories() {
           </div>
           <div className="cat-card">
             <Link
-              to="/safedefi/developers"
+              to="/safehaven/developers"
               style={{
                 fontSize: "16px",
                 fontWeight: "500",
@@ -39,7 +39,7 @@ export default function Categories() {
         <div className="col-md-6 d-flex mt-3 justify-content-around">
           <div className="cat-card">
             <Link
-              to="/safedefi/influencers"
+              to="/safehaven/influencers"
               style={{
                 fontSize: "16px",
                 fontWeight: "500",
@@ -52,7 +52,7 @@ export default function Categories() {
           </div>
           <div className="cat-card">
             <Link
-              to="/safedefi/promoters"
+              to="/safehaven/promoters"
               style={{
                 fontSize: "16px",
                 fontWeight: "500",

@@ -160,7 +160,7 @@ export default function Ownerprofile() {
                 <div className="head-content row">
                     <Breadcrumb><AiFillLeftCircle size={25} color="#fff" />
                         <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-                        <Breadcrumb.Item href="/safedefi/projectowner">
+                        <Breadcrumb.Item href="/safehaven/projectowner">
                             Safe DeFi
                         </Breadcrumb.Item>
                         <Breadcrumb.Item active>Profile</Breadcrumb.Item>

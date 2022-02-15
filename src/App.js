@@ -6,7 +6,7 @@ import Navbar from './component/Navbar';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './component/Home';
-import Pagesafedefi from './component/Pagesafedefi';
+import Pagesafehaven from './component/Pagesafehaven';
 import Ownercards from './component/Ownercards';
 import Promoters from './component/Promoters';
 import Influencers from './component/Influencers';
@@ -21,6 +21,7 @@ import InfluencerProfile from './component/InfluencerProfile';
 import PromoterProfile from './component/PromoterProfile';
 import Ongoingcards from './component/Ongoingcards';
 import Ongoingpage from './component/Ongoingpage';
+import Boobytrap from './component/Boobytrap';
 
 function App() {
 
@@ -32,24 +33,25 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="faqs" element={<Faqs />} />
-          <Route path="safedefi" element={<Pagesafedefi />} >
+          <Route path="safehaven" element={<Pagesafehaven />} >
             <Route path="projectowner" element={<Ownercards />} />
             <Route path="influencers" element={<Influencers />} />
             <Route path="developers" element={<Devcards />} />
             <Route path="promoters" element={<Promoters />} />
             <Route path="safuprojects" element={<Safecards/>}/>
+            <Route path="boobytrap" element={<Boobytrap/>}/>
             <Route path="upcomingprojects" element={<UpcomingCards/>}/>
             <Route path="ongoingprojects" element={<Ongoingcards/>}/>
           </Route>
-          <Route path="/safedefi/projectowner/:slug/:id/" element={<Ownerprofile />}/>
-          <Route path="/safedefi/developers/:slug/:id/" element={<Devprofile />}/>
-          <Route path="/safedefi/influencers/:slug/:id/" element={<InfluencerProfile/>}/>
-          <Route path="/safedefi/promoters/:slug/:id/" element={<PromoterProfile/>}/>
-          <Route path="/safedefi/safuprojects/:slug/" element={<Projectpage/>}/>
-          <Route path="/safedefi/ongoingprojects/:slug/:id" element={<Ongoingpage/>}/>
+          <Route path="/safehaven/projectowner/:slug/:id/" element={<Ownerprofile />}/>
+          <Route path="/safehaven/developers/:slug/:id/" element={<Devprofile />}/>
+          <Route path="/safehaven/influencers/:slug/:id/" element={<InfluencerProfile/>}/>
+          <Route path="/safehaven/promoters/:slug/:id/" element={<PromoterProfile/>}/>
+          <Route path="/safehaven/safuprojects/:slug/:id" element={<Projectpage/>}/>
+          <Route path="/safehaven/ongoingprojects/:slug/:id" element={<Ongoingpage/>}/>
+          <Route path="/safehaven/upcomingprojects/:slug/:id" element={<Projectpage/>}/>
+          <Route path="/safehaven/boobytrap/:slug/:id" element={<Projectpage/>}/>
           <Route path="*" element={<Page404/>} />
-            {/* <Route></Route>
-          </Route> */}
         </Routes>
         <Footer />
       </Router>

@@ -41,7 +41,7 @@ export default function Devcards() {
                 <div className="skills">Skills: {dev.skills}</div>
                 <div className="rate">Avg Cost: ${dev.avgPrice}</div>
                 <div id="social-dev"><Link to="/"><FaTelegramPlane size={25} fill={"#fff"}/></Link> &nbsp;<Link to="/"><FaTwitter size={25} fill={"#fff"}/></Link></div>
-                <Link className="btn shadow-sm" to={{pathname:`/safedefi/developers/${dev.slug.current}/${dev.id}`, state:{id:dev.id}}}>Details</Link>
+                <Link className="btn shadow-sm" to={{pathname:`/safehaven/developers/${dev.slug.current}/${dev.id}`, state:{id:dev.id}}}>Details</Link>
             </div>
         )
     }

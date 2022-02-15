@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { FaBusinessTime, FaLaptopCode, FaCode } from "react-icons/fa";
-import {AiFillSafetyCertificate, AiFillRightCircle} from "react-icons/ai";
+import {AiFillSafetyCertificate} from "react-icons/ai";
 import {
   GiChart,
   GiChessKing,
   GiSandsOfTime,
   GiProgression,
 } from "react-icons/gi";
+import {MdDangerous} from 'react-icons/md'
 import {Link} from 'react-router-dom'
 
 export default function Sidebar() {
@@ -18,71 +19,69 @@ export default function Sidebar() {
     setSidebar(index);
     // console.log(index);
   };
-  
-  const [activeRange, setActiveRange] = useState(1);
-
-  
-  /* Filter Trap Points */
-  const arr = [1,2,3,4,5,6,7,8,9,10]
-  const activePoints = (index) => {
-    return setActiveRange(index)
-  };
 
   return <div>
       <div className="side-categories p-3 rounded">
             <ul className="nav flex-column">
               <li className="nav-item">
                 <Link
-                  className={window.location.pathname.includes("safuprojects") === true || sidebar === 0 ? "nav-link active" : "nav-link"} to="/safedefi/safuprojects" onClick={() => activeSidebar(0)}
+                  className={window.location.pathname.includes("safuprojects") === true || sidebar === 0 ? "nav-link active" : "nav-link"} to="/safehaven/safuprojects" onClick={() => activeSidebar(0)}
                 >
                   <AiFillSafetyCertificate /> Safu Projects
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  className={window.location.pathname.includes("upcomingprojects") === true ? "nav-link active" : "nav-link"} to="/safedefi/upcomingprojects" onClick={() => activeSidebar(1)}
+                  className={window.location.pathname.includes("upcomingprojects") === true ? "nav-link active" : "nav-link"} to="/safehaven/upcomingprojects" onClick={() => activeSidebar(1)}
                 >
                   <GiProgression /> Upcoming Projects
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  className={window.location.pathname.includes("ongoingprojects") === true || sidebar === 2 ? "nav-link active" : "nav-link"} to="/safedefi/ongoingprojects" onClick={() => activeSidebar(2)}
+                  className={window.location.pathname.includes("ongoingprojects") === true || sidebar === 2 ? "nav-link active" : "nav-link"} to="/safehaven/ongoingprojects" onClick={() => activeSidebar(2)}
                 >
                   <GiSandsOfTime /> Ongoing Projects
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  className={window.location.pathname.includes("projectowner") === true ? "nav-link active" : "nav-link"} to="/safedefi/projectowner" onClick={() => activeSidebar(3)}
+                  className={window.location.pathname.includes("boobytrap") === true || sidebar === 8 ? "nav-link active" : "nav-link"} to="/safehaven/boobytrap" onClick={() => activeSidebar(8)}
+                >
+                  <MdDangerous /> Booby Trap
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className={window.location.pathname.includes("projectowner") === true ? "nav-link active" : "nav-link"} to="/safehaven/projectowner" onClick={() => activeSidebar(3)}
                 >
                   <FaBusinessTime /> Project Owners
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  className={window.location.pathname.includes("developers") === true ? "nav-link active" : "nav-link"} to="/safedefi/developers" onClick={() => activeSidebar(4)}
+                  className={window.location.pathname.includes("developers") === true ? "nav-link active" : "nav-link"} to="/safehaven/developers" onClick={() => activeSidebar(4)}
                 >
                   <FaLaptopCode /> Developers
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  className={window.location.pathname.includes("influencers") === true ? "nav-link active" : "nav-link"} to="/safedefi/influencers" onClick={() => activeSidebar(5)}
+                  className={window.location.pathname.includes("influencers") === true ? "nav-link active" : "nav-link"} to="/safehaven/influencers" onClick={() => activeSidebar(5)}
                 >
                   <GiChessKing /> Influencers
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  className={window.location.pathname.includes("promoters") === true ? "nav-link active" : "nav-link"} to="/safedefi/promoters" onClick={() => activeSidebar(6)}
+                  className={window.location.pathname.includes("promoters") === true ? "nav-link active" : "nav-link"} to="/safehaven/promoters" onClick={() => activeSidebar(6)}
                 >
                   <GiChart /> AMA/Call Channels
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  className={window.location.pathname.includes("influencers") === true ? "nav-link active" : "nav-link"} to="/safedefi/promoters" onClick={() => activeSidebar(7)}
+                  className={window.location.pathname.includes("influencers") === true ? "nav-link active" : "nav-link"} to="/safehaven/promoters" onClick={() => activeSidebar(7)}
                 >
                   <FaCode /> Other Services
                 </Link>
@@ -90,7 +89,7 @@ export default function Sidebar() {
             </ul>
           </div>
 
-          <div className="filter-points p-3 mt-4 rounded">
+          {/* <div className="filter-points p-3 mt-4 rounded">
             <ul className="nav flex-column">
               <li className="nav-item">
                 <Link
@@ -138,6 +137,6 @@ export default function Sidebar() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
   </div>;
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 body {
   margin: 0;
   font-family: Euclid Circular A;
@@ -111,7 +113,8 @@ button:focus, button:active{
   #team-cont .row{
     width: 90% !important;
   }
-  #team-cont .row .card{
+  #team-cont .row .col-lg-3{
+    max-width: 18rem;
     margin: auto;
   }
   .footer-main{
@@ -211,10 +214,10 @@ button:focus, button:active{
 .roadmap-content h2 {
   width: 90% !important;
 }
-  #safedefi-cont{
+  #safehaven-cont{
     text-align: start !important;
   }
-  #safedefi-cont p{
+  #safehaven-cont p{
     width: 100% !important;
   }
   .safepage-listing{

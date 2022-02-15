@@ -40,7 +40,7 @@ export default function Influencers() {
                 <div className="rate">Avg Price: ${influencer.avgPrice}</div>
                 <div id="social-dev"><a href={influencer.telegram}><FaTelegramPlane size={25} fill={"#fff"}/></a> &nbsp;<a href={influencer.twitter}><FaTwitter size={25} fill={"#fff"}/></a>&nbsp;<a href={influencer.instagram}><FaInstagram size={25} fill={"#fff"}/></a></div>
                 <br />
-                <Link className="btn shadow-sm" to={{pathname:`/safedefi/influencers/${influencer.slug.current}/${influencer.id}`, state:{id:influencer.id}}}>Details</Link>
+                <Link className="btn shadow-sm" to={{pathname:`/safehaven/influencers/${influencer.slug.current}/${influencer.id}`, state:{id:influencer.id}}}>Details</Link>
             </div>
         )
     }

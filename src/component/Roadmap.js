@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import Mobmap from '../component/Mobmap';
 import trapsheet from '../whitepaper/trapSheet-v2.pdf'
 // import { FaCode, FaPencilAlt, FaEnvelope, FaChartLine } from "react-icons/fa";

@@ -143,7 +143,7 @@ export default function InfluencerProfile() {
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="/safedefi/influencers">
+            <Breadcrumb.Item href="/safehaven/influencers">
               Safe DeFi
             </Breadcrumb.Item>
             <Breadcrumb.Item active>{singleInfluencer.name}</Breadcrumb.Item>

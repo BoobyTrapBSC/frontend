@@ -40,7 +40,7 @@ export default function Promoters() {
                 <div className="rate">Avg Price: ${promoter.avgCost}</div>
                 <div id="social-dev"><a href={promoter.telegram}><FaTelegramPlane size={25} fill={"#fff"}/></a> &nbsp;<a href={promoter.twitter}><FaTwitter size={25} fill={"#fff"}/></a>&nbsp;<a href={promoter.instagram}><FaInstagram size={25} fill={"#fff"}/></a></div>
                 <br />
-                <Link className="btn shadow-sm" to={{pathname:`/safedefi/promoters/${promoter.slug.current}/${promoter.id}`, state:{id:promoter.id}}}>Details</Link>
+                <Link className="btn shadow-sm" to={{pathname:`/safehaven/promoters/${promoter.slug.current}/${promoter.id}`, state:{id:promoter.id}}}>Details</Link>
             </div>
         )
     }

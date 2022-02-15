@@ -46,7 +46,7 @@ export default function Navbar() {
                                 <Link className="nav-link" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/safedefi/safuprojects">Safe DeFi</Link>
+                                <Link className="nav-link" to="/safehaven/safuprojects">Safe Haven</Link>
                             </li>
                             <li className="nav-item">
                                 <a href={trapsheetpdf} target="_blank" rel="noreferrer" className="nav-link">Trapsheet</a>
@@ -57,10 +57,6 @@ export default function Navbar() {
                         <p className='btn btn-outline-dark m-1'>Reward Balance: {tokenBal} {tokensymbol}</p>
                         <button type="button" className="btn button-blue m-1" onClick={() => login()}>{userAddress ? `${userAddress.slice(0, 5)}...${userAddress.slice(38)}` : `Connect Wallet`}</button>
 
-                        {/* <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form> */}
                     </div>
                     <div className="mob-nav">
                         <a href="https://t.me/boobytrapbsc" className="btn btn-sm btn-outline-dark m-1">911</a>

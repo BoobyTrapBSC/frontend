@@ -623,7 +623,11 @@ body.active-modal {
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
 }
-
+.card-bold-points{
+  font-family: 'Righteous';
+  font-size: 18px;
+  color: #254b8c;
+}
 .projectCard img{
   max-height: 75px;
   max-width: 75px;
@@ -900,4 +904,12 @@ body.active-modal {
 }
 #dev-social:hover{
   color: #000;
+}
+#bbt-ribbon-container img{
+  position: absolute;
+  border-radius: 0;
+  right: 0;
+  height: 50px;
+  max-width: 200px;
+  top: 35%;
 }

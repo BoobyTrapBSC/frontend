@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import client from "../client";
-import BlockContent from "@sanity/block-content-to-react";
 import {
   FaTelegramPlane,
   FaTwitter,
@@ -19,10 +18,11 @@ export default function Safecards() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type=="lprojects" && trappoints == 0] {
+        `*[_type in ["lprojects", "uprojects"] && trappoints == 0] {
               name,
               tracker,
               slug,
+              id,
               contract,
               owner,
               marketingStatus,
@@ -63,7 +63,7 @@ export default function Safecards() {
   const renderProjects = (project, index) => {
     return (
       <div
-        className="projectCard mx-2 my-4 col-md-3 px-1 py-2 shadow"
+        className="projectCard mx-2 my-4 col-md-3 px-1 py-2 pb-3 shadow"
         key={index}
       >
         <div id="projectHead" className="d-flex justify-content-between">
@@ -141,24 +141,13 @@ export default function Safecards() {
         </div>
         <div id="projectDesc">
           <br />
-          <p className="mb-0">Trap Points</p>
+          <p className="mb-0 card-bold-points">{project.trappoints} Trap Points</p>
           <p className="mb-0">{project.comStrength}k+ Community Strength</p>
-          {/* <p className="mb-0" style={{ color: "#FCB040", fontSize: "18px" }}>
-            <BsStarFill />
-            <BsStarFill />
-            <BsStarFill />
-            <BsStarFill />
-            <BsStarHalf />
-          </p> */}
-          <BlockContent
-            blocks={project.description}
-            projectId="lfyw4jna"
-            dataset="production"
-          />
+          <p>{project.description.length > 150 ? project.description.slice(0,150)+"..." : project.description}</p>
         </div>
         <Link
           className="btn shadow-sm"
-          to={{ pathname: `/safedefi/safuprojects/${project.slug.current}` }}
+          to={{ pathname: `/safehaven/safuprojects/${project.slug.current}/${project.id}`, state:{id:project.id}}}
         >
           Details
         </Link>

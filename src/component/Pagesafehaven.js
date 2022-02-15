@@ -4,9 +4,10 @@ import {
   AiFillLeftCircle,
 } from "react-icons/ai";
 import { Link, Outlet } from "react-router-dom";
+import Coin from "./Coin";
 import Sidebar from "./Sidebar";
 
-export default function Pagesafedefi() {
+export default function Pagesafehaven() {
 
   const toggleSort = (e) => {
     const checked = e.target.checked;
@@ -26,7 +27,7 @@ export default function Pagesafedefi() {
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-            <Breadcrumb.Item active>Safe DeFi</Breadcrumb.Item>
+            <Breadcrumb.Item active>Safe Haven</Breadcrumb.Item>
           </Breadcrumb>
           <h1>SAFE HAVEN</h1>
           <h2>Best Rated in DeFi</h2>
@@ -42,6 +43,7 @@ export default function Pagesafedefi() {
             </Link>
           </p>
         </div>
+        {/* <Coin/> */}
       </div>
       <div className="safe-content row w-100 mt-3">
         <div className={`sidebar col-lg-3`}>

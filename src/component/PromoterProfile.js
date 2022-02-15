@@ -143,7 +143,7 @@ export default function PromoterProfile() {
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="/safedefi/promoters">
+            <Breadcrumb.Item href="/safehaven/promoters">
               Safe DeFi
             </Breadcrumb.Item>
             <Breadcrumb.Item active>{singlePromoter.name}</Breadcrumb.Item>
