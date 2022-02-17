@@ -45,7 +45,7 @@ export default function Promoters() {
         )
     }
     return (
-        <div className='row' id='owner-card-cont'>
+        <div className='row mt-3' id='owner-card-cont'>
             {promoter.map(renderDev)}
         </div>
     )

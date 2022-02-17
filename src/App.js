@@ -49,7 +49,7 @@ function App() {
           <Route path="/safehaven/promoters/:slug/:id/" element={<PromoterProfile/>}/>
           <Route path="/safehaven/safuprojects/:slug/:id" element={<Projectpage/>}/>
           <Route path="/safehaven/ongoingprojects/:slug/:id" element={<Ongoingpage/>}/>
-          <Route path="/safehaven/upcomingprojects/:slug/:id" element={<Projectpage/>}/>
+          <Route path="/safehaven/upcomingproject/:slug/:id" element={<Projectpage/>}/>
           <Route path="/safehaven/boobytrap/:slug/:id" element={<Projectpage/>}/>
           <Route path="*" element={<Page404/>} />
         </Routes>

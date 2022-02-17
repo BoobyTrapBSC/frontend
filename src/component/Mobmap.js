@@ -49,7 +49,7 @@ export default function Mobmap() {
                     <ul>
                         <li className='ongoing'>Private Sale to collect funds for development of platform & presale marketing</li>
                         <li className='ongoing'>Beta Version of $BBT platform with "Safe Haven"</li>
-                        <li>Presale Marketing and promotions</li>
+                        <li className='ongoing'>Presale Marketing and promotions</li>
                         <li>Listing of 100+ Project Owners, Developers, Influencers/Promoters</li>
                     </ul>
                 </div>

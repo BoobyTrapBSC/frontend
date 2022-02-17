@@ -15,7 +15,7 @@ import {
 } from "react-icons/ai";
 import { BsStarFill, BsStarHalf } from 'react-icons/bs'
 import Projectdetails from "./Projectdetails";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { addReview, getProfile, BNBBalance } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
 import Sidebar from './Sidebar';

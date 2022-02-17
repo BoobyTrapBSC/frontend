@@ -20,7 +20,7 @@ export default function Footer() {
             <a href="http://tiktok.com/@boobytrapbsc">
               <FaTiktok size={25} className="text-light mx-3" />
             </a>
-            <a href="https://www.instagram.com/invites/contact/?i=15vunbavmzna0&utm_content=n7k94ff">
+            <a href="https://instagram.com/boobytrap_bsc">
               <FaInstagram size={25} className="text-light mx-3" />
             </a>
             <a href="https://twitter.com/BoobyTrapBsc">

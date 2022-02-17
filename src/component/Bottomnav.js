@@ -20,7 +20,7 @@ export default function Bottomnav() {
           <button className="btn">
             <Link to = {trapsheetpdf} id="mob-link" target = "_blank" rel="noreferrer"><img src={trapsheet} alt=""/><br/>Trapsheet</Link>
           </button>
-          <a href="https://privatesale.boobytrap.live/" id="mob-link" target = "_blank" rel="noreferrer"><button className="btn">
+          <a href="https://yachtpad.club/launchpad/BoobyTrap" id="mob-link" target = "_blank" rel="noreferrer"><button className="btn">
             <img src={buybbt} alt=""/><br/>Buy $BBT
           </button></a>
         </div>

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 export default function Projectdetails() {
 
     const [singleProject, setSingleProject] = useState([]);
-    const { slug } = useParams()
+    const { slug, id } = useParams()
 
     useEffect(() => {
         client.fetch(
@@ -15,6 +15,7 @@ export default function Projectdetails() {
                 tracker,
                 slug,
                 contract,
+                trappoints,
                 audit,
                 kyc,
                 marketingWallet,
@@ -43,6 +44,13 @@ export default function Projectdetails() {
                     alt
                 },
                 devwallet,
+                teamwallet,
+                cmc,
+                cg,
+                holdersCount,
+                exchanges,
+                chart,
+                expertOpinion,
                 newlyLaunched,
                 comStrength,
                 devStatus,
@@ -58,10 +66,15 @@ export default function Projectdetails() {
                 <ul id="skills">
                     <li><b>Trap Points:</b> {singleProject.trappoints}</li>
                     <li><b>Project Status:</b> {singleProject.newlyLaunched === true? "Recently Launched": singleProject.devStatus}</li>
-                    <li><b>Community Ratings:</b>  </li>
                     <li><b>Community Strength:</b> {singleProject.comStrength}k+</li>
                     <li><b>Marketing Budget:</b> ${singleProject.budget}</li>
                     <li><b>Dev Wallet:</b> {singleProject.devwallet}</li>
+                    <li><b>Team Wallet:</b> {singleProject.teamwallet}</li>
+                    <li><b>CMC Link:</b> <a href={`${singleProject.cmc}`}>{singleProject.cmc}</a></li>
+                    <li><b>CG Link:</b> {singleProject.cg}</li>
+                    <li><b>Email:</b> {singleProject.email}</li>
+                    <li><b>Exchange Listings:</b> {singleProject.exchanges}</li>
+                    <li><b>Number of Holders:</b> {singleProject.holdersCount}</li>
                 </ul>
             </div>
         </div>

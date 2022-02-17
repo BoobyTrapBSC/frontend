@@ -54,7 +54,7 @@ export default function Roadmap() {
              <>
                 <h3 className='ongoing'>Pre-Launch (Dec 2021 - Feb 2022)</h3>
               <p>
-                <span className='ongoing'>• Private Sale to collect funds for development of platform & presale marketing<br/>• Beta Version of $BBT platform with "Safe Haven"</span> <br />• Presale Marketing and promotions <br />• Listing of 100+ Project Owners, Developers, Influencers/Promoters</p>
+                <span className='ongoing'>• Private Sale to collect funds for development of platform & presale marketing<br/>• Beta Version of $BBT platform with "Safe Haven"</span> <br /><span className='ongoing'>• Presale Marketing and promotions </span><br />• Listing of 100+ Project Owners, Developers, Influencers/Promoters</p>
               </>
             :""}
             </div>

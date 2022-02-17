@@ -15,13 +15,22 @@ import {
 } from "react-icons/ai";
 import { BsStarFill, BsStarHalf } from 'react-icons/bs'
 import Projectdetails from "./Projectdetails";
+import { toast } from 'react-toastify';
 import { initInstance } from './../Web3_connection/web3_methods'
 import Sidebar from './Sidebar';
+import { addReview, getProfile, BNBBalance } from "./../Web3_connection/ContractMethods"
 
 export default function Ongoingpage() {
 
     const [singleProject, setSingleProject] = useState([]);
-    const { slug } = useParams()
+    const [rating, setRating] = useState('SAFU (5 Start)');
+    const [bnbBal,setBNBBal] = useState(0)
+    const [tokenBal, setTokenBal] = useState(0)
+    const { slug, id } = useParams();
+    const notify = () => toast("Transaction Successful",{
+        position: "top-right",
+        pauseOnHover: false,
+      });
 
     useEffect(() => {
         client.fetch(
@@ -65,9 +74,107 @@ export default function Ongoingpage() {
         ).then((data) => setSingleProject(data[0]))
         const init = async () => {
             await initInstance();
+            await getProfile(id);
         }
-        init();
+        setInterval(()=>{
+            init();
+        },4000)
+
+        const getBNB = async()=> {
+            const bnbbal = await BNBBalance();
+            setBNBBal(bnbbal)
+        } 
+        getBNB();
     }, [slug])
+
+    const [avgRating, setavgRating] = useState();
+    const [modal, setModal] = useState(false);
+    const [countreview, setCountReview] = useState(0)
+    const [trappoint, setTrapPoint] = useState(0)
+    const [name,setName] = useState("")
+
+    const toggleModal = () => {
+        setModal(!modal);
+    };
+    if (modal) {
+        document.body.classList.add('active-modal')
+    } else {
+        document.body.classList.remove('active-modal')
+    }
+
+    const giveRating = async (rate) => {
+        toggleModal();
+        try {
+            if (rate.includes("Safu")) {
+                const got = await addReview(id, 5);
+                if(got.status === true){
+                    
+                    notify();
+                    await getProfile();
+                }
+            }
+            else if (rate.includes("Excellent")) {
+               const got = await addReview(id, 4)
+               if(got.status === true){
+                notify();
+                await getProfile();
+            }
+            }
+            else if (rate.includes("DYOR")) {
+               const got = await addReview(id, 3)
+               if(got.status === true){
+                notify();
+                await getProfile();
+            }
+            }
+            else if (rate.includes("Avoidable")) {
+                const got = await addReview(id, 2)
+                if(got.status === true){
+                    notify();
+                    await getProfile();
+                }
+            }
+            else if (rate.includes("Scammer")) {
+               const got = await addReview(id, 1)
+               if(got.status === true){
+                notify();
+                await getProfile();
+            }
+            }
+        }
+        catch (e) {
+            console.log(e)
+        }
+    }
+
+    const getProfile = async(id) =>{
+        const data = await getProfile(id)
+        setName(data.name)
+        setTrapPoint(data.trapPoints)
+        setCountReview(data.reviewsCount)
+        setavgRating(data.avgRating/10) 
+    }
+  
+    const start =(avgRating)=> {
+        // console.log("Rating",Number(avgRating).toFixed(0))
+       if(Number(avgRating).toFixed(0) === "5"){
+            return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />]
+       }
+       else if(Number(avgRating).toFixed(0) === "4"){
+        return [<BsStarFill />,<BsStarFill />,<BsStarFill />,<BsStarFill />] 
+       }
+       else if(Number(avgRating).toFixed(0) === "3"){
+        return [<BsStarFill />,<BsStarFill />,<BsStarFill />] 
+       }
+       else if(Number(avgRating).toFixed(0) === "2"){
+        return [<BsStarFill />,<BsStarFill />] 
+       }
+       else if(Number(avgRating).toFixed(0) === "1"){
+        return [<BsStarFill />] 
+       }
+       else{
+       }
+    }
 
     return (
         <div id="pagesafe-cont" className="owner-prof-cont projectpage-cont">
@@ -83,7 +190,7 @@ export default function Ongoingpage() {
                     <div className="col-lg-8">
                         <div className="dev-main">
                             <h1>{singleProject.name}</h1>
-                            <div className="fs-6"><span className="review-star fs-5"><BsStarFill /><BsStarFill /><BsStarFill /><BsStarFill /><BsStarHalf /> </span> (177 Reviews)</div>
+                            <div className="fs-6"><span className="review-star fs-5"> {start(avgRating)} </span> ({countreview} Reviews)</div>
                             <p className="my-1">{singleProject.trapPoints} Trap Points</p>
                             <p>
                                 0 Trap Points means the safest! lower trap points means safer! Read
