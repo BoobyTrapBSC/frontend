@@ -13,7 +13,7 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {
     AiFillLeftCircle
 } from "react-icons/ai";
-import { BsStarFill, BsStarHalf } from 'react-icons/bs'
+import { BsStarFill} from 'react-icons/bs'
 import Projectdetails from "./Projectdetails";
 import { toast } from 'react-toastify';
 import { addReview, getProfile, BNBBalance } from "./../Web3_connection/ContractMethods"
@@ -193,7 +193,7 @@ export default function Projectpage() {
                         <div className="dev-main">
                             <h1>{singleProject.name}</h1>
                             <div className="fs-6"><span className="review-star fs-5"> {start(avgRating)} </span> ({countreview} Reviews)</div>
-                            <p className="my-1">{trappoint} Trap Points</p>
+                            <p className="my-1 card-bold-points text-light">{trappoint} Trap Points</p>
                             <p>
                                 0 Trap Points means the safest! lower trap points means safer! Read
                                 more about{" "}

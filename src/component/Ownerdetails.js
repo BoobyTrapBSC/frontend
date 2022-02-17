@@ -10,7 +10,7 @@ import {
 import { Link, useParams, useLocation } from "react-router-dom";
 import { getTotoalProfile } from "./../Web3_connection/ContractMethods";
 import { initInstance } from "./../Web3_connection/web3_methods";
-import BlockContent from "@sanity/block-content-to-react";
+// import BlockContent from "@sanity/block-content-to-react";
 
 export default function Ownerdetails(props) {
   // OWNER FETCH
@@ -186,11 +186,7 @@ export default function Ownerdetails(props) {
                 </div>
                 <div id="projectDesc">
                   <br />
-          <BlockContent
-            blocks={upcoming.description}
-            projectId="lfyw4jna"
-            dataset="production"
-          />
+                    <p>{upcoming.description.length > 150 ? upcoming.description.slice(0,150)+"..." : upcoming.description}</p>
                 </div>
                 <Link className="btn shadow-sm" to="/">
                   Details
@@ -298,11 +294,7 @@ export default function Ownerdetails(props) {
                 </div>
                 <div id="projectDesc">
                   <br />
-          <BlockContent
-            blocks={launched.description}
-            projectId="lfyw4jna"
-            dataset="production"
-          />
+                    <p>{launched.description.length > 150 ? launched.description.slice(0,150)+"..." : launched.description}</p>
                 </div>
                 <Link className="btn shadow-sm" to={{ pathname: `/safehaven/safuprojects/${launched.slug.current}`}}>
                   Details

@@ -144,7 +144,7 @@ export default function Devprofile() {
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="/safehaven/projectowner">
+            <Breadcrumb.Item href="/safehaven/developers">
               Safe DeFi
             </Breadcrumb.Item>
             <Breadcrumb.Item active>{singleDev.name}</Breadcrumb.Item>

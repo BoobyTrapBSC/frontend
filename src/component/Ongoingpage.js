@@ -43,6 +43,7 @@ export default function Ongoingpage() {
                 audit,
                 kyc,
                 marketingWallet,
+                trappoints,
                 budget,
                 tradingStartDate,
                 initialMC,
@@ -178,6 +179,7 @@ export default function Ongoingpage() {
 
     return (
         <div id="pagesafe-cont" className="owner-prof-cont projectpage-cont">
+            
             <div className="safe-head py-3 position-relative container-fluid">
                 <div className="head-content row">
                     <Breadcrumb><AiFillLeftCircle size={25} color="#fff" />
@@ -191,7 +193,7 @@ export default function Ongoingpage() {
                         <div className="dev-main">
                             <h1>{singleProject.name}</h1>
                             <div className="fs-6"><span className="review-star fs-5"> {start(avgRating)} </span> ({countreview} Reviews)</div>
-                            <p className="my-1">{singleProject.trapPoints} Trap Points</p>
+                            <p className="my-1">{singleProject.trappoints} Trap Points</p>
                             <p>
                                 0 Trap Points means the safest! lower trap points means safer! Read
                                 more about{" "}
@@ -202,7 +204,7 @@ export default function Ongoingpage() {
                                     trap points
                                 </Link>
                             </p>
-                            <a href="/" className="btn btn-outline-dark">Give Rating</a>
+                            <button className={`btn btn-outline-dark ${bnbBal ? "disabled" : ""} `} onClick={() => toggleModal()}>{bnbBal ? "Insufficient BNB Balance" : "Give Rating"}</button>
                         </div>
                     </div>
                     <div className="col-lg-2 position-relative">
@@ -221,6 +223,29 @@ export default function Ongoingpage() {
                     </div>
                 </div>
             </div>
+
+            {modal && (
+                <div style={{zIndex:"5"}}>
+                    <div onClick={() => toggleModal()} className="overlay-popup"></div>
+                    <div className="modal-content py-3">
+
+                        <label for="category" className="form-label fw-bold mb-3">
+                            Give Rating
+                        </label>
+                        <span style={{fontSize:"10px",marginTop:"-20px",marginBottom:"10px"}}>(A fee of 0.001 BNBs is applicable to keep this utility spam free!)</span>
+                        <div className='px-4 mb-2'>
+                            <select className="form-select text-center" id="sel1" value={rating} onChange={(e) => setRating(e.target.value)} aria-label="Default select example">
+                                <option selected>Select Star Rating</option>
+                                <option>Safu &nbsp; &#9733; &#9733; &#9733; &#9733; &#9733;</option>
+                                <option>Excellent &nbsp; &#9733; &#9733; &#9733; &#9733;</option>
+                                <option>DYOR &nbsp; &#9733; &#9733; &#9733;</option>
+                                <option>Avoidable &nbsp; &#9733; &#9733;</option>
+                                <option>Scammer &nbsp; &#9733;</option>
+                            </select></div>
+                        <button className="btn w-50 mx-auto fw-bold my-2 btn-outline-dark" onClick={() => giveRating(rating)}>Submit</button>
+                    </div>
+                </div>
+            )}
             
             <div className="safe-content row w-100 mt-3">
                 <div className={`sidebar col-lg-3`}>
