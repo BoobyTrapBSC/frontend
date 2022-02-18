@@ -46,7 +46,7 @@ export default function Devcards() {
         )
     }
     return (
-        <div className='row' id='owner-card-cont'>
+        <div className='row mt-3' id='owner-card-cont'>
             {dev.map(renderDev)}
         </div>
     )

@@ -184,7 +184,7 @@ export default function Projectpage() {
             <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
             <Breadcrumb.Item href="/safehaven/safuprojects">
-              Safe DeFi
+            Safe Haven
             </Breadcrumb.Item>
             <Breadcrumb.Item active>{singleProject.name}</Breadcrumb.Item>
           </Breadcrumb>

@@ -18,6 +18,8 @@ export default function SidebarSlide() {
         <Link className="menu-item" to="/safehaven/promoters">AMA/Call Channels</Link>
         <Link className="menu-item" to="/safehaven/promoters">Other Services</Link>
         <hr />
+        <a className="menu-item" href="https://yachtpad.club/launchpad/BoobyTrap">Buy Presale</a>
+        <a className="menu-item" href="https://privatesale.boobytrap.live/">Claim Tokens</a>
       </Menu>
   </div>;
 }

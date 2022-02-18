@@ -53,7 +53,13 @@ export default function Navbar() {
                             </li>
                         </ul>
                         <a href="https://t.me/boobytrapbsc" className="btn btn-outline-dark m-1">911</a>
-                        <a type="button" href='https://yachtpad.club/launchpad/BoobyTrap' className="btn btn-outline-dark m-1">Buy Presale</a>
+                        {/* <a type="button" href='https://yachtpad.club/launchpad/BoobyTrap' className="btn btn-outline-dark m-1">Buy Presale</a> */}
+                        <div className='position-relative'>
+                        <button className="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Buy $BBT</button>
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a className="dropdown-item" target="_blank" rel="noreferrer" href="https://yachtpad.club/launchpad/BoobyTrap">Buy Presale</a></li>
+                            <li><a className="dropdown-item" target="_blank" rel="noreferrer" href="https://privatesale.boobytrap.live/">Claim Tokens</a></li>
+                        </ul></div>
                         <p className='btn btn-outline-dark m-1'>Reward Balance: {tokenBal} {tokensymbol}</p>
                         <button type="button" className="btn button-blue m-1" onClick={() => login()}>{userAddress ? `${userAddress.slice(0, 5)}...${userAddress.slice(38)}` : `Connect Wallet`}</button>
 
@@ -61,7 +67,7 @@ export default function Navbar() {
                     <div className="mob-nav">
                         <a href="https://t.me/boobytrapbsc" className="btn btn-sm btn-outline-dark m-1">911</a>
                         <button type="button" className="btn btn-sm button-blue m-1" >Connect Wallet</button>
-                        <SidebarSlide right/>
+                        <SidebarSlide right />
                     </div>
                 </div>
             </nav>

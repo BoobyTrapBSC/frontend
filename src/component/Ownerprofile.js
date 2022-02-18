@@ -161,7 +161,7 @@ export default function Ownerprofile() {
                     <Breadcrumb><AiFillLeftCircle size={25} color="#fff" />
                         <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
                         <Breadcrumb.Item href="/safehaven/projectowner">
-                            Safe DeFi
+                        Safe Haven
                         </Breadcrumb.Item>
                         <Breadcrumb.Item active>Profile</Breadcrumb.Item>
                     </Breadcrumb>

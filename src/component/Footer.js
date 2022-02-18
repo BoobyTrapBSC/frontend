@@ -33,7 +33,7 @@ export default function Footer() {
           <img src={fGraphic} alt="" />
         </div>
       </div>
-      <div className="copyright pt-5 pb-2">
+      <div className="copyright pt-5 pb-2 ps-2">
         <p>© 2021 Booby Trap. All rights reserved.</p>
       </div>
     </div>
