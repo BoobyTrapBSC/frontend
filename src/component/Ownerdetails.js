@@ -22,7 +22,7 @@ export default function Ownerdetails(props) {
   /* THIS IS TO FETCH THE OWNERS SLUG FROM URL */
   var fetchedOwner = window.location.pathname
     .replace(/[0-9]/g, "")
-    .slice(23, -1);
+    .slice(24, -1);
   // var currentOwner = fetchedOwner.replace(/^./, str => str.toUpperCase())
   // console.log(fetchedOwner);
 
