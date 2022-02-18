@@ -57,7 +57,7 @@ export default function Safecards() {
     };
     getData();
   }, []);
-  console.log("Total profile", CountProfile);
+  
 
   // RENDER PROJECTS
   const renderProjects = (project, index) => {

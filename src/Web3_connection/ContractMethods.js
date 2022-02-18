@@ -39,7 +39,7 @@ export const TokenContract = async()=>{
 }
 
 export const getTokenBalance = async()=> {
-    const contract = await TokenContract();
+    const contract = getContract(TokenABI,envprod.React_App_Token)
     const balance = await contract.methods.balanceOf(await getAccount()).call();
     return balance
 }
@@ -57,7 +57,7 @@ export const BNBBalance = async()=>{
 }
 
 export const symbol = async()=>{
-    const contract = await TokenContract();
+    const contract = getContract(TokenABI,envprod.React_App_Token)
     const sym = await contract.methods.symbol().call();
     return sym;
 }
