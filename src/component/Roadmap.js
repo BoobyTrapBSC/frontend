@@ -26,7 +26,7 @@ export default function Roadmap() {
   return (
     <div id='roadmap-cont'>
       <div className="safe-defi roadmap-content container mb-5 pt-5">
-        <h2>Here's how we plan to take our project to a success - the roadmap.</h2>
+        <h2>Here's how we plan to take our project beyond moon - THE ROADMAP.</h2>
         <p className='text-muted mt-3 mx-auto'>We don't plan to wait for business to come to us; instead, we will bring our services to the DeFi. We aim to deliver a quality service, and this is how we do it.</p>
       </div>
       <Mobmap/>
