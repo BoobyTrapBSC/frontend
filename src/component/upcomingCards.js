@@ -30,6 +30,7 @@ export default function UpcomingCards() {
               marketingWallet,
               owner,
               telegram,
+              trappoints,
               twitter,
               website,
               facebook,

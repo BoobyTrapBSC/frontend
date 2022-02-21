@@ -20,6 +20,14 @@ body.active-modal {
 .mob-nav {
   display: none;
 }
+.dropdown-menu .dropdown-submenu {
+  left: 100%;
+  top: 70px;
+  position: absolute;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+  display: block;
+}
 
 /* BOTTOM NAVBAR */
 .bottomNav {

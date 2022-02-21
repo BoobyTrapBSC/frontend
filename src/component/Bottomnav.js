@@ -3,7 +3,7 @@ import home from '../images/home-alt.svg'
 import buybbt from '../images/square-vice-versa-alt.svg'
 import trapsheet from '../images/sim.svg'
 import safedefi from '../images/database.svg'
-import trapsheetpdf from '../whitepaper/trapSheet-v2.pdf'
+import trapsheetpdf from '../whitepaper/trapsheet-v2-launch-tokenomics.pdf'
 import {Link} from 'react-router-dom'
 
 export default function Bottomnav() {

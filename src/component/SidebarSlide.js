@@ -25,8 +25,10 @@ export default function SidebarSlide() {
         <Link className="menu-item" onClick={closeSideBar} to="/safehaven/promoters">AMA/Call Channels</Link>
         <Link className="menu-item" onClick={closeSideBar} to="/safehaven/promoters">Other Services</Link>
         <hr />
-        <a className="menu-item" onClick={closeSideBar} href="https://yachtpad.club/launchpad/BoobyTrap">Buy Presale</a>
-        <a className="menu-item" onClick={closeSideBar} href="https://privatesale.boobytrap.live/">Claim Tokens</a>
+        <a className="menu-item" target="_blank" rel="noreferrer" onClick={closeSideBar} href="https://pancakeswap.finance/swap?outputCurrency=0x609b88f5a4aBB7A55bA0c6d255C3F1b1bC7A4D76">Buy $BBT</a>
+        <a className="menu-item" target="_blank" rel="noreferrer" onClick={closeSideBar} href="https://poocoin.app/tokens/0x609b88f5a4aBB7A55bA0c6d255C3F1b1bC7A4D76">View Chart</a>
+        <a className="menu-item" target="_blank" rel="noreferrer" onClick={closeSideBar} href="https://yachtpad.club/launchpad/BoobyTrap">Claim Presale</a>
+        <a className="menu-item" target="_blank" rel="noreferrer" onClick={closeSideBar} href="https://privatesale.boobytrap.live/">Claim Pvt Sale</a>
       </Menu>
   </div>;
 }
