@@ -30,23 +30,32 @@ export default function PromoterProfile() {
     client
       .fetch(
         `*[slug.current == "${slug}"] {
-            name,
-            alias,
-            id,
-            slug,
-            telegram,
-            instagram,
-            twitter,
-            engagementRating,
-            roi,
-            numProjects,
-            image{
-                asset -> {
-                    _id,
-                    url
-                },
-                alt
-            }
+          name,
+          alias,
+          id,
+          slug,
+          telegram,
+          instagram,
+          avgCost,
+          twitter,
+          engagementRating,
+          groupowner,
+          experience,
+          tgOwner,
+          admin,
+          tgAdmin,
+          about,
+          roi,
+          wallet,
+          numProjects,
+          groupCreated,
+          image{
+              asset -> {
+                  _id,
+                  url
+              },
+              alt
+          }
       }`
       )
       .then((data) => setSinglePromoter(data[0]));

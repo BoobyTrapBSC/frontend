@@ -19,8 +19,16 @@ export default function Promoters() {
               avgCost,
               twitter,
               engagementRating,
+              groupowner,
+              experience,
+              tgOwner,
+              admin,
+              tgAdmin,
+              about,
               roi,
+              wallet,
               numProjects,
+              groupCreated,
               image{
                   asset -> {
                       _id,

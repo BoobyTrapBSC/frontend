@@ -22,30 +22,33 @@ export default function PromoterDetails() {
     client
       .fetch(
         `*[slug.current == "${slug}"] {
-            name,
-            alias,
-            id,
-            slug,
-            groupowner,
-            admin,
-            tgOwner,
-            groupCreated,
-            tgAdmin,
-            telegram,
-            instagram,
-            twitter,
-            avgCost,
-            experience,
-            engagementRating,
-            roi,
-            numProjects,
-            image{
-                asset -> {
-                    _id,
-                    url
-                },
-                alt
-            }
+          name,
+          email,
+          alias,
+          id,
+          slug,
+          telegram,
+          instagram,
+          avgCost,
+          twitter,
+          engagementRating,
+          groupowner,
+          experience,
+          tgOwner,
+          admin,
+          tgAdmin,
+          about,
+          roi,
+          wallet,
+          numProjects,
+          groupCreated,
+          image{
+              asset -> {
+                  _id,
+                  url
+              },
+              alt
+          }
       }`
       )
       .then((data) => setSinglePromoter(data[0]));
@@ -60,13 +63,15 @@ export default function PromoterDetails() {
     <div className="row justify-content-center">
       <div className="container-fluid text-start fs-6">
         <ul id="skills">
-          <li><b>Owner:</b> {singlePromoter.groupowner}</li>
+          <li><b>Email:</b> <a href={`mailto:${singlePromoter.email}`}>{singlePromoter.email}</a></li>
+          <li><b>Owner:</b> <a href={singlePromoter.tgOwner}>{singlePromoter.groupowner}</a></li>
           <li><b>Group Created on:</b> {singlePromoter.groupCreated}</li>
-          <li><b>Admin:</b> {singlePromoter.admin}</li>
+          <li><b>Admin:</b> <a href={singlePromoter.tgAdmin}>{singlePromoter.admin}</a></li>
           <li><b>Return on Investment:</b> {singlePromoter.roi}</li>
           <li><b>Engagement Rating:</b> {singlePromoter.engagementRating}</li>
           <li><b>Experience:</b> {singlePromoter.experience}+ Months</li>
           <li><b>Average Cost:</b> ${singlePromoter.avgCost}</li>
+          <li><b>About:</b> {singlePromoter.about}</li>
         </ul>
       </div>
       
