@@ -147,7 +147,7 @@ export default function Projectpage() {
 
   const getprofile = async (id) => {
     const data = await getProfile(id);
-    console.log("getprofile",data)
+    // console.log("getprofile",data)
     setName(data.name);
     setTrapPoint(data.trapPoints);
     setCountReview(data.reviewsCount);
@@ -223,7 +223,6 @@ export default function Projectpage() {
               />
             )}
             <div className="circleSocial">
-              {console.log(singleProject.owner)}
               <a
                 href={singleProject.telegram}
                 id="circleIco"
